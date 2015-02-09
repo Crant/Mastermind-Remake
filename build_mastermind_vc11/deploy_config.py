@@ -4,9 +4,9 @@
 # tool during the build process.
 
 config = {}
-cmdline = ['E:/Program Files (x86)/Marmelade/7.4/s3e/makefile_builder/mkb.py', 'e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb', '--deploy-only']
-mkb = 'e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb'
-mkf = ['e:\\program files (x86)\\marmelade\\7.4\\s3e\\s3e-default.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iw2d\\iw2d.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgx\\iwgx.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgl\\iwgl.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwutil\\iwutil.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\libjpeg\\libjpeg.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\libpng\\libpng.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\zlib\\zlib.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgeom\\iwgeom.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwresmanager\\iwresmanager.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\extensions\\pvrtextool\\pvrtextool.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgxfont\\iwgxfont.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\tiniconv\\tiniconv.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwtween\\iwtween.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iw2dscenegraph\\iw2dscenegraph.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iw2dscenegraphcore\\iw2dscenegraphcore.mkf', 'e:\\documents\\github\\mastermind remake\\modules\\soundengine\\soundengine.mkf']
+cmdline = ['E:/Program Files (x86)/Marmelade/7.4/s3e/makefile_builder/mkb.py', 'e:/Documents/GitHub/Mastermind-Remake/Mastermind/Mastermind.mkb', '--default-buildenv=vc11', '--msvc-project', '--deploy-only']
+mkb = 'e:/Documents/GitHub/Mastermind-Remake/Mastermind/Mastermind.mkb'
+mkf = ['e:\\program files (x86)\\marmelade\\7.4\\s3e\\s3e-default.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iw2d\\iw2d.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgx\\iwgx.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgl\\iwgl.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwutil\\iwutil.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\libjpeg\\libjpeg.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\libpng\\libpng.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\zlib\\zlib.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgeom\\iwgeom.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwresmanager\\iwresmanager.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\extensions\\pvrtextool\\pvrtextool.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwgxfont\\iwgxfont.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\third_party\\tiniconv\\tiniconv.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iwtween\\iwtween.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iw2dscenegraph\\iw2dscenegraph.mkf', 'e:\\program files (x86)\\marmelade\\7.4\\modules\\iw2dscenegraphcore\\iw2dscenegraphcore.mkf', 'e:\\documents\\github\\mastermind-remake\\modules\\soundengine\\soundengine.mkf']
 
 class DeployConfig(object):
     pass
@@ -16,8 +16,8 @@ class DeployConfig(object):
 assets = {}
 
 assets['Default'] = [
-    ('e:/Documents/GitHub/Mastermind Remake/Mastermind/data/textures', 'textures', 0),
-    ('e:/Documents/GitHub/Mastermind Remake/Mastermind/data/audio', 'audio', 0),
+    ('e:/Documents/GitHub/Mastermind-Remake/Mastermind/data/textures', 'textures', 0),
+    ('e:/Documents/GitHub/Mastermind-Remake/Mastermind/data/audio', 'audio', 0),
 ]
 
 ######### DEFAULT CONFIG #############
@@ -30,9 +30,9 @@ class DefaultConfig(DeployConfig):
     caption = 'Mastermind'
     long_caption = 'Mastermind'
     version = [0, 0, 1]
-    config = ['e:/Documents/GitHub/Mastermind Remake/Mastermind/data/app.icf']
-    data_dir = 'e:/Documents/GitHub/Mastermind Remake/Mastermind/data'
-    mkb_dir = 'e:/Documents/GitHub/Mastermind Remake/Mastermind'
+    config = ['e:/Documents/GitHub/Mastermind-Remake/Mastermind/data/app.icf']
+    data_dir = 'e:/Documents/GitHub/Mastermind-Remake/Mastermind/data'
+    mkb_dir = 'e:/Documents/GitHub/Mastermind-Remake/Mastermind'
     iphone_link_lib = []
     osx_ext_dll = ['e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/lib/osx/libPVRTexTool.dylib']
     wp81_extra_pri = []
@@ -86,40 +86,40 @@ class DefaultConfig(DeployConfig):
     iphone_link_libs = []
     target = {
          'gcc_x86' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_x86/Mastermind.so',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_x86/Mastermind.so',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_x86/Mastermind.so',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_x86/Mastermind.so',
                  },
          'gcc_x86_tizen' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_x86_tizen/Mastermind.s86',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_x86_tizen/Mastermind.s86',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_x86_tizen/Mastermind.s86',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_x86_tizen/Mastermind.s86',
                  },
          'firefoxos' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_firefoxos/Mastermind.js',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_firefoxos/Mastermind.js',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_firefoxos/Mastermind.js',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_firefoxos/Mastermind.js',
                  },
          'mips_gcc' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_mips/Mastermind.so',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_mips/Mastermind.so',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_mips/Mastermind.so',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_mips/Mastermind.so',
                  },
          'arm_gcc' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_arm/Mastermind.s3e',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_arm/Mastermind.s3e',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_arm/Mastermind.s3e',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_arm/Mastermind.s3e',
                  },
          'mips' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_mips/Mastermind.so',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_mips/Mastermind.so',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_mips/Mastermind.so',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_mips/Mastermind.so',
                  },
          'gcc_x86_android' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_x86_android/Mastermind.so',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_x86_android/Mastermind.so',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_gcc_x86_android/Mastermind.so',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_gcc_x86_android/Mastermind.so',
                  },
          'arm' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_arm/Mastermind.s3e',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_arm/Mastermind.s3e',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_arm/Mastermind.s3e',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_arm/Mastermind.s3e',
                  },
          'x86' : {
-                   'debug'   : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_x86/Mastermind.s86',
-                   'release' : r'e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_x86/Mastermind.s86',
+                   'debug'   : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Debug_Mastermind_VC11_x86/Mastermind.s86',
+                   'release' : r'e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/Release_Mastermind_VC11_x86/Mastermind.s86',
                  },
         }
     arm_arch = ''

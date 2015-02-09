@@ -96,10 +96,10 @@
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/algorithm">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </None>
-    <None Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/data/app.config.txt">
+    <None Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/data/app.config.txt">
       <Filter></Filter>
     </None>
-    <None Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/data/app.icf">
+    <None Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/data/app.icf">
       <Filter></Filter>
     </None>
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/bitset">
@@ -249,7 +249,7 @@
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf">
       <Filter>'Marmalade Studio'\iwresmanager</Filter>
     </None>
-    <None Include="e:/documents/github/mastermind remake/modules/soundengine/docs/iwsound.config.txt">
+    <None Include="e:/documents/github/mastermind-remake/modules/soundengine/docs/iwsound.config.txt">
       <Filter>(SoundEngine)\Docs</Filter>
     </None>
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf">
@@ -321,7 +321,7 @@
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/slist">
       <Filter>'Marmalade System (S3E)'\stdc headers\c++</Filter>
     </None>
-    <None Include="e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf">
+    <None Include="e:/documents/github/mastermind-remake/modules/soundengine/soundengine.mkf">
       <Filter>(SoundEngine)</Filter>
     </None>
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/sstream">
@@ -363,7 +363,7 @@
     <None Include="e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf">
       <Filter>(zlib)</Filter>
     </None>
-    <CustomBuild Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb">
+    <CustomBuild Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/Mastermind.mkb">
       <Filter></Filter>
     </CustomBuild>
   </ItemGroup>
@@ -371,16 +371,16 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/AirplayVersion.h">
       <Filter>'Marmalade System (S3E)'</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Audio.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Audio.h">
       <Filter>source</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Button.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Button.h">
       <Filter>source</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Game.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Game.h">
       <Filter>source</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Input.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Input.h">
       <Filter>source</Filter>
     </ClInclude>
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iw2d/h/Iw2D.h">
@@ -680,7 +680,7 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwgx/h/IwResHandlerMTL.h">
       <Filter>'Marmalade Studio'\iwgx</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwResHandlerWAV.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwResHandlerWAV.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h/IwResManager.h">
@@ -704,34 +704,34 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwSingleton.h">
       <Filter>'Marmalade Studio'\iwutil</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSound.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSound.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundADPCM.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundADPCM.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundData.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundData.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundGroup.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundGroup.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundInst.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundInst.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundManager.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundManager.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundPCM.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundPCM.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundParams.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundParams.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundSpec.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundSpec.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
-    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundWAV.h">
+    <ClInclude Include="e:/documents/github/mastermind-remake/modules/soundengine/h/IwSoundWAV.h">
       <Filter>(SoundEngine)</Filter>
     </ClInclude>
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwString.h">
@@ -773,28 +773,28 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwVariableBitField.h">
       <Filter>'Marmalade Studio'\iwutil</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/MainMenu.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/MainMenu.h">
       <Filter>source</Filter>
     </ClInclude>
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/MarmaladeVersion.h">
       <Filter>'Marmalade System (S3E)'</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Mastermind.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Mastermind.h">
       <Filter>source</Filter>
     </ClInclude>
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h/PVRTexTool.h">
       <Filter>Extensions\PVRTexTool</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/PauseMenu.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/PauseMenu.h">
       <Filter>source</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Rect.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Rect.h">
       <Filter>source</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Resource.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Resource.h">
       <Filter>source</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/source/Scene.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/source/Scene.h">
       <Filter>source</Filter>
     </ClInclude>
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/alloca.h">
@@ -1253,10 +1253,10 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/syslog.h">
       <Filter>'Marmalade System (S3E)'\stdc headers</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/temp_defines_debug.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/temp_defines_debug.h">
       <Filter>'generated files'</Filter>
     </ClInclude>
-    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/temp_defines_release.h">
+    <ClInclude Include="e:/Documents/GitHub/Mastermind-Remake/Mastermind/build_mastermind_vc11/temp_defines_release.h">
       <Filter>'generated files'</Filter>
     </ClInclude>
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/termios.h">

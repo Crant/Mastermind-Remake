@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <ItemGroup Label="ProjectConfigurations">
+  <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="x86 Debug|Win32">
       <Configuration>x86 Debug</Configuration>
       <Platform>Win32</Platform>
@@ -49,247 +49,247 @@
       <Configuration>GCC MIPS Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    </ItemGroup>
-
-    <PropertyGroup Label="Globals">
-      <ProjectGuid>{52F04D33-EED5-4EA7-8123-B57083AB4532}</ProjectGuid>
-      <Keyword>Win32Proj</Keyword>
-      <RootNamespace>RealProj</RootNamespace>
-    </PropertyGroup>
-    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'" Label="Configuration">
-      <ConfigurationType>DynamicLibrary</ConfigurationType>
-      <UseDebugLibraries>true</UseDebugLibraries>
-      <CharacterSet>Unicode</CharacterSet>
-      <PlatformToolset>v110</PlatformToolset>
-    </PropertyGroup>
-    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-    <ImportGroup Label="ExtensionSettings">
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <PropertyGroup Label="UserMacros" />
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
-      <LinkIncremental>true</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Debug_Mastermind_vc11_x86\</IntDir>
-      <OutDir>Debug_Mastermind_vc11_x86\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s86</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">
-      <LinkIncremental>false</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Release_Mastermind_vc11_x86\</IntDir>
-      <OutDir>Release_Mastermind_vc11_x86\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s86</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">
-      <LinkIncremental>true</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Debug_Mastermind_vc11_gcc_x86_android\</IntDir>
-      <OutDir>Debug_Mastermind_vc11_gcc_x86_android\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.so</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">
-      <LinkIncremental>false</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Release_Mastermind_vc11_gcc_x86_android\</IntDir>
-      <OutDir>Release_Mastermind_vc11_gcc_x86_android\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.so</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">
-      <LinkIncremental>true</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Debug_Mastermind_vc11_gcc_x86_tizen\</IntDir>
-      <OutDir>Debug_Mastermind_vc11_gcc_x86_tizen\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s86</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">
-      <LinkIncremental>false</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Release_Mastermind_vc11_gcc_x86_tizen\</IntDir>
-      <OutDir>Release_Mastermind_vc11_gcc_x86_tizen\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s86</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">
-      <LinkIncremental>true</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Debug_Mastermind_vc11_arm\</IntDir>
-      <OutDir>Debug_Mastermind_vc11_arm\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s3e</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">
-      <LinkIncremental>false</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Release_Mastermind_vc11_arm\</IntDir>
-      <OutDir>Release_Mastermind_vc11_arm\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s3e</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">
-      <LinkIncremental>true</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Debug_Mastermind_vc11_gcc_arm\</IntDir>
-      <OutDir>Debug_Mastermind_vc11_gcc_arm\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s3e</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">
-      <LinkIncremental>false</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Release_Mastermind_vc11_gcc_arm\</IntDir>
-      <OutDir>Release_Mastermind_vc11_gcc_arm\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.s3e</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">
-      <LinkIncremental>true</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Debug_Mastermind_vc11_gcc_mips\</IntDir>
-      <OutDir>Debug_Mastermind_vc11_gcc_mips\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.so</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">
-      <LinkIncremental>false</LinkIncremental>
-      <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
-      <IntDir>Release_Mastermind_vc11_gcc_mips\</IntDir>
-      <OutDir>Release_Mastermind_vc11_gcc_mips\</OutDir>
-      <TargetName>Mastermind</TargetName>
-      <TargetExt>.so</TargetExt>
-      <GenerateManifest>false</GenerateManifest>
-    </PropertyGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{52F04D33-EED5-4EA7-8123-B57083AB4532}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>RealProj</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Debug_Mastermind_vc11_x86\</IntDir>
+    <OutDir>Debug_Mastermind_vc11_x86\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s86</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Release_Mastermind_vc11_x86\</IntDir>
+    <OutDir>Release_Mastermind_vc11_x86\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s86</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Debug_Mastermind_vc11_gcc_x86_android\</IntDir>
+    <OutDir>Debug_Mastermind_vc11_gcc_x86_android\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.so</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Release_Mastermind_vc11_gcc_x86_android\</IntDir>
+    <OutDir>Release_Mastermind_vc11_gcc_x86_android\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.so</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Debug_Mastermind_vc11_gcc_x86_tizen\</IntDir>
+    <OutDir>Debug_Mastermind_vc11_gcc_x86_tizen\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s86</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Release_Mastermind_vc11_gcc_x86_tizen\</IntDir>
+    <OutDir>Release_Mastermind_vc11_gcc_x86_tizen\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s86</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Debug_Mastermind_vc11_arm\</IntDir>
+    <OutDir>Debug_Mastermind_vc11_arm\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s3e</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Release_Mastermind_vc11_arm\</IntDir>
+    <OutDir>Release_Mastermind_vc11_arm\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s3e</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Debug_Mastermind_vc11_gcc_arm\</IntDir>
+    <OutDir>Debug_Mastermind_vc11_gcc_arm\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s3e</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Release_Mastermind_vc11_gcc_arm\</IntDir>
+    <OutDir>Release_Mastermind_vc11_gcc_arm\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.s3e</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Debug_Mastermind_vc11_gcc_mips\</IntDir>
+    <OutDir>Debug_Mastermind_vc11_gcc_mips\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.so</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(S3E_DIR)\bin;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IntDir>Release_Mastermind_vc11_gcc_mips\</IntDir>
+    <OutDir>Release_Mastermind_vc11_gcc_mips\</OutDir>
+    <TargetName>Mastermind</TargetName>
+    <TargetExt>.so</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -306,28 +306,34 @@
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <EntryPointSymbol>DllEntryPoint</EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -344,28 +350,34 @@
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <EntryPointSymbol>DllEntryPoint</EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/x86/android_windows/bin/i686-linux-android-gcc.exe' tooltype=gcc_x86_android_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -m32 -fasynchronous-unwind-tables -fPIC -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -g -O0" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/x86/android_windows/bin/i686-linux-android-gcc.exe' tooltype=gcc_x86_android_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -m32 -fasynchronous-unwind-tables -fPIC -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -g -O0" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -375,35 +387,43 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/x86/android_windows/bin/i686-linux-android-g++.exe' tooltype=gcc_x86_android_linker -Wl,--as-needed -m32 --sysroot=e:/program files (x86)/marmelade/7.4/s3e\..\tools\gcc\x86\android_windows/android-14/arch-x86 -Wl,--no-undefined -shared -static-libgcc -nostdlib -fuse-ld=bfd -Wl,-Tandroid_x86_linker_script -Wl,-init -Wl,iwcrt_android_x86_init -Wl,-fini -Wl,iwcrt_android_x86_fini -frtti -Wl,-u_IwAppEntry -Wl,-u_IwAppVersionMajor -Wl,-u_IwAppVersionMinor -Wl,--entry=_IwAppEntry -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d_d -liwgx_d -liwgl_d -liwutil_d -ljpeg_d -lz_d -lpng_d -liwgeom_d -liwresmanager_d -liwgxfont_d -ltiniconv_d -ls3e_cpp_d -ls3e_d -ls3e_api_iwgl -lstdc++ -lc -lm -lgcc -Wl,--end-group --plink:-l"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/x86/android;e:/program files (x86)/marmelade/7.4/s3e/lib/x86/android</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/x86/android_windows/bin/i686-linux-android-gcc.exe' tooltype=gcc_x86_android_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -m32 -fasynchronous-unwind-tables -fPIC -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/x86/android_windows/bin/i686-linux-android-gcc.exe' tooltype=gcc_x86_android_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -m32 -fasynchronous-unwind-tables -fPIC -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -413,35 +433,43 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/x86/android_windows/bin/i686-linux-android-g++.exe' tooltype=gcc_x86_android_linker -Wl,--as-needed -m32 --sysroot=e:/program files (x86)/marmelade/7.4/s3e\..\tools\gcc\x86\android_windows/android-14/arch-x86 -Wl,--no-undefined -shared -static-libgcc -nostdlib -fuse-ld=bfd -Wl,-Tandroid_x86_linker_script -Wl,-init -Wl,iwcrt_android_x86_init -Wl,-fini -Wl,iwcrt_android_x86_fini -frtti -Wl,-u_IwAppEntry -Wl,-u_IwAppVersionMajor -Wl,-u_IwAppVersionMinor -Wl,--entry=_IwAppEntry -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d -liwgx -liwgl -liwutil -ljpeg -lz -lpng -liwgeom -liwresmanager -liwgxfont -ltiniconv -ls3e_cpp -ls3e -ls3e_api_iwgl -lstdc++ -lc -lm -lgcc -Wl,--end-group --plink:-l"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/x86/android;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/x86/android;e:/program files (x86)/marmelade/7.4/s3e/lib/x86/android</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__gcc_x86_tizen' tooltype=gcc_x86_tizen_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -g -O0" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__gcc_x86_tizen' tooltype=gcc_x86_tizen_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -g -O0" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -451,35 +479,43 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='__invalid__gcc_x86_tizen' tooltype=gcc_x86_tizen_linker -Wl,--as-needed -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d_d -liwgx_d -liwgl_d -liwutil_d -ljpeg_d -lz_d -lpng_d -liwgeom_d -liwresmanager_d -liwgxfont_d -ltiniconv_d -ls3e_cpp_d -ls3e_d -ls3e_api_iwgl -Wl,--end-group"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/s3e/lib/x86/tizen</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__gcc_x86_tizen' tooltype=gcc_x86_tizen_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__gcc_x86_tizen' tooltype=gcc_x86_tizen_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -Wno-switch -fvisibility=hidden -nostdinc --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -489,35 +525,43 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='__invalid__gcc_x86_tizen' tooltype=gcc_x86_tizen_linker -Wl,--as-needed -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d -liwgx -liwgl -liwutil -ljpeg -lz -lpng -liwgeom -liwresmanager -liwgxfont -ltiniconv -ls3e_cpp -ls3e -ls3e_api_iwgl -Wl,--end-group"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/x86/tizen;e:/program files (x86)/marmelade/7.4/s3e/lib/x86/tizen</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__rvct' tooltype=rvct_compiler --enum_is_int --unsigned_chars --interleave --diag_remark=1,9,111,174,128,177,196,381,550,611,815,1293,1295,1299,1300,1304,3017,3052,390 --apcs=/noropi --library_interface=aeabi_glibc --no-hide-all --no_unaligned_access --no_exceptions --cpu=6 --fpu=softvfp --apcs=/interwork --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct -Je:/program files (x86)/marmelade/7.4/s3e/h/std --asm --cppflag=--cpp -g -O0 --no_inline --diag_style=ide --default_extension=obj " /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__rvct' tooltype=rvct_compiler --enum_is_int --unsigned_chars --interleave --diag_remark=1,9,111,174,128,177,196,381,550,611,815,1293,1295,1299,1300,1304,3017,3052,390 --apcs=/noropi --library_interface=aeabi_glibc --no-hide-all --no_unaligned_access --no_exceptions --cpu=6 --fpu=softvfp --apcs=/interwork --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct -Je:/program files (x86)/marmelade/7.4/s3e/h/std --asm --cppflag=--cpp -g -O0 --no_inline --diag_style=ide --default_extension=obj " /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -526,36 +570,41 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='__invalid__rvct' tooltype=rvct_linker --diag_suppress=6331,6780,6340 --no_locals --datacompressor=off --remove --symbols --unmangled --callgraph --map --info=sizes,totals,inline,tailreorder,veneers --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct --scatter='e:/program files (x86)/marmelade/7.4/s3e/makefile_builder/templates/rvct_linker_script' --list='$(OutDir)/Mastermind.map' iw2d_d.a iwgx_d.a iwgl_d.a iwutil_d.a jpeg_d.a z_d.a png_d.a iwgeom_d.a iwresmanager_d.a iwgxfont_d.a tiniconv_d.a s3e_cpp_d.a s3e_d.a s3e_d.a(iwcrt.o) s3e_api_iwgl.a --plink:--arch=armv6 --plink:--compiler=gcc --plink:-u"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='__invalid__rvct' tooltype=rvct_linker --diag_suppress=6331,6780,6340 --no_locals --datacompressor=off --remove --symbols --unmangled --callgraph --map --info=sizes,totals,inline,tailreorder,veneers --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct --scatter='e:/program files (x86)/marmelade/7.4/s3e/makefile_builder/templates/rvct_linker_script' --list='$(OutDir)/Mastermind.map' iw2d_d.a iwgx_d.a iwgl_d.a iwutil_d.a jpeg_d.a z_d.a png_d.a iwgeom_d.a iwresmanager_d.a iwgxfont_d.a tiniconv_d.a s3e_cpp_d.a s3e_d.a s3e_d.a(iwcrt.o) s3e_api_iwgl.a --plink:--arch=armv6 --plink:--compiler=rvct --plink:-u"</AdditionalOptions>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/s3e/lib/arm/v6/nofpu/soft</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__rvct' tooltype=rvct_compiler --enum_is_int --unsigned_chars --interleave --diag_remark=1,9,111,174,128,177,196,381,550,611,815,1293,1295,1299,1300,1304,3017,3052,390 --apcs=/noropi --library_interface=aeabi_glibc --no-hide-all --no_unaligned_access --no_exceptions --cpu=6 --fpu=softvfp --apcs=/interwork --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct -Je:/program files (x86)/marmelade/7.4/s3e/h/std --asm --cppflag=--cpp --split_sections -Otime -O3 --diag_style=ide --default_extension=obj " /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='__invalid__rvct' tooltype=rvct_compiler --enum_is_int --unsigned_chars --interleave --diag_remark=1,9,111,174,128,177,196,381,550,611,815,1293,1295,1299,1300,1304,3017,3052,390 --apcs=/noropi --library_interface=aeabi_glibc --no-hide-all --no_unaligned_access --no_exceptions --cpu=6 --fpu=softvfp --apcs=/interwork --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct -Je:/program files (x86)/marmelade/7.4/s3e/h/std --asm --cppflag=--cpp --split_sections -Otime -O3 --diag_style=ide --default_extension=obj " /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -564,36 +613,41 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='__invalid__rvct' tooltype=rvct_linker --diag_suppress=6331,6780,6340 --no_locals --datacompressor=off --remove --symbols --unmangled --callgraph --map --info=sizes,totals,inline,tailreorder,veneers --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct --scatter='e:/program files (x86)/marmelade/7.4/s3e/makefile_builder/templates/rvct_linker_script' --list='$(OutDir)/Mastermind.map' iw2d.a iwgx.a iwgl.a iwutil.a jpeg.a z.a png.a iwgeom.a iwresmanager.a iwgxfont.a tiniconv.a s3e_cpp.a s3e.a s3e.a(iwcrt.o) s3e_api_iwgl.a --plink:--arch=armv6 --plink:--compiler=gcc --plink:-u"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='__invalid__rvct' tooltype=rvct_linker --diag_suppress=6331,6780,6340 --no_locals --datacompressor=off --remove --symbols --unmangled --callgraph --map --info=sizes,totals,inline,tailreorder,veneers --set-env-var:GCC_THUMB_SUPPORT='NO' --no-rvct --scatter='e:/program files (x86)/marmelade/7.4/s3e/makefile_builder/templates/rvct_linker_script' --list='$(OutDir)/Mastermind.map' iw2d.a iwgx.a iwgl.a iwutil.a jpeg.a z.a png.a iwgeom.a iwresmanager.a iwgxfont.a tiniconv.a s3e_cpp.a s3e.a s3e.a(iwcrt.o) s3e_api_iwgl.a --plink:--arch=armv6 --plink:--compiler=rvct --plink:-u"</AdditionalOptions>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/s3e/lib/arm/v6/nofpu/soft</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-gcc.exe' tooltype=gcc_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fomit-frame-pointer -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -ffunction-sections -mstructure-size-boundary=8 -march=armv6 -mfloat-abi=soft -mthumb-interwork -mword-relocations -Wno-switch -Wno-psabi -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -g -O0 -gdwarf-2" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-gcc.exe' tooltype=gcc_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fomit-frame-pointer -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -ffunction-sections -mstructure-size-boundary=8 -march=armv6 -mfloat-abi=soft -mthumb-interwork -mword-relocations -Wno-switch -Wno-psabi -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -g -O0 -gdwarf-2" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -602,36 +656,41 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-g++.exe' tooltype=gcc_linker -Wl,--gc-sections -Wl,--as-needed -march=armv6 -mfloat-abi=soft -mthumb-interwork -pie -Wl,--entry=_IwMain -Wl,--no-enum-size-warning -Wl,-Tlinker_script -lc -lm -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d_d -liwgx_d -liwgl_d -liwutil_d -ljpeg_d -lz_d -lpng_d -liwgeom_d -liwresmanager_d -liwgxfont_d -ltiniconv_d -ls3e_cpp_d -ls3e_d -ls3e_api_iwgl -Wl,--end-group --plink:--arch=armv6 --plink:--compiler=gcc --plink:-u"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-g++.exe' tooltype=gcc_linker -Wl,--gc-sections -Wl,--as-needed -march=armv6 -mfloat-abi=soft -mthumb-interwork -pie -Wl,--entry=_IwMain -Wl,--no-enum-size-warning -Wl,-Tlinker_script -lc -lm -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d_d -liwgx_d -liwgl_d -liwutil_d -ljpeg_d -lz_d -lpng_d -liwgeom_d -liwresmanager_d -liwgxfont_d -ltiniconv_d -ls3e_cpp_d -ls3e_d -ls3e_api_iwgl -Wl,--end-group --plink:--arch=armv6 --plink:--compiler=rvct --plink:-u"</AdditionalOptions>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/s3e/lib/arm/v6/nofpu/soft</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-gcc.exe' tooltype=gcc_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fomit-frame-pointer -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -ffunction-sections -mstructure-size-boundary=8 -march=armv6 -mfloat-abi=soft -mthumb-interwork -mword-relocations -Wno-switch -Wno-psabi -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-gcc.exe' tooltype=gcc_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fomit-frame-pointer -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -ffunction-sections -mstructure-size-boundary=8 -march=armv6 -mfloat-abi=soft -mthumb-interwork -mword-relocations -Wno-switch -Wno-psabi -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -640,36 +699,41 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-g++.exe' tooltype=gcc_linker -Wl,--gc-sections -Wl,--as-needed -march=armv6 -mfloat-abi=soft -mthumb-interwork -pie -Wl,--entry=_IwMain -Wl,--no-enum-size-warning -Wl,-Tlinker_script -lc -lm -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d -liwgx -liwgl -liwutil -ljpeg -lz -lpng -liwgeom -liwresmanager -liwgxfont -ltiniconv -ls3e_cpp -ls3e -ls3e_api_iwgl -Wl,--end-group --plink:--arch=armv6 --plink:--compiler=gcc --plink:-u"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/s3e/gcc/win32/bin/arm-none-eabi-g++.exe' tooltype=gcc_linker -Wl,--gc-sections -Wl,--as-needed -march=armv6 -mfloat-abi=soft -mthumb-interwork -pie -Wl,--entry=_IwMain -Wl,--no-enum-size-warning -Wl,-Tlinker_script -lc -lm -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d -liwgx -liwgl -liwutil -ljpeg -lz -lpng -liwgeom -liwresmanager -liwgxfont -ltiniconv -ls3e_cpp -ls3e -ls3e_api_iwgl -Wl,--end-group --plink:--arch=armv6 --plink:--compiler=rvct --plink:-u"</AdditionalOptions>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/arm/v6/nofpu/soft;e:/program files (x86)/marmelade/7.4/s3e/lib/arm/v6/nofpu/soft</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/mips/android_mips_windows/bin/mipsel-linux-android-gcc.exe' tooltype=gcc_mips_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -fPIC -EL -mips1 -mabi=32 -Wno-switch -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -g -O0" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/mips/android_mips_windows/bin/mipsel-linux-android-gcc.exe' tooltype=gcc_mips_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -fPIC -EL -mips1 -mabi=32 -Wno-switch -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -g -O0" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_debug.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -679,35 +743,43 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/mips/android_mips_windows/bin/mipsel-linux-android-g++.exe' tooltype=gcc_mips_linker -Wl,--as-needed --sysroot=e:/program files (x86)/marmelade/7.4/s3e\..\tools\gcc\mips\android_mips_windows/android-14/arch-mips -Wl,--no-undefined -shared -EL -mips1 -mabi=32 -static-libgcc -nodefaultlibs -Wl,--entry=_IwMain -frtti -Wl,-Tmips_linker_script -Wl,-init -Wl,iwcrt_mips_init -Wl,-fini -Wl,iwcrt_mips_fini -Wl,--no-undefined -Wl,-u_IwAppEntry -Wl,-u_IwAppVersionMajor -Wl,-u_IwAppVersionMinor -Wl,--entry=_IwAppEntry -shared -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d_d -liwgx_d -liwgl_d -liwutil_d -ljpeg_d -lz_d -lpng_d -liwgeom_d -liwresmanager_d -liwgxfont_d -ltiniconv_d -ls3e_cpp_d -ls3e_d -ls3e_api_iwgl -lstdc++ -lc -lm -lgcc -Wl,--end-group --plink:-i"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/mips/linux;e:/program files (x86)/marmelade/7.4/s3e/lib/mips/linux</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/mips/android_mips_windows/bin/mipsel-linux-android-gcc.exe' tooltype=gcc_mips_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -fPIC -EL -mips1 -mabi=32 -Wno-switch -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
+      <AdditionalOptions>/S3Eproject /J /Fe"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/mips/android_mips_windows/bin/mipsel-linux-android-gcc.exe' tooltype=gcc_mips_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -fPIC -EL -mips1 -mabi=32 -Wno-switch -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-frtti --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\GitHub\Mastermind Remake\Mastermind\build_mastermind_vc11\temp_defines_release.h"</AdditionalOptions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/marmelade/modules/soundengine/h;e:/documents/github/marmelade/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/h;e:/program files (x86)/marmelade/7.4/modules/iwgx/h;e:/program files (x86)/marmelade/7.4/modules/iwgl/h;e:/program files (x86)/marmelade/7.4/modules/iwutil/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/h;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/h;e:/program files (x86)/marmelade/7.4/modules/iwgeom/h;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/h;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/source;e:/program files (x86)/marmelade/7.4/modules/iwtween/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h;e:/documents/github/mastermind remake/modules/soundengine/h;e:/documents/github/mastermind remake/modules/soundengine/source;e:/program files (x86)/marmelade/7.4/s3e/h;e:/program files (x86)/marmelade/7.4/s3e/h/ext;e:/program files (x86)/marmelade/7.4/s3e/h/std;e:/program files (x86)/marmelade/7.4/s3e/h/std/c++;e:/program files (x86)/marmelade/7.4/s3e/h/ext_legacy;e:/program files (x86)/marmelade/7.4/s3e/h/legacy;.</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -717,22 +789,29 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalOptions> /include:_IwMain /include:_raise /include:_DllEntryPoint@12/COMMENT:"s3e-custom-tool='e:/program files (x86)/marmelade/7.4/tools/gcc/mips/android_mips_windows/bin/mipsel-linux-android-g++.exe' tooltype=gcc_mips_linker -Wl,--as-needed --sysroot=e:/program files (x86)/marmelade/7.4/s3e\..\tools\gcc\mips\android_mips_windows/android-14/arch-mips -Wl,--no-undefined -shared -EL -mips1 -mabi=32 -static-libgcc -nodefaultlibs -Wl,--entry=_IwMain -frtti -Wl,-Tmips_linker_script -Wl,-init -Wl,iwcrt_mips_init -Wl,-fini -Wl,iwcrt_mips_fini -Wl,--no-undefined -Wl,-u_IwAppEntry -Wl,-u_IwAppVersionMajor -Wl,-u_IwAppVersionMinor -Wl,--entry=_IwAppEntry -shared -Wl,-Map='$(OutDir)/Mastermind.map' -Wl,--start-group -liw2d -liwgx -liwgl -liwutil -ljpeg -lz -lpng -liwgeom -liwresmanager -liwgxfont -ltiniconv -ls3e_cpp -ls3e -ls3e_api_iwgl -lstdc++ -lc -lm -lgcc -Wl,--end-group --plink:-i"</AdditionalOptions>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AdditionalLibraryDirectories>e:/program files (x86)/marmelade/7.4/modules/iw2d/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgx/atitools;e:/program files (x86)/marmelade/7.4/modules/iwgx/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgl/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwutil/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgeom/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/lib/mips/linux;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/lib/mips/linux;e:/program files (x86)/marmelade/7.4/s3e/lib/mips/linux</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <EntryPointSymbol></EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      
     </Link>
     <Lib>
       <AdditionalOptions> %(AdditionalOptions) </AdditionalOptions>
     </Lib>
-      <PostBuildEvent>
-        <Command>echo &quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\tools&quot;&#x0D;&#x0A;&quot;E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe&quot; .\process_map.py &quot;$(TargetPath)&quot;&#x0D;&#x0A;echo &quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;chdir /d &quot;e:\program files (x86)\marmelade\7.4\s3e\bin&quot;&#x0D;&#x0A;&quot;s3e_plink&quot; -l &quot;$(TargetPath)&quot; &#x0D;&#x0A;</Command>
-      </PostBuildEvent>
-    </ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Command>echo "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\tools"
+"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "$(TargetPath)"
+echo "s3e_plink" -l "$(TargetPath)" 
+chdir /d "e:\program files (x86)\marmelade\7.4\s3e\bin"
+"s3e_plink" -l "$(TargetPath)" 
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwgx/h/IwClip.inl" />
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwgeom/h/IwGeomMat.h.tpl" />
@@ -741,8 +820,8 @@
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwgeom/h/IwGeomVec.h.tpl" />
     <None Include="e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/interface/PVRTexTool.defines.txt" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/algorithm" />
-    <None Include="e:/Documents/GitHub/Marmelade/Mastermind/data/app.config.txt" />
-    <None Include="e:/Documents/GitHub/Marmelade/Mastermind/data/app.icf" />
+    <None Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/data/app.config.txt" />
+    <None Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/data/app.icf" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/bitset" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/cassert" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/cctype" />
@@ -792,7 +871,7 @@
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwgxfont/docs/iwgxfont_public.defines.txt" />
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/docs/iwresmanager.config.txt" />
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf" />
-    <None Include="e:/documents/github/marmelade/modules/soundengine/docs/iwsound.config.txt" />
+    <None Include="e:/documents/github/mastermind remake/modules/soundengine/docs/iwsound.config.txt" />
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf" />
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/docs/iwutil.config.txt" />
     <None Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf" />
@@ -816,7 +895,7 @@
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/set" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/slist" />
-    <None Include="e:/documents/github/marmelade/modules/soundengine/soundengine.mkf" />
+    <None Include="e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/sstream" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/stack" />
     <None Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/stdexcept" />
@@ -832,50 +911,56 @@
     <None Include="e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf" />
     <CustomBuild Include="..\Mastermind.mkb">
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='x86 Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='x86 Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 ANDROID Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC X86 Tizen Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RVCT ARM Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC ARM Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb" "--buildenv=VC11" "--default-buildenv=vc11" --msvc-project</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Debug|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">"E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" "E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py" "e:/Documents/GitHub/Mastermind Remake/Mastermind/Mastermind.mkb" "--default-buildenv=vc11" --msvc-project</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">Mastermind_vc11.stamp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/marmelade/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='GCC MIPS Release|Win32'">e:/program files (x86)/marmelade/7.4/modules/iwgeom/iwgeom.mkf;e:/program files (x86)/marmelade/7.4/modules/iwutil/iwutil.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e.mkf;e:/program files (x86)/marmelade/7.4/modules/iwtween/iwtween.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/zlib.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libpng/libpng.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/iw2dscenegraph.mkf;e:/program files (x86)/marmelade/7.4/s3e/s3e-default.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgx/iwgx.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgl/iwgl.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/tiniconv/tiniconv.mkf;e:/program files (x86)/marmelade/7.4/modules/iwresmanager/iwresmanager.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2d/iw2d.mkf;e:/program files (x86)/marmelade/7.4/modules/iwgxfont/iwgxfont.mkf;e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/iw2dscenegraphcore.mkf;e:/program files (x86)/marmelade/7.4/modules/third_party/libjpeg/libjpeg.mkf;e:/documents/github/mastermind remake/modules/soundengine/soundengine.mkf;e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/pvrtextool.mkf</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Source\Audio.h" />
+    <ClInclude Include="..\Source\Button.h" />
+    <ClInclude Include="..\Source\Game.h" />
+    <ClInclude Include="..\Source\Input.h" />
+    <ClInclude Include="..\Source\MainMenu.h" />
+    <ClInclude Include="..\Source\Mastermind.h" />
+    <ClInclude Include="..\Source\PauseMenu.h" />
+    <ClInclude Include="..\Source\Rect.h" />
+    <ClInclude Include="..\Source\Resource.h" />
+    <ClInclude Include="..\Source\Scene.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/AirplayVersion.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Audio.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Button.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Game.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Input.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iw2d/h/Iw2D.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraph/h/Iw2DSceneGraph.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iw2dscenegraphcore/h/Iw2DSceneGraphCore.h" />
@@ -975,7 +1060,7 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h/IwResHandlerITX.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h/IwResHandlerImage.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwgx/h/IwResHandlerMTL.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwResHandlerWAV.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwResHandlerWAV.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h/IwResManager.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h/IwResManagerClass.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwresmanager/h/IwResSerialise.h" />
@@ -983,16 +1068,16 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwRuntime.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwSerialise.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwSingleton.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSound.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundADPCM.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundData.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundGroup.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundInst.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundManager.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundPCM.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundParams.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundSpec.h" />
-    <ClInclude Include="e:/documents/github/marmelade/modules/soundengine/h/IwSoundWAV.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSound.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundADPCM.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundData.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundGroup.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundInst.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundManager.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundPCM.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundParams.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundSpec.h" />
+    <ClInclude Include="e:/documents/github/mastermind remake/modules/soundengine/h/IwSoundWAV.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwString.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwgx/h/IwTPage.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwTextParseable.h" />
@@ -1006,14 +1091,8 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwUtil.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwUtilInitTerm.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/iwutil/h/IwVariableBitField.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/MainMenu.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/MarmaladeVersion.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Mastermind.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/extensions/pvrtextool/h/PVRTexTool.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/PauseMenu.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Rect.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Resource.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/source/Scene.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/alloca.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/assert.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/byteswap.h" />
@@ -1166,8 +1245,8 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/strings.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/strstream.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/syslog.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/build_mastermind_vc11/temp_defines_debug.h" />
-    <ClInclude Include="e:/Documents/GitHub/Marmelade/Mastermind/build_mastermind_vc11/temp_defines_release.h" />
+    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/temp_defines_debug.h" />
+    <ClInclude Include="e:/Documents/GitHub/Mastermind Remake/Mastermind/build_mastermind_vc11/temp_defines_release.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/termios.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/time.h" />
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/s3e/h/std/sys/time.h" />
@@ -1191,10 +1270,6 @@
     <ClInclude Include="e:/program files (x86)/marmelade/7.4/modules/third_party/zlib/h/zlib.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\source\Audio.cpp" />
-    <ClCompile Include="..\source\Button.cpp" />
-    <ClCompile Include="..\source\Game.cpp" />
-    <ClCompile Include="..\source\Input.cpp" />
     <ClCompile Include="..\..\..\..\..\program files (x86)\marmelade\7.4\modules\iw2dscenegraph\source\Iw2DSceneGraph.cpp" />
     <ClCompile Include="..\..\..\..\..\program files (x86)\marmelade\7.4\modules\iw2dscenegraphcore\source\Iw2DSceneGraphCore.cpp" />
     <ClCompile Include="..\..\modules\soundengine\source\IwResHandlerWAV.cpp" />
@@ -1208,14 +1283,18 @@
     <ClCompile Include="..\..\modules\soundengine\source\IwSoundSpec.cpp" />
     <ClCompile Include="..\..\modules\soundengine\source\IwSoundWAV.cpp" />
     <ClCompile Include="..\..\..\..\..\program files (x86)\marmelade\7.4\modules\iwtween\source\IwTween.cpp" />
-    <ClCompile Include="..\source\Main.cpp" />
-    <ClCompile Include="..\source\MainMenu.cpp" />
-    <ClCompile Include="..\source\Mastermind.cpp" />
     <ClCompile Include="..\..\..\..\..\program files (x86)\marmelade\7.4\extensions\pvrtextool\interface\PVRTexTool_interface.cpp" />
-    <ClCompile Include="..\source\PauseMenu.cpp" />
-    <ClCompile Include="..\source\Rect.cpp" />
-    <ClCompile Include="..\source\Resource.cpp" />
-    <ClCompile Include="..\source\Scene.cpp" />
+    <ClCompile Include="..\Source\Audio.cpp" />
+    <ClCompile Include="..\Source\Button.cpp" />
+    <ClCompile Include="..\Source\Game.cpp" />
+    <ClCompile Include="..\Source\Input.cpp" />
+    <ClCompile Include="..\Source\Main.cpp" />
+    <ClCompile Include="..\Source\MainMenu.cpp" />
+    <ClCompile Include="..\Source\Mastermind.cpp" />
+    <ClCompile Include="..\Source\PauseMenu.cpp" />
+    <ClCompile Include="..\Source\Rect.cpp" />
+    <ClCompile Include="..\Source\Resource.cpp" />
+    <ClCompile Include="..\Source\Scene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
