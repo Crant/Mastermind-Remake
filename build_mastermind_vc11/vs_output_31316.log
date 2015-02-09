@@ -1,0 +1,7 @@
+1>------ Build started: Project: Mastermind_vc11, Configuration: GCC ARM Release Win32 ------
+1>  ARM Compiling(GCC) e:\program files (x86)\marmelade\7.4\extensions\pvrtextool\interface\PVRTexTool_interface.cpp ...
+1>  ARM Linking(GCC) ...
+1>  Mastermind_vc11.vcxproj -> e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\Release_Mastermind_vc11_gcc_arm\Mastermind.s3e
+1>  "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\Release_Mastermind_vc11_gcc_arm\Mastermind.s3e"
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+

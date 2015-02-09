@@ -1,0 +1,54 @@
+#!/usr/bin/env mkb
+
+options
+{
+    module_path="../modules"
+}
+
+files
+{
+	[source]
+    (source)
+	
+    Main.cpp
+	Rect.cpp
+	Game.cpp
+	Input.cpp
+	Audio.cpp
+	Scene.cpp
+	Button.cpp
+	MainMenu.cpp
+	Resource.cpp
+	PauseMenu.cpp
+	Mastermind.cpp
+
+	Game.h
+	Rect.h
+	Input.h
+	Audio.h
+	Scene.h
+	Button.h
+	Resource.h
+	MainMenu.h
+	PauseMenu.h
+	Mastermind.h
+}
+
+subprojects
+{
+	
+	iw2d
+	iwtween
+	iw2dscenegraph
+	iw2dscenegraphcore
+	SoundEngine
+}
+
+assets
+{
+	(data)
+	textures
+	
+	(data)
+	audio
+}

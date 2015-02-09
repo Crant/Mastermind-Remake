@@ -1,0 +1,9 @@
+/build_mastermind_vc11/Release_Mastermind_vc11_x86
+/build_mastermind_vc11/Debug_Mastermind_vc11_arm
+/build_mastermind_vc11/Debug_Mastermind_vc11_gcc_arm
+/build_mastermind_vc11/Debug_Mastermind_vc11_x86
+/build_mastermind_vc11/deployments
+/build_mastermind_vc11/Release_Mastermind_vc11_arm
+/build_mastermind_vc11/Release_Mastermind_vc11_gcc_arm
+
+/build_mastermind_vc11/*.sdf

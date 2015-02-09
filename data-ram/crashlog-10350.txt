@@ -1,0 +1,15 @@
+S3E runtime Crashlog
+--------------------
+
+System Information:
+
+   SDK Version    : 7.4.2 [409586] (S3E ABI v4.39.0)
+   OS             : WINDOWS (3)
+   OS Version     : Windows 6.2 (6.2)
+   Device ID      : QEMU (1)
+   Device Class   : WINDOWS_GENERIC (3000)
+
+Crash Information:
+
+Memory exception (11) [ip=4A0B4C08]
+Execption occurred in emulated ARM code.

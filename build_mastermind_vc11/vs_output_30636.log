@@ -1,0 +1,122 @@
+1>------ Build started: Project: Mastermind_vc11, Configuration: GCC ARM Release Win32 ------
+1>  Performing Custom Build Tools
+1>  msg: option 'default-buildenv' overridden by command line
+1>  E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb --buildenv=VC11 --default-buildenv=vc11 --msvc-project
+1>  Building project: e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb
+1>  Visual studio files updated (dsp).
+1>  -
+1>CUSTOMBUILD : Deliberate error : please reload now.
+1>  
+1>  done
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
+
+1>------ Build started: Project: Mastermind_vc11, Configuration: GCC ARM Release Win32 ------
+1>  Performing Custom Build Tools
+1>  msg: option 'default-buildenv' overridden by command line
+1>  E:\Program Files (x86)\Marmelade\7.4\s3e\makefile_builder\mkb.py e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb --buildenv=VC11 --default-buildenv=vc11 --msvc-project
+1>  Building project: e:/Documents/GitHub/Marmelade/Mastermind/Mastermind.mkb
+1>  done
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\Mastermind\source\Audio.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\Mastermind\source\Game.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\Mastermind\source\Input.cpp ...
+1>  ARM Compiling(GCC) e:\program files (x86)\marmelade\7.4\modules\iw2dscenegraph\source\Iw2DSceneGraph.cpp ...
+1>  ARM Compiling(GCC) e:\program files (x86)\marmelade\7.4\modules\iw2dscenegraphcore\source\Iw2DSceneGraphCore.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwResHandlerWAV.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundADPCM.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundData.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundGroup.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundInst.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundManager.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundPCM.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundParams.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundSpec.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\modules\soundengine\source\IwSoundWAV.cpp ...
+1>  ARM Compiling(GCC) e:\program files (x86)\marmelade\7.4\modules\iwtween\source\IwTween.cpp ...
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [In file included from]
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h( In member function 'IwTween) :CTween* IwTween::CTweenManager::Tween(float, ...)': (col )
+1>  
+1>e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(377): warning : 'tween.IwTween::CTween::m_ElapsedTime' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 7)
+1>  
+1>  class CTween
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(234) : note: 'tween.IwTween::CTween::m_ElapsedTime' was declared here (col 12)
+1>  
+1>  CTween tween(spec);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [In file included from]
+1>e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(377): warning : '*((void*)& tween +36)' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 7)
+1>  
+1>  class CTween
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(234) : note: '*((void*)& tween +36)' was declared here (col 12)
+1>  
+1>  CTween tween(spec);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [In file included from]
+1>e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(377): warning : '*((void*)& tween +37)' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 7)
+1>  
+1>  class CTween
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(234) : note: '*((void*)& tween +37)' was declared here (col 12)
+1>  
+1>  CTween tween(spec);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [In file included from]
+1>e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(377): warning : '*((void*)& tween +38)' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 7)
+1>  
+1>  class CTween
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(234) : note: '*((void*)& tween +38)' was declared here (col 12)
+1>  
+1>  CTween tween(spec);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [In file included from]
+1>e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(377): warning : '*((void*)& tween +39)' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 7)
+1>  
+1>  class CTween
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(234) : note: '*((void*)& tween +39)' was declared here (col 12)
+1>  
+1>  CTween tween(spec);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [In file included from]
+1>e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(377): warning : 'tween.IwTween::CTween::m_NumCycles' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 7)
+1>  
+1>  class CTween
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(234) : note: 'tween.IwTween::CTween::m_NumCycles' was declared here (col 12)
+1>  
+1>  CTween tween(spec);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [In file included from]
+1>e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(377): warning : 'tween.IwTween::CTween::m_List' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 7)
+1>  
+1>  class CTween
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(234) : note: 'tween.IwTween::CTween::m_List' was declared here (col 12)
+1>  
+1>  CTween tween(spec);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/stl/_alloc.h(68) [In file included from]
+1>  e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/stl/_vector.h(40) [from]
+1>  e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/vector(40) [from]
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/h/IwTween.h(27) [from]
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(23) [from]
+1>e:/program files (x86)/marmelade/7.4/s3e/h/std/c++/stl/_construct.h(97): warning : 'value' may be used uninitialized in this function [-Wmaybe-uninitialized] (col 5)
+1>  
+1>  _STLP_PLACEMENT_NEW (__p) _T1(__val);
+1>  ^
+1>  e:/program files (x86)/marmelade/7.4/modules/iwtween/source/IwTween.cpp(256) : note: 'value' was declared here (col 13)
+1>  
+1>  int value;
+1>  ^
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\Mastermind\source\Main.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\Mastermind\source\Mastermind.cpp ...
+1>  ARM Compiling(GCC) e:\program files (x86)\marmelade\7.4\extensions\pvrtextool\interface\PVRTexTool_interface.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\Mastermind\source\Resource.cpp ...
+1>  ARM Compiling(GCC) e:\Documents\GitHub\Marmelade\Mastermind\source\Scene.cpp ...
+1>  ARM Linking(GCC) ...
+1>  Mastermind_vc11.vcxproj -> e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\Release_Mastermind_vc11_gcc_arm\Mastermind.s3e
+1>  "E:\Program Files (x86)\Marmelade\7.4\s3e\python\python.exe" .\process_map.py "e:\Documents\GitHub\Marmelade\Mastermind\build_mastermind_vc11\Release_Mastermind_vc11_gcc_arm\Mastermind.s3e"
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+
