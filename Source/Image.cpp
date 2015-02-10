@@ -1,4 +1,4 @@
-#include "Rect.h"
+#include "Image.h"
 
 using namespace Iw2DSceneGraph;
 

@@ -7,3 +7,9 @@
 /build_mastermind_vc11/Release_Mastermind_vc11_gcc_arm
 
 /build_mastermind_vc11/*.sdf
+/build_mastermind_vc11/
+/build_mastermind_vc12_ws81toolset
+/build_mastermind_vc11
+/build_mastermind_vc12_wp8toolset
+/build_mastermind_vc12_wp81toolset
+/build_mastermind_vc12_ws8toolset

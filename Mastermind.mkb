@@ -2,7 +2,7 @@
 
 options
 {
-    module_path="../modules"
+    module_path="modules"
 }
 
 files
@@ -11,8 +11,8 @@ files
     (source)
 	
     Main.cpp
-	Rect.cpp
 	Game.cpp
+	Image.cpp
 	Input.cpp
 	Audio.cpp
 	Scene.cpp
@@ -23,7 +23,7 @@ files
 	Mastermind.cpp
 
 	Game.h
-	Rect.h
+	Image.h
 	Input.h
 	Audio.h
 	Scene.h

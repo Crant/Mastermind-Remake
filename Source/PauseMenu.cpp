@@ -54,7 +54,7 @@ void PauseMenu::Init()
 	bg->m_AnchorX = 0.5f;
 	bg->m_AnchorY = 0.5f;
 	// Fit background to screen size
-	bg->m_ScaleX = (float)IwGxGetScreenHeight() / bg->GetImage()->GetWidth();
+	bg->m_ScaleX = (float)IwGxGetScreenWidth() / bg->GetImage()->GetWidth();
 	bg->m_ScaleY = (float)IwGxGetScreenHeight() / bg->GetImage()->GetHeight();
 
 	AddChild(bg);

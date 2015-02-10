@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Scene.h"
-#include "Rect.h"
+#include "Image.h"
 #include "Button.h"
 #include <map>
 
@@ -72,6 +72,7 @@ public:
 
 	float GetGraphicsScale() {return this->zGraphics_Scale;}
 	float GetFontScale() {return this->zFont_Scale;}
+	float GetActualFontHeight() {return this->zActualFontHeight;}
 
 	static void ShowEndScreen(CTween* pTween);
 	void ShowPauseScreen();

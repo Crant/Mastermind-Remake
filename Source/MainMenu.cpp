@@ -43,7 +43,7 @@ void MainMenu::Init()
 	bg->m_AnchorX = 0.5f;
 	bg->m_AnchorY = 0.5f;
 	// Fit background to screen size
-	bg->m_ScaleX = (float)IwGxGetScreenHeight() / bg->GetImage()->GetWidth();
+	bg->m_ScaleX = (float)IwGxGetScreenWidth() / bg->GetImage()->GetWidth();
 	bg->m_ScaleY = (float)IwGxGetScreenHeight() / bg->GetImage()->GetHeight();
 
 	AddChild(bg);
@@ -62,8 +62,8 @@ void MainMenu::Init()
 	CLabel* label = new CLabel();
 	label->m_X = button->m_X;
 	label->m_Y = button->m_Y;
-	label->m_W = button->m_W;
-	label->m_H = button->m_H;
+	label->m_W = FONT_DESIGN_WIDTH;
+	label->m_H = game->GetActualFontHeight();
 	label->m_AnchorX = 0.5f;
 	label->m_AnchorY = 0.5f;
 	label->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
@@ -72,7 +72,8 @@ void MainMenu::Init()
 	label->m_ScaleY = label->m_ScaleX;
 	label->m_Font = GetResource()->GetFont();
 	label->m_Text = "Start Game";
-	label->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
+	
+	//label->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
 
 	this->zStartGameButton = new Button(button, label);
 }

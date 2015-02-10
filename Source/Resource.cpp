@@ -37,11 +37,12 @@ bool FreeResource()
 Resource::Resource()
 {
 	// Load images
-	this->zGameBG			= Iw2DCreateImage("textures/bkg1.png");
+	this->zGameBG			= Iw2DCreateImage("textures/bkg2.png");
 	this->zMarble			= Iw2DCreateImage("textures/marble_t.png");
 	this->zMarble_Selected	= Iw2DCreateImage("textures/marble_selected.png");
 	this->zMarbleBG			= Iw2DCreateImage("textures/marble_bg.png");
-	this->zCheckButton		= Iw2DCreateImage("textures/checkbutton.png");
+	this->zCheckButton		= Iw2DCreateImage("textures/check.png");
+	this->zArrow			= Iw2DCreateImage("textures/arrow.png");
 	this->zPin				= Iw2DCreateImage("textures/pin.png");
 	this->zButton			= Iw2DCreateImage("textures/button.png");
 	this->zBG				= Iw2DCreateImage("textures/bkg.png");
@@ -61,6 +62,8 @@ Resource::~Resource()
 		delete this->zButton;
 	if(this->zPin)
 		delete this->zPin;
+	if(this->zArrow)
+		delete this->zArrow;
 	if(this->zBG)
 		delete this->zBG;
 	if(this->zGameBG)
