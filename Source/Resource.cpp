@@ -37,14 +37,23 @@ bool FreeResource()
 Resource::Resource()
 {
 	// Load images
-	this->zGameBG			= Iw2DCreateImage("textures/bkg2.png");
+	
 	this->zMarble			= Iw2DCreateImage("textures/marble_t.png");
 	this->zMarble_Selected	= Iw2DCreateImage("textures/marble_selected.png");
 	this->zMarbleBG			= Iw2DCreateImage("textures/marble_bg.png");
+
 	this->zCheckButton		= Iw2DCreateImage("textures/check.png");
 	this->zArrow			= Iw2DCreateImage("textures/arrow.png");
+
 	this->zPin				= Iw2DCreateImage("textures/pin.png");
-	this->zButton			= Iw2DCreateImage("textures/button.png");
+	this->zPinBG			= Iw2DCreateImage("textures/pin_bg.png");
+
+	this->zStartGameButton	= Iw2DCreateImage("textures/MenuButton_SG.png");
+	this->zResumeGameButton	= Iw2DCreateImage("textures/MenuButton_RG.png");
+	this->zNewGameButton	= Iw2DCreateImage("textures/MenuButton_NG.png");
+	this->zExitGameButton	= Iw2DCreateImage("textures/MenuButton_Ex.png");
+
+	this->zGameBG			= Iw2DCreateImage("textures/bkg2.png");
 	this->zBG				= Iw2DCreateImage("textures/bkg.png");
 	// Load fonts
 	this->zFont				= Iw2DCreateFont("fonts/font_small.gxfont");
@@ -58,10 +67,20 @@ Resource::Resource()
 
 Resource::~Resource()
 {
-	if(this->zButton)
-		delete this->zButton;
+	if(this->zStartGameButton)
+		delete this->zStartGameButton;
+	if(this->zResumeGameButton)
+		delete this->zResumeGameButton;
+	if(this->zNewGameButton)
+		delete this->zNewGameButton;
+	if(this->zExitGameButton)
+		delete this->zExitGameButton;
+
 	if(this->zPin)
 		delete this->zPin;
+	if(this->zPinBG)
+		delete this->zPinBG;
+
 	if(this->zArrow)
 		delete this->zArrow;
 	if(this->zBG)

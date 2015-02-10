@@ -25,8 +25,12 @@ private:
 	CIw2DImage* zGameBG;
 	CIw2DImage* zBG;
 	CIw2DImage* zCheckButton;
-	CIw2DImage* zButton;
+	CIw2DImage* zStartGameButton;
+	CIw2DImage* zResumeGameButton;
+	CIw2DImage* zNewGameButton;
+	CIw2DImage* zExitGameButton;
 	CIw2DImage* zArrow;
+	CIw2DImage* zPinBG;
 	CIw2DFont*	zFont;
 
 public:
@@ -43,7 +47,11 @@ public:
 	CIw2DImage*				GetCheckButton()			{return this->zCheckButton;}
 	CIw2DImage*				GetArrow()					{return this->zArrow;}
 	CIw2DImage*				GetPin()					{return this->zPin;}
-	CIw2DImage*				GetButton()					{return this->zButton;}
+	CIw2DImage*				GetPinBG()					{return this->zPinBG;}
+	CIw2DImage*				GetStartGameButton()		{return this->zStartGameButton;}
+	CIw2DImage*				GetResumeGameButton()		{return this->zResumeGameButton;}
+	CIw2DImage*				GetNewGameButton()			{return this->zNewGameButton;}
+	CIw2DImage*				GetExitGameButton()			{return this->zExitGameButton;}
 	CIw2DFont*				GetFont()					{return this->zFont;}
 };
 

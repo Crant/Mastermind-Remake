@@ -17,6 +17,7 @@
 #define FONT_HEIGHT             15.0f
 #define FONT_DESIGN_WIDTH       320.0f
 #define GRAPHIC_DESIGN_WIDTH    768.0f
+#define GRAPHIC_DESIGN_HEIGHT   1136.0f
 
 class Game : public Scene
 {

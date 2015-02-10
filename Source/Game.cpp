@@ -245,7 +245,7 @@ void Game::New_Game()
 			marble_BG->SetImage(GetResource()->GetMarbleBG());
 			marble_BG->m_ScaleX = this->zGraphics_Scale;
 			marble_BG->m_ScaleY = this->zGraphics_Scale;
-			marble_BG->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
+			//marble_BG->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
 			this->zGrid[i][j].SetImage(marble_BG);
 		}
 	}
@@ -303,10 +303,10 @@ void Game::New_Game()
 				pin_bg->m_Y += GetResource()->GetPin()->GetHeight() * this->zGraphics_Scale;
 			}
 
-			pin_bg->SetImage(GetResource()->GetPin());
+			pin_bg->SetImage(GetResource()->GetPinBG());
+
 			pin_bg->m_ScaleX = this->zGraphics_Scale;
 			pin_bg->m_ScaleY = this->zGraphics_Scale;
-			pin_bg->m_Alpha = 0.0f;
 			this->zPins[i][j].SetImage(pin_bg);
 		}
 	}
@@ -373,7 +373,7 @@ void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 
 	for(int i = 0; i < COLS; i++)
 	{
-		for (int j = 0; j < this->zCurrentRound; j++)
+		for (int j = 0; j < this->zMaxRounds; j++)
 		{
 			this->zPins[i][j].GetImage()->Update(pDeltaTime, pAlphaMul);
 		}
@@ -557,7 +557,7 @@ void Game::Render()
 
 	for(int i = 0; i < COLS; i++)
 	{
-		for (int j = 0; j < this->zCurrentRound; j++)
+		for (int j = 0; j < this->zMaxRounds; j++)
 		{
 			this->zPins[i][j].Render();
 		}
@@ -676,13 +676,13 @@ void Game::CalculateCorrectMarbles()
 		if(nrOfCorrectPlaced > 0)
 		{
 			nrOfCorrectPlaced--;
-			this->zPins[i][this->zCurrentRound].SetImageAlpha(1.0f);
+			this->zPins[i][this->zCurrentRound].GetImage()->SetImage(GetResource()->GetPin());
 			this->zPins[i][this->zCurrentRound].SetImageColor(CColor(0, 0, 0, 255));
 		}
 		else if(nrOfCorrect > 0)
 		{
 			nrOfCorrect--;
-			this->zPins[i][this->zCurrentRound].SetImageAlpha(1.0f);
+			this->zPins[i][this->zCurrentRound].GetImage()->SetImage(GetResource()->GetPin());
 			this->zPins[i][this->zCurrentRound].SetImageColor(CColor(255, 255, 255, 255));
 		}
 	}

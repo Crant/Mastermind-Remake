@@ -15,8 +15,6 @@ MainMenu::MainMenu()
 
 MainMenu::~MainMenu()
 {
-	if(this->zStartGameButton)
-		delete this->zStartGameButton;
 }
 
 void MainMenu::StartGame(CTween* pTween)
@@ -27,6 +25,11 @@ void MainMenu::StartGame(CTween* pTween)
 
 	// Create new game
 	game->New_Game();
+}
+
+void MainMenu::ExitGame( CTween* pTween )
+{
+	s3eDeviceExit();
 }
 
 void MainMenu::Init()
@@ -50,32 +53,45 @@ void MainMenu::Init()
 
 	Game* game = (Game*)GetSceneManager()->Find("game");
 
-	CSprite* button = new CSprite();
-	button->m_X = (IwGxGetScreenWidth() / 2);
-	button->m_Y = (IwGxGetScreenHeight() / 2);
-	button->SetImage(GetResource()->GetButton());
-	button->m_AnchorX = 0.5f;
-	button->m_AnchorY = 0.5f;
-	button->m_ScaleX = game->GetGraphicsScale();
-	button->m_ScaleY = game->GetGraphicsScale();
+	this->zStartGameButton = new CSprite();
+	this->zStartGameButton->m_X = (IwGxGetScreenWidth() / 2);
+	this->zStartGameButton->m_Y = (IwGxGetScreenHeight() / 2) - GetResource()->GetStartGameButton()->GetHeight() * game->GetGraphicsScale() * 1.0f;
+	this->zStartGameButton->SetImage(GetResource()->GetStartGameButton());
+	this->zStartGameButton->m_AnchorX = 0.5f;
+	this->zStartGameButton->m_AnchorY = 0.5f;
+	this->zStartGameButton->m_ScaleX = game->GetGraphicsScale();
+	this->zStartGameButton->m_ScaleY = game->GetGraphicsScale();
 
-	CLabel* label = new CLabel();
-	label->m_X = button->m_X;
-	label->m_Y = button->m_Y;
-	label->m_W = FONT_DESIGN_WIDTH;
-	label->m_H = game->GetActualFontHeight();
-	label->m_AnchorX = 0.5f;
-	label->m_AnchorY = 0.5f;
-	label->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
-	label->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
-	label->m_ScaleX = game->GetFontScale() / game->GetGraphicsScale(); // Compound scaling factors as label ie child of button
-	label->m_ScaleY = label->m_ScaleX;
-	label->m_Font = GetResource()->GetFont();
-	label->m_Text = "Start Game";
-	
-	//label->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
+	AddChild(this->zStartGameButton);
 
-	this->zStartGameButton = new Button(button, label);
+	this->zExitButton = new CSprite();
+	this->zExitButton->m_X = (IwGxGetScreenWidth() / 2);
+	this->zExitButton->m_Y = (IwGxGetScreenHeight() / 2) + GetResource()->GetExitGameButton()->GetHeight() * game->GetGraphicsScale() * 1.0f;
+	this->zExitButton->SetImage(GetResource()->GetExitGameButton());
+	this->zExitButton->m_AnchorX = 0.5f;
+	this->zExitButton->m_AnchorY = 0.5f;
+	this->zExitButton->m_ScaleX = game->GetGraphicsScale();
+	this->zExitButton->m_ScaleY = game->GetGraphicsScale();
+
+	AddChild(this->zExitButton);
+
+	//CLabel* label = new CLabel();
+	//label->m_X = button->m_X;
+	//label->m_Y = button->m_Y;
+	//label->m_W = FONT_DESIGN_WIDTH;
+	//label->m_H = game->GetActualFontHeight();
+	//label->m_AnchorX = 0.5f;
+	//label->m_AnchorY = 0.5f;
+	//label->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
+	//label->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
+	//label->m_ScaleX = game->GetFontScale() / game->GetGraphicsScale(); // Compound scaling factors as label ie child of button
+	//label->m_ScaleY = label->m_ScaleX;
+	//label->m_Font = GetResource()->GetFont();
+	//label->m_Text = "Start Game";
+	//
+	////label->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
+
+	//this->zStartGameButton = new Button(button, label);
 }
 
 void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
@@ -85,21 +101,26 @@ void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f 
 
 	Scene::Update(pDeltaTime, pAlphaMul);
 
-	if(this->zStartGameButton)
-		this->zStartGameButton->Update(pDeltaTime, pAlphaMul);
-
 	//Detect screen tap
 	if(this->zIsInputActive && this->zSceneManager->GetCurrentScene() == this 
 		&& !GetInput()->GetTouchedStatus() && GetInput()->GetPrevTouchedStatus())
 	{
 		// Reset input
 		GetInput()->Reset();
-		if(this->zStartGameButton->GetButton()->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+		if(this->zStartGameButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
 		{
 			this->zTweener.Tween(0.2f,
 					DELAY, 0.25f,
 					ONCOMPLETE, StartGame,
 					END);
+		}
+
+		if(this->zExitButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+		{
+			this->zTweener.Tween(0.2f,
+				DELAY, 0.25f,
+				ONCOMPLETE, ExitGame,
+				END);
 		}
 	}
 }
@@ -110,7 +131,4 @@ void MainMenu::Render()
 		return;
 
 	Scene::Render();
-
-	if(this->zStartGameButton)
-		this->zStartGameButton->Render();
 }

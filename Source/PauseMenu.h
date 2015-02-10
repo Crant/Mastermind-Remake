@@ -6,8 +6,9 @@
 class PauseMenu : public Scene
 {
 private:
-	Button* zResumeGameButton;
-	Button* zNewGameButton;
+	Iw2DSceneGraph::CSprite* zNewGameButton;
+	Iw2DSceneGraph::CSprite* zResumeGameButton;
+	Iw2DSceneGraph::CSprite* zExitGameButton;
 public:
 	PauseMenu();
 	~PauseMenu();
@@ -24,4 +25,5 @@ public:
 	static void NewGame(CTween* pTween);
 
 	static void ResumeGame(CTween* pTween);
+	static void ExitGame(CTween* pTween);
 };

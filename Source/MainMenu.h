@@ -1,12 +1,12 @@
 #pragma once
 
 #include "Scene.h"
-#include "Button.h"
 
 class MainMenu : public Scene
 {
 private:
-	Button* zStartGameButton;
+	Iw2DSceneGraph::CSprite* zStartGameButton;
+	Iw2DSceneGraph::CSprite* zExitButton;
 public:
 	MainMenu();
 	~MainMenu();
@@ -20,4 +20,5 @@ public:
 	//Render the game
 	void Render();
 	static void StartGame(CTween* pTween);
+	static void ExitGame(CTween* pTween);
 };
