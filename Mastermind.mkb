@@ -47,8 +47,9 @@ subprojects
 assets
 {
 	(data)
-	textures
-	
-	(data)
 	audio
+	textures
+
+	(data-ram/data-gles1, data)
+    .
 }

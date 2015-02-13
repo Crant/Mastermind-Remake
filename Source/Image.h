@@ -31,14 +31,14 @@ public:
 	bool HasSameColor(const Iw2DSceneGraph::CColor& pColor) const;
 
 	/**
-     * @fn    bool Rect::AddMarble(Iw2DSceneGraph::CSprite* pMarble)
+     * @fn    bool Rect::SetImage(Iw2DSceneGraph::CSprite* pMarble)
      *
-     * @brief Adds a Marble sprite to the screen
+     * @brief Adds a sprite to the screen
      *
-     * Adds a marble sprite to the screen 
-	 * if it already has one change to color and return false so it gets deleted
+     * Adds a sprite to the screen 
+	 * if it already has one delete the old one and replace with the new one
      *
-     * @param pMarble marble to display on the screen
+     * @param pImage sprite to display on the screen
      *
      * @return true if no sprite exist else returns false
      */

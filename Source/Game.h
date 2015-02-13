@@ -19,6 +19,13 @@
 #define GRAPHIC_DESIGN_WIDTH    768.0f
 #define GRAPHIC_DESIGN_HEIGHT   1136.0f
 
+enum GAME_STATE
+{
+	GAME_STATE_PLAYING,
+	GAME_STATE_VICTORY,
+	GAME_STATE_GAMEOVER
+};
+
 class Game : public Scene
 {
 private:
@@ -30,18 +37,22 @@ private:
 	Image** zGrid;
 	Image** zPins;
 
+	Image* zArrow;
 	Image* zCheckButton;
-
+	Iw2DSceneGraph::CLabel* timerlabel;
+	Iw2DSceneGraph::CSprite* zBackground;
 	int zMaxRounds;
 	int zCurrentRound;
+
+	int zGameState;
 
 	float zActualFontHeight;
 	float zFont_Scale;
 	float zGraphics_Scale;
 	float zY_Spacing;
 
-	bool zGameWon;
-	bool zGameOver;
+	float zCurrentGametimeSec;
+
 	bool zShowCorrectMarbles;
 	bool zShowCheckButton;
 	bool zScreenSwitching;
@@ -65,6 +76,7 @@ public:
 
 	void SwitchToScene(const char* pScene_Name);
 	void UpdateGameObjects(float pDeltaTime, float pAlphaMul);
+	void UpdateGameTimer(float pDeltaTime, float pAlphaMul);
 
 	void MoveMarble();
 	void CountChoosenMarbles();

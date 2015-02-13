@@ -73,6 +73,8 @@ void Mastermind::Run()
 	while(!s3eDeviceCheckQuitRequest() && 
 		!GetInput()->GetHomeKeyStatus())
 	{
+		uint64 new_time = s3eTimerGetMs();
+
 		this->Update();
 
 		// Clear the drawing surface
@@ -83,8 +85,13 @@ void Mastermind::Run()
 		// Show the drawing surface
 		Iw2DSurfaceShow();
 
-		// Sleep for 0ms to allow the OS to process events etc.
-		s3eDeviceYield(0);
+		uint64 time = s3eTimerGetMs();
+		// Lock frame rate
+		int yield = (int)(FRAME_TIME * 1000 - (time - new_time));
+		if (yield < 0)
+			yield = 0;
+		// Yield to OS
+		s3eDeviceYield(yield);
 	}
 }
 

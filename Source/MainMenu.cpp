@@ -54,7 +54,7 @@ void MainMenu::Init()
 	Game* game = (Game*)GetSceneManager()->Find("game");
 
 	this->zStartGameButton = new CSprite();
-	this->zStartGameButton->m_X = (IwGxGetScreenWidth() / 2);
+	this->zStartGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
 	this->zStartGameButton->m_Y = (IwGxGetScreenHeight() / 2) - GetResource()->GetStartGameButton()->GetHeight() * game->GetGraphicsScale() * 1.0f;
 	this->zStartGameButton->SetImage(GetResource()->GetStartGameButton());
 	this->zStartGameButton->m_AnchorX = 0.5f;
@@ -65,7 +65,7 @@ void MainMenu::Init()
 	AddChild(this->zStartGameButton);
 
 	this->zExitButton = new CSprite();
-	this->zExitButton->m_X = (IwGxGetScreenWidth() / 2);
+	this->zExitButton->m_X = (IwGxGetScreenWidth() / 2.0f);
 	this->zExitButton->m_Y = (IwGxGetScreenHeight() / 2) + GetResource()->GetExitGameButton()->GetHeight() * game->GetGraphicsScale() * 1.0f;
 	this->zExitButton->SetImage(GetResource()->GetExitGameButton());
 	this->zExitButton->m_AnchorX = 0.5f;

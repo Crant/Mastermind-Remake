@@ -81,9 +81,9 @@ void PauseMenu::Init()
 	//this->zNewGameButton = new Button(button, label);
 
 	this->zNewGameButton = new CSprite();
-	this->zNewGameButton->m_X = (IwGxGetScreenWidth() / 2);
+	this->zNewGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
 	this->zNewGameButton->m_Y = (IwGxGetScreenHeight() / 2) - GetResource()->GetStartGameButton()->GetHeight() * game->GetGraphicsScale() * 2.0f;
-	this->zNewGameButton->SetImage(GetResource()->GetStartGameButton());
+	this->zNewGameButton->SetImage(GetResource()->GetNewGameButton());
 	this->zNewGameButton->m_AnchorX = 0.5f;
 	this->zNewGameButton->m_AnchorY = 0.5f;
 	this->zNewGameButton->m_ScaleX = game->GetGraphicsScale();
@@ -92,7 +92,7 @@ void PauseMenu::Init()
 	AddChild(this->zNewGameButton);
 
 	this->zResumeGameButton = new CSprite();
-	this->zResumeGameButton->m_X = (IwGxGetScreenWidth() / 2);
+	this->zResumeGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
 	this->zResumeGameButton->m_Y = (IwGxGetScreenHeight() / 2) - GetResource()->GetResumeGameButton()->GetHeight() * game->GetGraphicsScale() * 0.0f;
 	this->zResumeGameButton->SetImage(GetResource()->GetResumeGameButton());
 	this->zResumeGameButton->m_AnchorX = 0.5f;
@@ -103,7 +103,7 @@ void PauseMenu::Init()
 	AddChild(this->zResumeGameButton);
 
 	this->zExitGameButton = new CSprite();
-	this->zExitGameButton->m_X = (IwGxGetScreenWidth() / 2);
+	this->zExitGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
 	this->zExitGameButton->m_Y = (IwGxGetScreenHeight() / 2) + GetResource()->GetExitGameButton()->GetHeight() * game->GetGraphicsScale() * 2.0f;
 	this->zExitGameButton->SetImage(GetResource()->GetExitGameButton());
 	this->zExitGameButton->m_AnchorX = 0.5f;

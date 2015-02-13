@@ -24,17 +24,18 @@ Game::Game()
 
 	this->zPins = 0;
 	this->zGrid = 0;
+	this->zArrow = 0;
 	this->zAnswers = 0;
 	this->zCheckButton = 0;
 	this->zColorChoices = 0;
 	this->zSelectedRect = 0;
 	this->zSelectedMarble = 0;
 
+	this->zCurrentGametimeSec = 0;
+
 	this->zMaxRounds = NORMAL;
 
 	this->zCurrentRound = 0;
-	this->zGameWon = false;
-	this->zGameOver = false;
 	this->zScreenSwitching = false;
 	this->zShowCheckButton = false;
 	this->zShowCorrectMarbles = false;
@@ -55,6 +56,9 @@ Game::~Game()
 	
 	if(this->zColorChoices)
 		delete [] this->zColorChoices;
+
+	if(this->zArrow)
+		delete this->zArrow;
 
 	if(this->zCheckButton)
 		delete this->zCheckButton;
@@ -78,19 +82,33 @@ void Game::Init()
 	this->zFont_Scale = (float)IwGxGetScreenWidth() / FONT_DESIGN_WIDTH;
 	this->zActualFontHeight = FONT_HEIGHT * this->zFont_Scale;
 	//Initialize UI
-	CSprite* bg = new CSprite();
-	bg->m_X = (float)IwGxGetScreenWidth() / 2;
-	bg->m_Y = (float)IwGxGetScreenHeight() / 2;
-	bg->SetImage(GetResource()->GetGameBG());
-	bg->m_W = bg->GetImage()->GetWidth();
-	bg->m_H = bg->GetImage()->GetHeight();
-	bg->m_AnchorX = 0.5f;
-	bg->m_AnchorY = 0.5f;
+	this->zBackground = new CSprite();
+	this->zBackground->m_X = (float)IwGxGetScreenWidth() / 2;
+	this->zBackground->m_Y = (float)IwGxGetScreenHeight() / 2;
+	this->zBackground->SetImage(GetResource()->GetGameBG());
+	this->zBackground->m_W = this->zBackground->GetImage()->GetWidth();
+	this->zBackground->m_H = this->zBackground->GetImage()->GetHeight();
+	this->zBackground->m_AnchorX = 0.5f;
+	this->zBackground->m_AnchorY = 0.5f;
 	// Fit background to screen size
-	bg->m_ScaleX = (float)IwGxGetScreenWidth() / bg->GetImage()->GetWidth();
-	bg->m_ScaleY = (float)IwGxGetScreenHeight() / bg->GetImage()->GetHeight();
+	this->zBackground->m_ScaleX = (float)IwGxGetScreenWidth() / this->zBackground->GetImage()->GetWidth();
+	this->zBackground->m_ScaleY = (float)IwGxGetScreenHeight() / this->zBackground->GetImage()->GetHeight();
+	
+	AddChild(this->zBackground);
 
-	AddChild(bg);
+	this->timerlabel = new CLabel();
+	timerlabel->m_X = -100 * this->zGraphics_Scale;
+	timerlabel->m_Y = 10 * this->zGraphics_Scale;
+	timerlabel->m_W = FONT_DESIGN_WIDTH;
+	timerlabel->m_H = this->zActualFontHeight;
+	timerlabel->m_Text = "";
+	timerlabel->m_AlignHor = IW_2D_FONT_ALIGN_RIGHT;
+	timerlabel->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
+	timerlabel->m_Font = GetResource()->GetFont();
+	timerlabel->m_ScaleX = this->zFont_Scale;// / this->zGraphics_Scale;
+	timerlabel->m_ScaleY = this->zFont_Scale;// / this->zGraphics_Scale;
+	timerlabel->m_Color = CColor(0, 0, 0, 255);
+	AddChild(timerlabel);
 
 	this->zY_Spacing = (float)( (IwGxGetScreenHeight()) - (GetResource()->GetMarble()->GetWidth() * this->zGraphics_Scale * (this->zMaxRounds + 2)) );
 	this->zY_Spacing /= this->zMaxRounds + 2;
@@ -214,16 +232,18 @@ void Game::New_Game()
 	//	this->zAnswers[i].SetImage(marble_Answer);
 	//}
 
+	this->zGameState = GAME_STATE_PLAYING;
 	this->zCurrentRound = 0;
-	this->zGameWon = false;
-	this->zGameOver = false;
 	this->zScreenSwitching = false;
 	this->zShowCheckButton = false;
-	this->zShowCorrectMarbles = true;
+	this->zShowCorrectMarbles = false;
 
 	float marbleStartX = 108.0f;
 	float marbleStartY = 102.0f;
 	float checkButtonStartX = 538.0f;
+	float pinStart = 621.0f;
+	float arrowStart = 43.0f;
+
 	if(this->zGrid)
 	{
 		for (int i = 0; i < COLS; i++)
@@ -245,7 +265,7 @@ void Game::New_Game()
 			marble_BG->SetImage(GetResource()->GetMarbleBG());
 			marble_BG->m_ScaleX = this->zGraphics_Scale;
 			marble_BG->m_ScaleY = this->zGraphics_Scale;
-			//marble_BG->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
+
 			this->zGrid[i][j].SetImage(marble_BG);
 		}
 	}
@@ -253,7 +273,7 @@ void Game::New_Game()
 	if(this->zColorChoices)
 		delete [] this->zColorChoices;
 
-	Iw2DSceneGraph::CColor col[COLORS] = 
+	static Iw2DSceneGraph::CColor col[COLORS] = 
 	{
 		CColor(255, 0, 255, 255), //Yellow
 		CColor(255, 255, 0, 255), //Purple
@@ -291,7 +311,7 @@ void Game::New_Game()
 		for(int j = 0; j < this->zMaxRounds; j++)
 		{
 			CSprite* pin_bg = new CSprite();
-			pin_bg->m_X = checkButtonStartX * this->zGraphics_Scale + 2 * GetResource()->GetCheckButton()->GetWidth() * this->zGraphics_Scale;
+			pin_bg->m_X = pinStart * this->zGraphics_Scale;
 			pin_bg->m_Y = (IwGxGetScreenHeight() - marbleStartY * this->zGraphics_Scale) - (j + 0.8f) * (GetResource()->GetMarble()->GetHeight() * this->zGraphics_Scale) - j * this->zY_Spacing;
 			if(i < 3)
 			{
@@ -310,6 +330,17 @@ void Game::New_Game()
 			this->zPins[i][j].SetImage(pin_bg);
 		}
 	}
+
+	if(this->zArrow)
+		delete this->zArrow;
+
+	CSprite* arrow = new CSprite();
+	arrow->m_X = arrowStart * this->zGraphics_Scale;
+	arrow->m_Y = (IwGxGetScreenHeight() - marbleStartY * this->zGraphics_Scale) - 0.5f * GetResource()->GetMarble()->GetHeight() * this->zGraphics_Scale - this->zY_Spacing;
+	arrow->SetImage(GetResource()->GetArrow());
+	arrow->m_ScaleX = this->zGraphics_Scale;
+	arrow->m_ScaleY = this->zGraphics_Scale;
+	this->zArrow = new Image(arrow);
 
 	if(this->zCheckButton)
 		delete this->zCheckButton;
@@ -341,6 +372,42 @@ void Game::New_Game()
 	}
 }
 
+void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
+{
+	this->zCurrentGametimeSec += pDeltaTime;
+	int minute = this->zCurrentGametimeSec / 60;
+	int hour = minute / 60;
+	minute = minute - (hour * 60);
+
+	std::string finalstring = "";
+	char str[32];
+	if(hour > 0)
+	{
+		snprintf(str, 32, "%d", (int)hour);
+		finalstring = str;
+		finalstring += ":";
+		if(minute < 1)
+			finalstring += "00:";
+	}
+	if(minute > 0)
+	{
+		if(minute < 10)
+			finalstring += '0';
+
+		snprintf(str, 32, "%d", (int)minute);
+		finalstring += str;
+		finalstring += ":";
+	}
+	
+	float seconds = this->zCurrentGametimeSec - (minute * 60) - (hour * 3600);
+	if(seconds < 10)
+		finalstring += '0';
+	snprintf(str, 32, "%d", (int)seconds);
+	finalstring += str;
+
+	timerlabel->m_Text = finalstring;
+}
+
 void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 {
 	if(this->zShowCorrectMarbles)
@@ -366,10 +433,14 @@ void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 	}
 
 	if(this->zCurrentRound < this->zMaxRounds)
+	{
+		this->zArrow->Update(pDeltaTime, pAlphaMul);
 		this->CountChoosenMarbles();
-
+	}
 	if(this->zShowCheckButton)
 		this->zCheckButton->Update(pDeltaTime, pAlphaMul);
+
+
 
 	for(int i = 0; i < COLS; i++)
 	{
@@ -390,20 +461,15 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 
 	this->UpdateGameObjects(pDeltaTime, pAlphaMul);
 
-	if(this->zCurrentRound < this->zMaxRounds)
+	this->UpdateGameTimer(pDeltaTime, pAlphaMul);
+
+	if(this->zCurrentRound >= this->zMaxRounds)
 	{
-		if(this->zGameWon)
-		{
-			this->zShowCorrectMarbles = true;
-			if(!this->zScreenSwitching)
-			{
-				//this->zTweener.Tween(5.0f,
-				//	ONCOMPLETE, ShowEndScreen, 
-				//	END);
-				//this->zScreenSwitching = true;
-			}
-		}
-		
+		this->zGameState = GAME_STATE_GAMEOVER;
+	}
+
+	if(this->zGameState == GAME_STATE_PLAYING)
+	{
 		//Detect screen tap
 		if(this->zIsInputActive && this->zSceneManager->GetCurrentScene() == this)
 		{
@@ -416,42 +482,42 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 				// Reset input
 				GetInput()->Reset();
 
-				if(!this->zGameWon)
+				for(int i = 0; i < COLORS; i++)
 				{
-					for(int i = 0; i < COLORS; i++)
+					if(this->zColorChoices[i].GetImage()->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
 					{
-						if(this->zColorChoices[i].GetImage()->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
-						{
-							if(this->zSelectedMarble != 0)
-								this->zSelectedMarble->GetImage()->SetImage(GetResource()->GetMarble());
+						if(this->zSelectedMarble != 0)
+							this->zSelectedMarble->GetImage()->SetImage(GetResource()->GetMarble());
 
-							this->zSelectedMarble = &this->zColorChoices[i];
-							this->zColorChoices[i].GetImage()->SetImage(GetResource()->GetMarbleSelected());
+						this->zSelectedMarble = &this->zColorChoices[i];
+						this->zColorChoices[i].GetImage()->SetImage(GetResource()->GetMarbleSelected());
+					}
+				}
+				//Require that user selects a color first
+				if(this->zSelectedMarble != 0)
+				{
+					for(int i = 0; i < COLS; i++)
+					{
+						if(this->zGrid[i][this->zCurrentRound].GetImage()->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+						{
+							this->zSelectedRect = &this->zGrid[i][this->zCurrentRound];
 						}
 					}
-					//Require that user selects a color first
-					if(this->zSelectedMarble != 0)
+				}
+
+				if(this->zShowCheckButton)
+				{
+					if(this->zCheckButton->GetImage()->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
 					{
-						for(int i = 0; i < COLS; i++)
-						{
-							if(this->zGrid[i][this->zCurrentRound].GetImage()->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
-							{
-								this->zSelectedRect = &this->zGrid[i][this->zCurrentRound];
-							}
-						}
-					}
+						this->CalculateCorrectMarbles();
 
-					if(this->zShowCheckButton)
-					{
-						if(this->zCheckButton->GetImage()->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
-						{
-							this->CalculateCorrectMarbles();
+						this->zSelectedMarble->GetImage()->SetImage(GetResource()->GetMarble());
+						this->zSelectedMarble = 0;
+						this->zShowCheckButton = false;
+						this->zCurrentRound++;
 
-							this->zShowCheckButton = false;
-							this->zCurrentRound++;
-
-							this->zCheckButton->GetImage()->m_Y -= (GetResource()->GetMarble()->GetHeight() * this->zGraphics_Scale + this->zY_Spacing); 
-						}
+						this->zCheckButton->GetImage()->m_Y -= (GetResource()->GetMarble()->GetHeight() * this->zGraphics_Scale + this->zY_Spacing);
+						this->zArrow->GetImage()->m_Y = this->zCheckButton->GetImage()->m_Y;
 					}
 				}
 			}
@@ -462,21 +528,46 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 			this->MoveMarble();
 
 			this->zSelectedRect = 0;
-			this->zSelectedMarble = 0;
 		}
-
 	}
-	else
+	else if(this->zGameState == GAME_STATE_VICTORY)
 	{
-		//Display gameover Message
 		this->zShowCorrectMarbles = true;
-
-		if(!this->zScreenSwitching)
+		//Detect screen tap
+		if(this->zIsInputActive && this->zSceneManager->GetCurrentScene() == this)
 		{
-			//this->zTweener.Tween(5.0f,
-			//	ONCOMPLETE, ShowEndScreen, 
-			//	END);
-			//this->zScreenSwitching = true;
+			if(!GetInput()->GetTouchedStatus() && GetInput()->GetPrevTouchedStatus())
+			{
+				// Reset input
+				GetInput()->Reset();
+				if(this->zBackground->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+				{
+					this->zTweener.Tween(1.0f,
+						DELAY, 0.2f,
+						ONCOMPLETE, ShowEndScreen,
+						END);
+				}
+			}
+		}	
+	}
+	else if(this->zGameState == GAME_STATE_GAMEOVER)
+	{
+		this->zShowCorrectMarbles = true;
+		//Detect screen tap
+		if(this->zIsInputActive && this->zSceneManager->GetCurrentScene() == this)
+		{
+			if(!GetInput()->GetTouchedStatus() && GetInput()->GetPrevTouchedStatus())
+			{
+				// Reset input
+				GetInput()->Reset();
+				if(this->zBackground->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+				{
+					this->zTweener.Tween(1.0f,
+						DELAY, 0.2f,
+						ONCOMPLETE, ShowEndScreen,
+						END);
+				}
+			}
 		}
 	}
 }
@@ -503,7 +594,7 @@ void Game::CountChoosenMarbles()
 void Game::MoveMarble()
 {
 	CSprite* curMarble = this->zSelectedMarble->GetImage();
-	curMarble->SetImage(GetResource()->GetMarble());
+	//curMarble->SetImage(GetResource()->GetMarble());
 
 	CSprite* marble = new CSprite();
 	marble->m_X = curMarble->m_X;
@@ -515,7 +606,7 @@ void Game::MoveMarble()
 	marble->m_ScaleY = this->zGraphics_Scale;
 	marble->m_Color = curMarble->m_Color;
 
-	this->zTweener.Tween(1.0f, 
+	this->zTweener.Tween(0.5f, 
 		FLOAT, &marble->m_X, this->zSelectedRect->GetX(),
 		FLOAT, &marble->m_Y, this->zSelectedRect->GetY(),
 		EASING, Ease::sineIn,
@@ -554,6 +645,9 @@ void Game::Render()
 
 	if(this->zShowCheckButton)
 		this->zCheckButton->Render();
+
+	if(!this->zGameOver && !this->zGameWon)
+		this->zArrow->Render();
 
 	for(int i = 0; i < COLS; i++)
 	{
@@ -668,7 +762,7 @@ void Game::CalculateCorrectMarbles()
 	}
 	if(nrOfCorrectPlaced == 5)
 	{
-		this->zGameWon = true;
+		this->zGameState == GAME_STATE_VICTORY;
 	}
 	//Edit black/white pins
 	for(int i = 0; i < COLS && (nrOfCorrect > 0 || nrOfCorrectPlaced > 0); i++)

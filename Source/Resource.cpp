@@ -53,7 +53,7 @@ Resource::Resource()
 	this->zNewGameButton	= Iw2DCreateImage("textures/MenuButton_NG.png");
 	this->zExitGameButton	= Iw2DCreateImage("textures/MenuButton_Ex.png");
 
-	this->zGameBG			= Iw2DCreateImage("textures/bkg2.png");
+	this->zGameBG			= Iw2DCreateImage("textures/bkg1.png");
 	this->zBG				= Iw2DCreateImage("textures/bkg.png");
 	// Load fonts
 	this->zFont				= Iw2DCreateFont("fonts/font_small.gxfont");
@@ -87,12 +87,14 @@ Resource::~Resource()
 		delete this->zBG;
 	if(this->zGameBG)
 		delete this->zGameBG;
+
 	if(this->zMarble)
 		delete this->zMarble;
 	if(this->zMarble_Selected)
 		delete this->zMarble_Selected;
 	if(this->zMarbleBG)
 		delete this->zMarbleBG;
+
 	if(this->zCheckButton)
 		delete this->zCheckButton;
 	if(this->zFont)
