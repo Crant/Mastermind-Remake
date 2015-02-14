@@ -2,7 +2,7 @@
 
 #include "Scene.h"
 #include "Image.h"
-#include "Button.h"
+#include "Highscore.h"
 #include <map>
 
 #define COLS 5
@@ -32,19 +32,21 @@ private:
 	Image* zSelectedMarble;
 	Image* zSelectedRect;
 
-	Image* zAnswers;
-	Image* zColorChoices;
-	Image** zGrid;
-	Image** zPins;
+	Image** zAnswers;
+	Image** zColorChoices;
+	Image*** zGrid;
+	Image*** zPins;
 
 	Image* zArrow;
 	Image* zCheckButton;
-	Iw2DSceneGraph::CLabel* timerlabel;
+	Iw2DSceneGraph::CLabel* zFinalLabel;
+	Iw2DSceneGraph::CLabel* zGametimeLabel;
 	Iw2DSceneGraph::CSprite* zBackground;
 	int zMaxRounds;
 	int zCurrentRound;
 
-	int zGameState;
+	Highscore* zHighscore;
+	GAME_STATE zGameState;
 
 	float zActualFontHeight;
 	float zFont_Scale;
@@ -54,12 +56,11 @@ private:
 	float zCurrentGametimeSec;
 
 	bool zShowCorrectMarbles;
-	bool zShowCheckButton;
 	bool zScreenSwitching;
 public:
 	Game();
 	Game(const char* pHashName) {this->SetName(pHashName);}
-	~Game();
+	virtual ~Game();
 
 	Iw2DSceneGraph::CColor GetRandomColor();
 
@@ -81,7 +82,7 @@ public:
 	void MoveMarble();
 	void CountChoosenMarbles();
 	void CalculateCorrectMarbles();
-	int GetImageColorValue(const Image& pImage);
+	int GetImageColorValue(const Image* pImage);
 
 	float GetGraphicsScale() {return this->zGraphics_Scale;}
 	float GetFontScale() {return this->zFont_Scale;}

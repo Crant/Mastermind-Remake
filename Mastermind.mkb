@@ -12,6 +12,7 @@ files
 	
     Main.cpp
 	Game.cpp
+	Score.cpp
 	Image.cpp
 	Input.cpp
 	Audio.cpp
@@ -20,9 +21,12 @@ files
 	MainMenu.cpp
 	Resource.cpp
 	PauseMenu.cpp
+	Highscore.cpp
 	Mastermind.cpp
 
+	
 	Game.h
+	Score.h
 	Image.h
 	Input.h
 	Audio.h
@@ -31,6 +35,7 @@ files
 	Resource.h
 	MainMenu.h
 	PauseMenu.h
+	Highscore.h
 	Mastermind.h
 }
 
