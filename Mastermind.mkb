@@ -23,7 +23,7 @@ files
 	PauseMenu.cpp
 	Highscore.cpp
 	Mastermind.cpp
-
+	HighscoreScreen.cpp
 	
 	Game.h
 	Score.h
@@ -37,6 +37,10 @@ files
 	PauseMenu.h
 	Highscore.h
 	Mastermind.h
+	HighscoreScreen.h
+
+	MaloWPerformance.h
+	MaloWPerformance.cpp
 }
 
 subprojects

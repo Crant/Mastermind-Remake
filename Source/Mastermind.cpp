@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "MainMenu.h"
 #include "PauseMenu.h"
+#include "HighscoreScreen.h"
 
 // FRAME_TIME is the amount of time that a single frame should last in seconds
 #define FRAME_TIME  (30.0f / 1000.0f)
@@ -60,6 +61,12 @@ void Mastermind::Init()
 	pausemenu->SetGlobalTween(this->zGlobalTweener);
 	pausemenu->Init();
 	this->zSceneManager->Add(pausemenu);
+
+	HighscoreScreen* highscoreScreen = new HighscoreScreen();
+	highscoreScreen->SetName("highscore");
+	highscoreScreen->SetGlobalTween(this->zGlobalTweener);
+	highscoreScreen->Init();
+	this->zSceneManager->Add(highscoreScreen);
 
 	this->zSceneManager->SwitchTo(mainmenu);
 }

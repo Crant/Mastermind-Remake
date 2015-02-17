@@ -39,6 +39,8 @@ void PauseMenu::ResumeGame( CTween* pTween )
 
 void PauseMenu::ExitGame( CTween* pTween )
 {
+	Game* game = (Game*)GetSceneManager()->Find("game");
+	game->SaveHighscore();
 	s3eDeviceExit();
 }
 
@@ -127,7 +129,7 @@ void PauseMenu::Init()
 	//label2->m_Font = GetResource()->GetFont();
 	//label2->m_Text = "Resume";
 	//label2->m_Color = Iw2DSceneGraph::CColor(0, 0, 0, 255);
-
+	//
 	//this->zResumeGameButton = new Button(button2, label2);
 }
 
@@ -143,7 +145,12 @@ void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f
 	{
 		if(GetInput()->GetBackKeyStatus())
 		{
-			s3eDeviceExit();
+			// Reset input
+			GetInput()->Reset();
+			this->zTweener.Tween(0.2f,
+				DELAY, 0.25f,
+				ONCOMPLETE, ExitGame,
+				END);
 		}
 		if(!GetInput()->GetTouchedStatus() && GetInput()->GetPrevTouchedStatus())
 		{

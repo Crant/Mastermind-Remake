@@ -23,7 +23,9 @@ private:
 	CIw2DImage* zMarble_Selected;
 	CIw2DImage* zMarbleBG;
 	CIw2DImage* zGameBG;
+	CIw2DImage* zHighscoreBG;
 	CIw2DImage* zBG;
+	CIw2DImage* zBlankButton;
 	CIw2DImage* zCheckButton;
 	CIw2DImage* zStartGameButton;
 	CIw2DImage* zResumeGameButton;
@@ -44,7 +46,9 @@ public:
 	CIw2DImage*				GetBG()						{return this->zBG;}
 	CIw2DImage*				GetMarbleBG()				{return this->zMarbleBG;}
 	CIw2DImage*				GetGameBG()					{return this->zGameBG;}
+	CIw2DImage*				GetHighscoreBG()			{return this->zHighscoreBG;}
 	CIw2DImage*				GetCheckButton()			{return this->zCheckButton;}
+	CIw2DImage*				GetButton()					{return this->zBlankButton;}
 	CIw2DImage*				GetArrow()					{return this->zArrow;}
 	CIw2DImage*				GetPin()					{return this->zPin;}
 	CIw2DImage*				GetPinBG()					{return this->zPinBG;}

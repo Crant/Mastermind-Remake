@@ -37,9 +37,8 @@ bool FreeResource()
 Resource::Resource()
 {
 	// Load images
-	
-	this->zMarble			= Iw2DCreateImage("textures/marble_t.png");
-	this->zMarble_Selected	= Iw2DCreateImage("textures/marble_selected.png");
+	this->zMarble			= Iw2DCreateImage("textures/marble.png");
+	this->zMarble_Selected	= Iw2DCreateImage("textures/marble_s.png");
 	this->zMarbleBG			= Iw2DCreateImage("textures/marble_bg.png");
 
 	this->zCheckButton		= Iw2DCreateImage("textures/check.png");
@@ -48,15 +47,17 @@ Resource::Resource()
 	this->zPin				= Iw2DCreateImage("textures/pin.png");
 	this->zPinBG			= Iw2DCreateImage("textures/pin_bg.png");
 
+	this->zBlankButton		= Iw2DCreateImage("textures/Button.png");
 	this->zStartGameButton	= Iw2DCreateImage("textures/MenuButton_SG.png");
 	this->zResumeGameButton	= Iw2DCreateImage("textures/MenuButton_RG.png");
 	this->zNewGameButton	= Iw2DCreateImage("textures/MenuButton_NG.png");
 	this->zExitGameButton	= Iw2DCreateImage("textures/MenuButton_Ex.png");
 
+	this->zHighscoreBG		= Iw2DCreateImage("textures/bkg2.png");
 	this->zGameBG			= Iw2DCreateImage("textures/bkg1.png");
 	this->zBG				= Iw2DCreateImage("textures/bkg.png");
 	// Load fonts
-	this->zFont				= Iw2DCreateFont("fonts/font_small.gxfont");
+	this->zFont				= Iw2DCreateFont("fonts/font.gxfont");
 
 	//Create Atlas
 	int frame_width = (int)(this->zMarble->GetWidth());
@@ -83,10 +84,13 @@ Resource::~Resource()
 
 	if(this->zArrow)
 		delete this->zArrow;
+
 	if(this->zBG)
 		delete this->zBG;
 	if(this->zGameBG)
 		delete this->zGameBG;
+	if(this->zHighscoreBG)
+		delete this->zHighscoreBG;
 
 	if(this->zMarble)
 		delete this->zMarble;
@@ -97,6 +101,9 @@ Resource::~Resource()
 
 	if(this->zCheckButton)
 		delete this->zCheckButton;
+	if(this->zBlankButton)
+		delete this->zBlankButton;
+
 	if(this->zFont)
 		delete this->zFont;
 

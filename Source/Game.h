@@ -5,6 +5,7 @@
 #include "Highscore.h"
 #include <map>
 
+#include "MaloWPerformance.h"
 #define COLS 5
 #define COLORS 5
 
@@ -14,7 +15,7 @@
 #define VHARD 3
 
 // Constants that are used to fit the game to different screen sizes
-#define FONT_HEIGHT             15.0f
+#define FONT_HEIGHT             10.0f
 #define FONT_DESIGN_WIDTH       320.0f
 #define GRAPHIC_DESIGN_WIDTH    768.0f
 #define GRAPHIC_DESIGN_HEIGHT   1136.0f
@@ -57,6 +58,11 @@ private:
 
 	bool zShowCorrectMarbles;
 	bool zScreenSwitching;
+#define _PERF_
+
+#ifdef _PERF_
+	MaloWPerformance* zPerf;
+#endif
 public:
 	Game();
 	Game(const char* pHashName) {this->SetName(pHashName);}
@@ -90,4 +96,8 @@ public:
 
 	static void ShowEndScreen(CTween* pTween);
 	void ShowPauseScreen();
+
+	void SaveHighscore();
+
+	Highscore* GetHighscore() {return this->zHighscore;}
 };

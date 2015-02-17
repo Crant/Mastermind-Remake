@@ -6,7 +6,9 @@ class MainMenu : public Scene
 {
 private:
 	Iw2DSceneGraph::CSprite* zStartGameButton;
+	Iw2DSceneGraph::CSprite* zHighscoreButton;
 	Iw2DSceneGraph::CSprite* zExitButton;
+	Iw2DSceneGraph::CLabel*  zHighscoreLabel;
 public:
 	MainMenu();
 	~MainMenu();
@@ -21,4 +23,5 @@ public:
 	void Render();
 	static void StartGame(CTween* pTween);
 	static void ExitGame(CTween* pTween);
+	static void ShowHighscore(CTween* pTween);
 };

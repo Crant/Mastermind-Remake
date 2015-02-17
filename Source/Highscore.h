@@ -8,7 +8,8 @@ class Highscore
 private:
 	std::vector<Score*> zHighscoreList;
 
-	
+private:
+	void Sort();
 public:
 	Highscore();
 	~Highscore();
@@ -19,5 +20,5 @@ public:
 	bool SaveHighscore();
 	void LoadHighscore();
 
-	std::vector<Score*> GetScore();
+	std::vector<Score*> GetScoreList();
 };

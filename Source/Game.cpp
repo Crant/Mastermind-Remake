@@ -43,6 +43,10 @@ Game::Game()
 	this->zShowCorrectMarbles = false;
 
 	this->zHighscore = 0;
+
+#ifdef _PERF_
+	this->zPerf = 0;
+#endif
 }
 
 Game::~Game()
@@ -108,6 +112,11 @@ Game::~Game()
 
 	this->zHighscore->SaveHighscore();
 	delete this->zHighscore;
+
+#ifdef _PERF_
+	this->zPerf->GenerateReport();
+	delete this->zPerf;
+#endif
 }
 
 void Game::Init()
@@ -117,6 +126,7 @@ void Game::Init()
 	this->zGraphics_Scale = (float)IwGxGetScreenWidth() /GRAPHIC_DESIGN_WIDTH;
 	this->zFont_Scale = (float)IwGxGetScreenWidth() / FONT_DESIGN_WIDTH;
 	this->zActualFontHeight = FONT_HEIGHT * this->zFont_Scale;
+
 	//Initialize UI
 	this->zBackground = new CSprite();
 	this->zBackground->m_X = (float)IwGxGetScreenWidth() / 2;
@@ -152,10 +162,17 @@ void Game::Init()
 
 	this->zHighscore = new Highscore();
 	this->zHighscore->LoadHighscore();
+
+#ifdef _PERF_
+	this->zPerf = new MaloWPerformance();
+#endif
 }
 
 void Game::New_Game()
 {
+#ifdef _PERF_
+	this->zPerf->PreMeasure("Create new game", 1);
+#endif
 	this->zGameState = GAME_STATE_PLAYING;
 	this->zCurrentRound = 0;
 	this->zScreenSwitching = false;
@@ -336,6 +353,10 @@ void Game::New_Game()
 
 		this->zAnswers[i] = marble_Answer;
 	}
+
+#ifdef _PERF_
+	this->zPerf->PostMeasure("Create new game", 1);
+#endif
 }
 
 void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
@@ -376,6 +397,9 @@ void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
 
 void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 {
+#ifdef _PERF_
+	this->zPerf->PreMeasure("Update Game objects", 2);
+#endif
 	if(this->zShowCorrectMarbles)
 	{
 		for(int i = 0; i < COLS; i++)
@@ -413,6 +437,9 @@ void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 			this->zPins[i][j]->Update(pDeltaTime, pAlphaMul);
 		}
 	}
+#ifdef _PERF_
+	this->zPerf->PostMeasure("Update Game objects", 2);
+#endif
 }
 
 void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ ) 
@@ -420,6 +447,9 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	if(!this->zIsActive)
 		return;
 
+#ifdef _PERF_
+	this->zPerf->PreMeasure("Main Update function", 1);
+#endif
 	//Update base scene
 	Scene::Update(pDeltaTime, pAlphaMul);
 
@@ -501,9 +531,6 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 
 		this->zShowCorrectMarbles = true;
 
-		Score* score = new Score(this->zCurrentGametimeSec, this->zCurrentRound, this->zMaxRounds);
-		this->zHighscore->AddScore(score);
-
 		//Detect screen tap
 		if(this->zIsInputActive && this->zSceneManager->GetCurrentScene() == this)
 		{
@@ -520,6 +547,15 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 				}
 			}
 		}	
+
+		for (int i = 0; i < COLS; i++)
+		{
+			for(int j = 0; j < this->zMaxRounds; j++)
+			{
+				this->zGrid[i][j]->m_Alpha = 0.5f;
+			}
+		}
+
 	}
 	else if(this->zGameState == GAME_STATE_GAMEOVER)
 	{
@@ -544,7 +580,18 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 				}
 			}
 		}
+
+		for (int i = 0; i < COLS; i++)
+		{
+			for(int j = 0; j < this->zMaxRounds; j++)
+			{
+				this->zGrid[i][j]->m_Alpha = 0.5f;
+			}
+		}
 	}
+#ifdef _PERF_
+	this->zPerf->PostMeasure("Main Update function", 1);
+#endif
 }
 
 void Game::CountChoosenMarbles()
@@ -588,6 +635,9 @@ void Game::Render()
 	if(!this->zIsActive)
 		return;
 
+#ifdef _PERF_
+	this->zPerf->PreMeasure("Main Render function", 1);
+#endif
 	Scene::Render();
 
 	for(int i = 0; i < COLS; i++)
@@ -624,6 +674,9 @@ void Game::Render()
 		}
 		this->zFinalLabel->Render();
 	}
+#ifdef _PERF_
+	this->zPerf->PostMeasure("Main Render function", 1);
+#endif
 }
 
 void Game::SwitchToScene( const char* pScene_Name )
@@ -731,6 +784,8 @@ void Game::CalculateCorrectMarbles()
 	if(nrOfCorrectPlaced == 5)
 	{
 		this->zGameState = GAME_STATE_VICTORY;
+		Score* score = new Score(this->zCurrentGametimeSec, this->zCurrentRound, this->zMaxRounds);
+		this->zHighscore->AddScore(score);
 	}
 	//Edit black/white pins
 	for(int i = 0; i < COLS && (nrOfCorrect > 0 || nrOfCorrectPlaced > 0); i++)
@@ -789,4 +844,9 @@ void Game::ShowPauseScreen()
 	GetInput()->Reset();
 	PauseMenu* menu = (PauseMenu*)GetSceneManager()->Find("pausemenu");
 	GetSceneManager()->SwitchTo(menu);
+}
+
+void Game::SaveHighscore()
+{
+	this->zHighscore->SaveHighscore();
 }
