@@ -3,7 +3,6 @@
 #include "ScenePauseMenu.h"
 #include "SceneMainMenu.h"
 #include "Input.h"
-#include "Audio.h"
 #include "Resource.h"
 #include "IwGx.h"
 
@@ -45,10 +44,6 @@ Game::Game()
 	this->zCurrentRound = 0;
 
 	this->zHighscore = 0;
-
-#ifdef _PERF_
-	this->zPerf = 0;
-#endif
 }
 
 Game::~Game()
@@ -114,11 +109,6 @@ Game::~Game()
 
 	this->zHighscore->SaveHighscore();
 	delete this->zHighscore;
-
-#ifdef _PERF_
-	this->zPerf->GenerateReport();
-	delete this->zPerf;
-#endif
 }
 
 void Game::Init()
@@ -167,17 +157,10 @@ void Game::Init()
 
 	this->zHighscore = new Highscore();
 	this->zHighscore->LoadHighscore();
-
-#ifdef _PERF_
-	this->zPerf = new MaloWPerformance();
-#endif
 }
 
 void Game::New_Game()
 {
-#ifdef _PERF_
-	this->zPerf->PreMeasure("Create new game", 1);
-#endif
 	this->zCurrentRound = 0;
 	this->zCurrentGametimeSec = 0.0f;
 
@@ -385,10 +368,6 @@ void Game::New_Game()
 			this->zAnswers[i]->SetImage(GetResource()->GetMarbleBG());
 		}
 	}
-
-#ifdef _PERF_
-	this->zPerf->PostMeasure("Create new game", 1);
-#endif
 }
 
 void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
@@ -399,7 +378,7 @@ void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
 	int hour = 0;
 	int seconds = 0;
 
-	TimeHelper::CalcTime(hour, minute, seconds, this->zCurrentGametimeSec);
+	TimeHelper::CalcTime(hour, minute, seconds, (int)this->zCurrentGametimeSec);
 
 	std::string finalstring = "";
 	char str[32];
@@ -431,9 +410,6 @@ void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
 
 void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 {
-#ifdef _PERF_
-	this->zPerf->PreMeasure("Update Game objects", 2);
-#endif
 	if(this->zGameState == GAME_STATE_VICTORY || this->zGameState == GAME_STATE_GAMEOVER)
 	{
 		for(int i = 0; i < COLS; i++)
@@ -477,10 +453,6 @@ void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 	{
 		this->zColorChoices[i]->Update(pDeltaTime, pAlphaMul);
 	}
-
-#ifdef _PERF_
-	this->zPerf->PostMeasure("Update Game objects", 2);
-#endif
 }
 
 void Game::CheckInput()
@@ -582,9 +554,6 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	if(!this->zIsActive)
 		return;
 
-#ifdef _PERF_
-	this->zPerf->PreMeasure("Main Update function", 1);
-#endif
 	//Update base scene
 	Scene::Update(pDeltaTime, pAlphaMul);
 
@@ -701,9 +670,6 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 			}
 		}
 	}
-#ifdef _PERF_
-	this->zPerf->PostMeasure("Main Update function", 1);
-#endif
 }
 
 void Game::CountChoosenMarbles()
@@ -744,9 +710,6 @@ void Game::Render()
 	if(!this->zIsActive)
 		return;
 
-#ifdef _PERF_
-	this->zPerf->PreMeasure("Main Render function", 1);
-#endif
 	Scene::Render();
 
 	if(this->zGameState == GAME_STATE_PICKING_ANSWERS)
@@ -801,11 +764,6 @@ void Game::Render()
 			this->zFinalLabel->Render();
 		}
 	}
-
-	
-#ifdef _PERF_
-	this->zPerf->PostMeasure("Main Render function", 1);
-#endif
 }
 
 void Game::SwitchToScene( const char* pScene_Name )

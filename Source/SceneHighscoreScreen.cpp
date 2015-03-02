@@ -187,7 +187,7 @@ void HighscoreScreen::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* 
 		int hour = 0;
 		int seconds = 0;
 		
-		TimeHelper::CalcTime(hour, minute, seconds, time);
+		TimeHelper::CalcTime(hour, minute, seconds, (int)time);
 
 		std::string text;
 		if(hour > 0)

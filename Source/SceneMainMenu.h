@@ -29,10 +29,8 @@ public:
 	//Render the game
 	virtual void Render();
 
-	static void StartGame(CTween* pTween);
 	static void ExitGame(CTween* pTween);
 	static void ShowHighscore(CTween* pTween);
-	static void ShowOptions(CTween* pTween);
 
 	virtual void OnBackKeyPress();
 

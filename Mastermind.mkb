@@ -2,7 +2,7 @@
 
 options
 {
-    module_path="modules"
+   
 }
 
 files
@@ -14,35 +14,26 @@ files
 	Score.cpp
 	Image.cpp
 	Input.cpp
-	Audio.cpp
 	Scene.cpp
-	Button.cpp
 	Resource.cpp
 	Highscore.cpp
 	Mastermind.cpp
 	SceneGame.cpp
 	SceneMainMenu.cpp
-	SceneGameModeMenu.cpp
 	ScenePauseMenu.cpp
 	SceneHighscoreScreen.cpp
 	
 	Score.h
 	Image.h
 	Input.h
-	Audio.h
 	Scene.h
-	Button.h
 	Resource.h
 	Highscore.h
 	Mastermind.h
 	SceneGame.h
 	SceneMainMenu.h
-	SceneGameModeMenu.h
 	ScenePauseMenu.h
 	SceneHighscoreScreen.h
-
-	MaloWPerformance.h
-	MaloWPerformance.cpp
 
 	[Data]
 	(data)
@@ -54,10 +45,9 @@ subprojects
 	derbh
 	iw2d
 	iwtween
-	iw2dscenegraph
 	iwresmanager
+	iw2dscenegraph
 	iw2dscenegraphcore
-	SoundEngine
 }
 
 assets

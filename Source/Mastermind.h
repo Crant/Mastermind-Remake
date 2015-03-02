@@ -2,7 +2,6 @@
 
 #include "IwTween.h"
 #include "Input.h"
-#include "Audio.h"
 #include "Scene.h"
 
 class Mastermind
@@ -10,7 +9,6 @@ class Mastermind
 private:
 	SceneManager*	zSceneManager;
 	Input*			zInput;
-	Audio*			zAudio;
 	CTweenManager*	zGlobalTweener;
 public:
 	Mastermind();

@@ -5,7 +5,6 @@
 #include "Highscore.h"
 #include <map>
 
-#include "MaloWPerformance.h"
 #define COLS 5
 #define COLORS 5
 
@@ -66,10 +65,7 @@ private:
 	float zCurrentGametimeSec;
 
 	GAME_MODE zGameMode;
-//#define _PERF_
-#ifdef _PERF_
-	MaloWPerformance* zPerf;
-#endif
+
 private:
 	void CheckInput();
 	Iw2DSceneGraph::CColor GetRandomColor();

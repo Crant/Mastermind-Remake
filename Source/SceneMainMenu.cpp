@@ -1,10 +1,8 @@
 #include "SceneMainMenu.h"
 
 #include "SceneHighscoreScreen.h"
-#include "SceneGameModeMenu.h"
 #include "SceneGame.h"
 #include "Input.h"
-#include "Audio.h"
 #include "Resource.h"
 #include "IwGx.h"
 
@@ -26,13 +24,6 @@ MainMenu::~MainMenu()
 {
 }
 
-void MainMenu::StartGame(CTween* pTween)
-{
-	//Switch to game mode Scene
-	GameModeMenu* gameMode = (GameModeMenu*)GetSceneManager()->Find("gamemode");
-	GetSceneManager()->SwitchTo(gameMode);
-}
-
 void MainMenu::ExitGame( CTween* pTween )
 {
 	Game* game = (Game*)GetSceneManager()->Find("game");
@@ -46,13 +37,6 @@ void MainMenu::ShowHighscore( CTween* pTween )
 	HighscoreScreen* highscore = (HighscoreScreen*)GetSceneManager()->Find("highscore");
 
 	GetSceneManager()->SwitchTo(highscore);
-}
-
-void MainMenu::ShowOptions( CTween* pTween )
-{
-	GameModeMenu* gameModeMenu = (GameModeMenu*)GetSceneManager()->Find("options");
-
-	GetSceneManager()->SwitchTo(gameModeMenu);
 }
 
 void MainMenu::Init()

@@ -1,6 +1,7 @@
 #include "s3e.h"
 #include "IwDebug.h"
 #include "iw2d.h"
+#include "IwResManager.h"
 #include "Mastermind.h"
 
 // Main entry point for the application
