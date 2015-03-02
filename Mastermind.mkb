@@ -52,10 +52,6 @@ subprojects
 
 assets
 {
-	(data)
-	fonts
-	textures
-
 	(data-ram/data-gles1, data)
     Resources.group.bin
 }
