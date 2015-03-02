@@ -4,7 +4,7 @@ Score::Score(float pTime, int pRound, int pDifficulty)
 {
 	this->zRound = pRound;
 	this->zTime = pTime;
-	this->zScore = (pDifficulty - (this->zRound)) / pTime;
+	this->zScore = (int)((pDifficulty - (this->zRound)) / pTime);
 }
 
 Score::Score()

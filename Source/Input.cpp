@@ -34,6 +34,10 @@ void Input::Update()
 	{
 		GetInput()->SetBackKeyStatus(true);
 	}
+	else
+	{
+		GetInput()->SetBackKeyStatus(false);
+	}
 }
 
 void Input::Reset()

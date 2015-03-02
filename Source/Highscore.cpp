@@ -2,7 +2,6 @@
 #include <fstream>
 
 #define FILENAME "highscore.mmh"
-#define MAX_SCORES 10
 
 Highscore::Highscore()
 {
@@ -19,7 +18,7 @@ Highscore::~Highscore()
 
 void Highscore::Sort()
 {
-	for (int i = 1; i < this->zHighscoreList.size(); i++)
+	for (int i = 1; i < (int)this->zHighscoreList.size(); i++)
 	{
 		int j = i;
 		while (j > 0 && !( (*this->zHighscoreList[j-1]) < (*this->zHighscoreList[j])) )
@@ -124,4 +123,13 @@ void Highscore::ResetScore()
 std::vector<Score*> Highscore::GetScoreList()
 {
 	return this->zHighscoreList;
+}
+
+void TimeHelper::CalcTime( int& hour, int& minute, int& seconds, const int& timer )
+{
+	minute = (timer / 60);
+	hour = minute / 60;
+	minute = minute - (hour * 60);
+
+	seconds = timer - (minute * 60) - (hour * 3600);
 }

@@ -1,0 +1,24 @@
+CIwResGroup
+{
+	name "Resources"
+	
+	//Load Textures
+	"./textures/Arrow.png"
+	"./textures/Check.png"
+	"./textures/bkg.png"
+	"./textures/bkg1.png"
+	"./textures/bkg2.png"
+	"./textures/button.png"
+	"./textures/buttonsmall.png"
+	"./textures/Marble.png"
+	"./textures/marble_bg.png"
+	"./textures/Marble_selected.png"
+	"./textures/pin.png"
+	"./textures/pin_bg.png"
+	
+	"./fonts/arial8_bold.gxfont"
+	"./fonts/arial10.gxfont"
+	"./fonts/arial10_bold.gxfont"
+	"./fonts/arial12.gxfont"
+	"./fonts/arial14.gxfont"
+}

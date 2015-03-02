@@ -1,18 +1,17 @@
 #include "Mastermind.h"
 #include "Resource.h"
-#include "Game.h"
-#include "MainMenu.h"
-#include "PauseMenu.h"
-#include "HighscoreScreen.h"
-
-// FRAME_TIME is the amount of time that a single frame should last in seconds
-#define FRAME_TIME  (30.0f / 1000.0f)
+#include "SceneGame.h"
+#include "SceneMainMenu.h"
+#include "ScenePauseMenu.h"
+#include "SceneHighscoreScreen.h"
+#include "SceneGameModeMenu.h"
 
 Mastermind::Mastermind()
 {
 	this->zAudio = 0;
 	this->zInput = 0;
 	this->zSceneManager = 0;
+	this->zGlobalTweener = 0;
 }
 
 Mastermind::~Mastermind()
@@ -21,7 +20,7 @@ Mastermind::~Mastermind()
 	FreeInput();
 	FreeResource();
 	FreeSceneManager();
-
+	
 	if(this->zGlobalTweener)
 		delete this->zGlobalTweener;
 }
@@ -36,53 +35,85 @@ void Mastermind::Init()
 	SceneManagerInit();
 	//Set up Resources
 	ResourceInit();
+	
+	
+	this->zGlobalTweener = new CTweenManager();
 
 	this->zAudio = GetAudio();
 	this->zInput = GetInput();
 	this->zSceneManager = GetSceneManager();
 
-	this->zGlobalTweener = new CTweenManager();
-
 	Game* game = new Game();
 	game->SetName("game");
-	game->SetGlobalTween(this->zGlobalTweener);
 	game->Init();
-	this->zSceneManager->Add(game);
+	game->SetGlobalTween(this->zGlobalTweener);
 	game->New_Game();
+	this->zSceneManager->Add(game);
 
 	MainMenu* mainmenu = new MainMenu();
 	mainmenu->SetName("mainmenu");
-	mainmenu->SetGlobalTween(this->zGlobalTweener);
 	mainmenu->Init();
+	mainmenu->SetGlobalTween(this->zGlobalTweener);
 	this->zSceneManager->Add(mainmenu);
 
 	PauseMenu* pausemenu = new PauseMenu();
 	pausemenu->SetName("pausemenu");
-	pausemenu->SetGlobalTween(this->zGlobalTweener);
 	pausemenu->Init();
+	pausemenu->SetGlobalTween(this->zGlobalTweener);
 	this->zSceneManager->Add(pausemenu);
 
 	HighscoreScreen* highscoreScreen = new HighscoreScreen();
 	highscoreScreen->SetName("highscore");
-	highscoreScreen->SetGlobalTween(this->zGlobalTweener);
 	highscoreScreen->Init();
+	highscoreScreen->SetGlobalTween(this->zGlobalTweener);
 	this->zSceneManager->Add(highscoreScreen);
+
+	GameModeMenu* gameModeMenu = new GameModeMenu();
+	gameModeMenu->SetName("gamemode");
+	gameModeMenu->Init();
+	gameModeMenu->SetGlobalTween(this->zGlobalTweener);
+	this->zSceneManager->Add(gameModeMenu);
 
 	this->zSceneManager->SwitchTo(mainmenu);
 }
 
 void Mastermind::Run()
 {
+	s3eDeviceRegister(S3E_DEVICE_PAUSE, (s3eCallback)PauseCallback, NULL);
+	s3eDeviceRegister(S3E_DEVICE_UNPAUSE, (s3eCallback)ResumeCallback, NULL);
+
 	// Play some background music
 	//this->zAudio->PlayMusic("audio/frontend.mp3", true);
 
+	uint32 timer = (uint32)s3eTimerGetMs();
+
 	// Loop forever, until the user or the OS performs some action to quit the app
 	while(!s3eDeviceCheckQuitRequest() && 
-		!GetInput()->GetHomeKeyStatus())
+		!GetSceneManager()->QuitRequested())
 	{
-		uint64 new_time = s3eTimerGetMs();
+		//this->zAudio->Update();
 
-		this->Update();
+		this->zInput->Update();
+
+		if(GetInput()->GetBackKeyStatus())
+		{
+			GetSceneManager()->OnBackButtonPressed();
+		}
+		if(GetInput()->GetHomeKeyStatus())
+		{
+			GetSceneManager()->QuitGame();
+		}
+
+		int deltaTime = uint32(s3eTimerGetMs()) - timer;
+		timer += deltaTime;
+
+		//Make sure the delta time is safe
+		if(deltaTime < 0)
+			deltaTime = 0;
+		if(deltaTime > 100)
+			deltaTime = 100;
+
+		this->Update(deltaTime);
 
 		// Clear the drawing surface
 		Iw2DSurfaceClear(0xff000000);
@@ -92,23 +123,24 @@ void Mastermind::Run()
 		// Show the drawing surface
 		Iw2DSurfaceShow();
 
-		uint64 time = s3eTimerGetMs();
-		// Lock frame rate
-		int yield = (int)(FRAME_TIME * 1000 - (time - new_time));
-		if (yield < 0)
-			yield = 0;
 		// Yield to OS
-		s3eDeviceYield(yield);
+		s3eDeviceYield(0);
 	}
 }
 
-void Mastermind::Update()
+void Mastermind::Update( int delta )
 {
-	this->zAudio->Update();
+	this->zGlobalTweener->Update(delta / 1000.0f);
 
-	this->zInput->Update();
+	this->zSceneManager->Update(delta / 1000.0f);
+}
 
-	this->zGlobalTweener->Update(FRAME_TIME);
+void Mastermind::PauseCallback( void* systemData, void* userData )
+{
+	GetSceneManager()->OnPause();
+}
 
-	this->zSceneManager->Update(FRAME_TIME);
+void Mastermind::ResumeCallback( void* systemData, void* userData )
+{
+	GetSceneManager()->OnResume();
 }

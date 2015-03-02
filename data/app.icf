@@ -16,10 +16,15 @@
 # Some conditional operations are also permitted, see the
 # S3E documentation for details.
 
+[RESMANAGER] 
+ResBuild=1
+
 [S3E]
-MemSize=50000000
+#Approx 20MB
+MemSize=20000000
+MemSizeDebug=28490928
 SysGlesVersion=2
 DispFixRot=FixedPortrait
 
 [GX]
-DataCacheSize=131072
+DataCacheSize=161072

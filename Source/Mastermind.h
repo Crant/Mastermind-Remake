@@ -19,5 +19,8 @@ public:
 	void Init();
 
 	void Run();
-	void Update();
+	void Update(int delta);
+
+	static void PauseCallback(void* systemData, void* userData);
+	static void ResumeCallback(void* systemData, void* userData);
 };

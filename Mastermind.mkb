@@ -10,22 +10,22 @@ files
 	[source]
     (source)
 	
-    Main.cpp
-	Game.cpp
+	Main.cpp
 	Score.cpp
 	Image.cpp
 	Input.cpp
 	Audio.cpp
 	Scene.cpp
 	Button.cpp
-	MainMenu.cpp
 	Resource.cpp
-	PauseMenu.cpp
 	Highscore.cpp
 	Mastermind.cpp
-	HighscoreScreen.cpp
+	SceneGame.cpp
+	SceneMainMenu.cpp
+	SceneGameModeMenu.cpp
+	ScenePauseMenu.cpp
+	SceneHighscoreScreen.cpp
 	
-	Game.h
 	Score.h
 	Image.h
 	Input.h
@@ -33,22 +33,29 @@ files
 	Scene.h
 	Button.h
 	Resource.h
-	MainMenu.h
-	PauseMenu.h
 	Highscore.h
 	Mastermind.h
-	HighscoreScreen.h
+	SceneGame.h
+	SceneMainMenu.h
+	SceneGameModeMenu.h
+	ScenePauseMenu.h
+	SceneHighscoreScreen.h
 
 	MaloWPerformance.h
 	MaloWPerformance.cpp
+
+	[Data]
+	(data)
+	Resources.group
 }
 
 subprojects
 {
-	
+	derbh
 	iw2d
 	iwtween
 	iw2dscenegraph
+	iwresmanager
 	iw2dscenegraphcore
 	SoundEngine
 }
@@ -56,9 +63,15 @@ subprojects
 assets
 {
 	(data)
-	audio
+	fonts
 	textures
 
 	(data-ram/data-gles1, data)
-    .
+    Resources.group.bin
+}
+
+deployments
+{
+	auto-derbh
+	icon='deployments/Icon_1024.png'
 }

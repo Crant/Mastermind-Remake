@@ -31,6 +31,10 @@ public:
 	CTweenManager&	GetTweener()							{return this->zTweener;}
 	void			SetGlobalTween(CTweenManager* pTween)	{this->zGlobalTweener = pTween;}
 	CTweenManager* GetGlobalTween()							{return this->zGlobalTweener;}
+
+	virtual void OnBackKeyPress() = 0;
+	virtual void OnPause() = 0;
+	virtual void OnResume() = 0;
 public:
 	/**
      * @fn    virtual void Scene::Init();
@@ -60,11 +64,14 @@ public:
 class SceneManager
 {
 protected:
+	bool				zQuitRequest;
 	Scene*				zCurrentScene;	// Currently active scene
 	Scene*				zNextScene;		// Next scene (that is being switched to)
+	Scene*				zPrevScene;		// Previous scene (that was switched from)
 	std::list<Scene*>	zScenes;		// Scenes list
 public:
 	Scene* GetCurrentScene()	{return this->zCurrentScene;}
+	Scene* GetPreviousScene()	{return this->zPrevScene;}
 
 	SceneManager();
 	~SceneManager();
@@ -123,6 +130,13 @@ public:
      */
     Scene*  Find(const char* pName);
 
+	void OnBackButtonPressed();
+	void OnPause();
+	void OnResume();
+
+	void QuitGame() {this->zQuitRequest = true;}
+
+	bool QuitRequested() {return this->zQuitRequest;}
 	//Internal
 	static void OnSwitchComplete(CTween* pTween);
 	void	FinishSwitch();

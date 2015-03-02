@@ -52,8 +52,10 @@ void Scene::Render()
 //
 SceneManager::SceneManager()
 {
+	this->zQuitRequest = false;
 	this->zCurrentScene = 0;
 	this->zNextScene = 0;
+	this->zPrevScene = 0;
 }
 
 SceneManager::~SceneManager()
@@ -131,6 +133,8 @@ void SceneManager::FinishSwitch()
 	this->zNextScene->SetInputActive(true);
 	this->zNextScene->SetActive(true);
 
+	this->zPrevScene = this->zCurrentScene;
+
 	this->zCurrentScene->Update(0);
 	this->zCurrentScene->SetActive(false);
 	this->zCurrentScene = this->zNextScene;
@@ -140,6 +144,33 @@ void SceneManager::FinishSwitch()
 void SceneManager::OnSwitchComplete( CTween* pTween )
 {
 	GetSceneManager()->FinishSwitch();
+}
+
+void SceneManager::OnBackButtonPressed()
+{
+	for (std::list<Scene*>::iterator it = this->zScenes.begin(); it != this->zScenes.end(); it++)
+	{
+		if( (*it)->IsActive())
+			(*it)->OnBackKeyPress();
+	}
+}
+
+void SceneManager::OnPause()
+{
+	for (std::list<Scene*>::iterator it = this->zScenes.begin(); it != this->zScenes.end(); it++)
+	{
+		if( (*it) == this->zCurrentScene)
+			(*it)->OnPause();
+	}
+}
+
+void SceneManager::OnResume()
+{
+	for (std::list<Scene*>::iterator it = this->zScenes.begin(); it != this->zScenes.end(); it++)
+	{
+		if( (*it) == this->zCurrentScene)
+			(*it)->OnResume();
+	}
 }
 
 namespace

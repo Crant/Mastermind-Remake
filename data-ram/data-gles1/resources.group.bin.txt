@@ -1,0 +1,58 @@
+ResGroupResources:
+	CIwTexture (0x3521f539)
+		"Arrow" (0xf1abff0)
+		Size: 7432
+	CIwTexture (0x3521f539)
+		"Check" (0xf393c43)
+		Size: 16936
+	CIwTexture (0x3521f539)
+		"bkg" (0xb8861f9)
+		Size: 3489828
+	CIwTexture (0x3521f539)
+		"bkg1" (0x7c94a14a)
+		Size: 3489828
+	CIwTexture (0x3521f539)
+		"bkg2" (0x7c94a14b)
+		Size: 2617380
+	CIwTexture (0x3521f539)
+		"button" (0xf4ff5d81)
+		Size: 130016
+	CIwTexture (0x3521f539)
+		"buttonsmall" (0x1169685a)
+		Size: 87336
+	CIwTexture (0x3521f539)
+		"Marble" (0xd3ccc98)
+		Size: 28936
+	CIwTexture (0x3521f539)
+		"marble_bg" (0x43ee46c0)
+		Size: 28936
+	CIwTexture (0x3521f539)
+		"Marble_selected" (0x406c1360)
+		Size: 28936
+	CIwTexture (0x3521f539)
+		"pin" (0xb889d4c)
+		Size: 3172
+	CIwTexture (0x3521f539)
+		"pin_bg" (0x14cacaf4)
+		Size: 3172
+	ResList 'CIwTexture' pos:40 size:9931918
+
+	CIwGxFont (0xa68776be)
+		"arial8_bold" (0x8f5c5906)
+		Size: 67173
+	CIwGxFont (0xa68776be)
+		"arial10" (0x401fc9cf)
+		Size: 67173
+	CIwGxFont (0xa68776be)
+		"arial10_bold" (0xf22ffeaf)
+		Size: 67173
+	CIwGxFont (0xa68776be)
+		"arial12" (0x401fc9d1)
+		Size: 83593
+	CIwGxFont (0xa68776be)
+		"arial14" (0x401fc9d3)
+		Size: 132745
+	ResList 'CIwGxFont' pos:9931958 size:417867
+
+ResGroupResources: Wrote 10349789 bytes to CIwResGroup "Resources"
+

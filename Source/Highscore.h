@@ -3,6 +3,8 @@
 #include "Score.h"
 #include <vector>
 
+#define MAX_SCORES 10
+
 class Highscore 
 {
 private:
@@ -22,3 +24,8 @@ public:
 
 	std::vector<Score*> GetScoreList();
 };
+
+namespace TimeHelper
+{
+	void CalcTime(int& hour, int& minute, int& seconds, const int& timer);
+}
