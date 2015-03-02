@@ -16,9 +16,8 @@ CIwResGroup
 	"./textures/pin.png"
 	"./textures/pin_bg.png"
 	
-	"./fonts/arial8_bold.gxfont"
+	//Load Fonts
 	"./fonts/arial10.gxfont"
 	"./fonts/arial10_bold.gxfont"
-	"./fonts/arial12.gxfont"
 	"./fonts/arial14.gxfont"
 }

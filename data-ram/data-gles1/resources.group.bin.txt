@@ -38,21 +38,15 @@ ResGroupResources:
 	ResList 'CIwTexture' pos:40 size:9931918
 
 	CIwGxFont (0xa68776be)
-		"arial8_bold" (0x8f5c5906)
-		Size: 67173
-	CIwGxFont (0xa68776be)
 		"arial10" (0x401fc9cf)
 		Size: 67173
 	CIwGxFont (0xa68776be)
 		"arial10_bold" (0xf22ffeaf)
 		Size: 67173
 	CIwGxFont (0xa68776be)
-		"arial12" (0x401fc9d1)
-		Size: 83593
-	CIwGxFont (0xa68776be)
 		"arial14" (0x401fc9d3)
 		Size: 132745
-	ResList 'CIwGxFont' pos:9931958 size:417867
+	ResList 'CIwGxFont' pos:9931958 size:267101
 
-ResGroupResources: Wrote 10349789 bytes to CIwResGroup "Resources"
+ResGroupResources: Wrote 10199023 bytes to CIwResGroup "Resources"
 

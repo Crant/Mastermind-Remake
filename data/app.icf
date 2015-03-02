@@ -22,9 +22,10 @@ ResBuild=1
 [S3E]
 #Approx 20MB
 MemSize=20000000
-MemSizeDebug=28490928
+MemSizeDebugDevice=2000000
+MemSizeDebug=300000000	# Memory used for resource building and other debug features
 SysGlesVersion=2
-DispFixRot=FixedPortrait
+DispFixRot=Portrait
 
 [GX]
 DataCacheSize=161072

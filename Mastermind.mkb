@@ -59,5 +59,9 @@ assets
 deployments
 {
 	auto-derbh
-	icon='deployments/Icon_1024.png'
+	android-icon-ldpi='deployments/icon_36.png'
+	android-icon-mdpi='deployments/icon_48.png'
+	android-icon-hdpi='deployments/icon_72.png'
+	icon='deployments'
+	version=1.0.0
 }
