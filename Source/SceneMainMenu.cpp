@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "Resource.h"
 #include "IwGx.h"
+#include "Ads.h"
 
 using namespace Iw2DSceneGraph;
 
@@ -236,6 +237,8 @@ void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f 
 
 	Scene::Update(pDeltaTime, pAlphaMul);
 
+	//ADVERT_MANAGER->Update();
+
 	//Detect screen tap
 	if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this) 
 	{
@@ -282,6 +285,8 @@ void MainMenu::Render()
 		return;
 
 	Scene::Render();
+
+	//ADVERT_MANAGER->Draw();
 }
 
 void MainMenu::OnBackKeyPress()

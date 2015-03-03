@@ -2,7 +2,7 @@
 
 options
 {
-   
+   module_path="modules/IwGameAds"
 }
 
 files
@@ -10,6 +10,7 @@ files
 	[source]
     (source)
 	
+	Ads.cpp
 	Main.cpp
 	Score.cpp
 	Image.cpp
@@ -23,6 +24,7 @@ files
 	ScenePauseMenu.cpp
 	SceneHighscoreScreen.cpp
 	
+	Ads.h
 	Score.h
 	Image.h
 	Input.h
@@ -46,6 +48,7 @@ subprojects
 	derbh
 	iw2d
 	iwtween
+	IwGameAds
 	iwresmanager
 	iw2dscenegraph
 	iw2dscenegraphcore

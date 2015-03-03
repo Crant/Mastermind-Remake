@@ -5,6 +5,7 @@
 #include "ScenePauseMenu.h"
 #include "SceneHighscoreScreen.h"
 #include "Input.h"
+#include "Ads.h"
 
 Mastermind::Mastermind()
 {
@@ -15,11 +16,16 @@ Mastermind::~Mastermind()
 {
 	INPUT_MANAGER->Release();
 	Input::Destroy();
+
 	SCENE_MANAGER->Release();
 	SceneManager::Destroy();
+
 	RESOURCE_MANAGER->Release();
 	Resource::Destroy();
 	
+	//ADVERT_MANAGER->Release();
+	//Ads::Destroy();
+
 	SAFE_DELETE(this->zGlobalTweener);
 }
 
@@ -34,7 +40,10 @@ void Mastermind::Init()
 	//Set up Resources
 	Resource::Create();
 	RESOURCE_MANAGER->Init();
-	
+	//Set up Adverts
+	//Ads::Create();
+	//ADVERT_MANAGER->Init();
+
 	this->zGlobalTweener = new CTweenManager();
 
 	Game* game = new Game();

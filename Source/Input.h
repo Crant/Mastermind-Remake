@@ -13,9 +13,8 @@
  */
 class Input
 {
-private:
 	CDEFINE_SINGLETONS(Input)
-
+private:
 	//Previous Touched Status
 	bool zPrev_Touched;
 	//Current Touched Status

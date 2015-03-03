@@ -248,7 +248,6 @@ void HighscoreScreen::Render()
 
 void HighscoreScreen::ExitHighscore( CTween* pTween )
 {
-	HighscoreScreen* screen = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
 	Scene* prevScene = SCENE_MANAGER->GetPreviousScene();
 
 	SCENE_MANAGER->SwitchTo(prevScene);

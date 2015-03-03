@@ -18,9 +18,8 @@
  */
 class Resource
 {
-private:
 	CDEFINE_SINGLETONS(Resource)
-
+private:
 	//Iw2DSceneGraph::CAtlas* zButtonSmallAtlas;
 	//Iw2DSceneGraph::CAtlas* zMarble_SelectedAtlas;
 	CIw2DImage* zPin;
