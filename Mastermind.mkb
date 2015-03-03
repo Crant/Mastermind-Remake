@@ -28,6 +28,7 @@ files
 	Input.h
 	Scene.h
 	Resource.h
+	ClassUtil.h
 	Highscore.h
 	Mastermind.h
 	SceneGame.h

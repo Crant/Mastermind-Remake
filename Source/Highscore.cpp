@@ -1,4 +1,6 @@
 #include "Highscore.h"
+
+#include "ClassUtil.h"
 #include <fstream>
 
 #define FILENAME "highscore.mmh"

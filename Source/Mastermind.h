@@ -7,8 +7,6 @@
 class Mastermind
 {
 private:
-	SceneManager*	zSceneManager;
-	Input*			zInput;
 	CTweenManager*	zGlobalTweener;
 public:
 	Mastermind();

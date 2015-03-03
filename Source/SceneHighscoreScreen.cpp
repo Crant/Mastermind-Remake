@@ -24,7 +24,7 @@ void HighscoreScreen::Init()
 	CSprite* bg = new CSprite();
 	bg->m_X = (float)IwGxGetScreenWidth() / 2;
 	bg->m_Y = (float)IwGxGetScreenHeight() / 2;
-	bg->SetImage(GetResource()->GetHighscoreBG());
+	bg->SetImage(RESOURCE_MANAGER->GetHighscoreBG());
 	bg->m_W = bg->GetImage()->GetWidth();
 	bg->m_H = bg->GetImage()->GetHeight();
 	bg->m_AnchorX = 0.5f;
@@ -35,7 +35,7 @@ void HighscoreScreen::Init()
 
 	AddChild(bg);
 
-	Game* game = (Game*)GetSceneManager()->Find("game");
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
 
 	this->zRoundTitle = new CLabel();
 	this->zRoundTitle->m_X = 140 * game->GetGraphicsScaleX();
@@ -45,7 +45,7 @@ void HighscoreScreen::Init()
 	this->zRoundTitle->m_Text = "Rounds";
 	this->zRoundTitle->m_AlignHor = IW_2D_FONT_ALIGN_LEFT;
 	this->zRoundTitle->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
-	this->zRoundTitle->m_Font = GetResource()->GetFontNormal();
+	this->zRoundTitle->m_Font = RESOURCE_MANAGER->GetFontNormal();
 	this->zRoundTitle->m_ScaleX = game->GetFontScale();// / this->zGraphics_Scale;
 	this->zRoundTitle->m_ScaleY = this->zRoundTitle->m_ScaleX;// / this->zGraphics_Scale;
 
@@ -59,7 +59,7 @@ void HighscoreScreen::Init()
 	this->zTimeTitle->m_Text = "Time";
 	this->zTimeTitle->m_AlignHor = IW_2D_FONT_ALIGN_LEFT;
 	this->zTimeTitle->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
-	this->zTimeTitle->m_Font = GetResource()->GetFontNormal();
+	this->zTimeTitle->m_Font = RESOURCE_MANAGER->GetFontNormal();
 	this->zTimeTitle->m_ScaleX = game->GetFontScale();// / this->zGraphics_Scale;
 	this->zTimeTitle->m_ScaleY = this->zRoundTitle->m_ScaleX;// / this->zGraphics_Scale;
 
@@ -75,7 +75,7 @@ void HighscoreScreen::Init()
 		this->zRoundLabel[i]->m_Text = "";
 		this->zRoundLabel[i]->m_AlignHor = IW_2D_FONT_ALIGN_LEFT;
 		this->zRoundLabel[i]->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
-		this->zRoundLabel[i]->m_Font = GetResource()->GetFontBold();
+		this->zRoundLabel[i]->m_Font = RESOURCE_MANAGER->GetFontBold();
 		this->zRoundLabel[i]->m_ScaleX = game->GetFontScale();// / this->zGraphics_Scale;
 		this->zRoundLabel[i]->m_ScaleY = this->zRoundLabel[i]->m_ScaleX;// / this->zGraphics_Scale;
 
@@ -89,7 +89,7 @@ void HighscoreScreen::Init()
 		this->zTimeLabel[i]->m_Text = "";
 		this->zTimeLabel[i]->m_AlignHor = IW_2D_FONT_ALIGN_LEFT;
 		this->zTimeLabel[i]->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
-		this->zTimeLabel[i]->m_Font = GetResource()->GetFontBold();
+		this->zTimeLabel[i]->m_Font = RESOURCE_MANAGER->GetFontBold();
 		this->zTimeLabel[i]->m_ScaleX = game->GetFontScale();// / this->zGraphics_Scale;
 		this->zTimeLabel[i]->m_ScaleY = this->zRoundLabel[i]->m_ScaleX;// / this->zGraphics_Scale;
 
@@ -100,7 +100,7 @@ void HighscoreScreen::Init()
 	this->zBackButton = new CSprite();
 	this->zBackButton->m_X = (IwGxGetScreenWidth() / 2) - 150 * game->GetGraphicsScaleX();
 	this->zBackButton->m_Y = 990 * game->GetGraphicsScaleY();
-	this->zBackButton->SetImage(GetResource()->GetButtonSmall());
+	this->zBackButton->SetImage(RESOURCE_MANAGER->GetButtonSmall());
 	this->zBackButton->m_AnchorX = 0.5f;
 	this->zBackButton->m_AnchorY = 0.0f;
 	this->zBackButton->m_ScaleX = game->GetGraphicsScaleX();
@@ -116,7 +116,7 @@ void HighscoreScreen::Init()
 	this->zBackButtonLabel->m_Text = "Back";
 	this->zBackButtonLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
 	this->zBackButtonLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
-	this->zBackButtonLabel->m_Font = GetResource()->GetFontLarge();
+	this->zBackButtonLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
 	this->zBackButtonLabel->m_AnchorX = 0.5f;
 	this->zBackButtonLabel->m_AnchorY = 0.5f;
 	this->zBackButtonLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
@@ -128,7 +128,7 @@ void HighscoreScreen::Init()
 	this->zResetButton = new CSprite();
 	this->zResetButton->m_X = (IwGxGetScreenWidth() / 2) + 150 * game->GetGraphicsScaleX();
 	this->zResetButton->m_Y = 990 * game->GetGraphicsScaleY();
-	this->zResetButton->SetImage(GetResource()->GetButtonSmall());
+	this->zResetButton->SetImage(RESOURCE_MANAGER->GetButtonSmall());
 	this->zResetButton->m_AnchorX = 0.5f;
 	this->zResetButton->m_AnchorY = 0.0f;
 	this->zResetButton->m_ScaleX = game->GetGraphicsScaleX();
@@ -144,7 +144,7 @@ void HighscoreScreen::Init()
 	this->zResetButtonLabel->m_Text = "Reset";
 	this->zResetButtonLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
 	this->zResetButtonLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
-	this->zResetButtonLabel->m_Font = GetResource()->GetFontLarge();
+	this->zResetButtonLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
 	this->zResetButtonLabel->m_AnchorX = 0.5f;
 	this->zResetButtonLabel->m_AnchorY = 0.5f;
 	this->zResetButtonLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
@@ -160,7 +160,7 @@ void HighscoreScreen::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* 
 
 	Scene::Update(pDeltaTime, pAlphaMul);
 
-	Game* game = (Game*)GetSceneManager()->Find("game");
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
 
 	Highscore* highscore = game->GetHighscore();
 
@@ -214,20 +214,20 @@ void HighscoreScreen::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* 
 	}
 
 	//Detect screen tap
-	if(this->zIsInputActive && this->zSceneManager->GetCurrentScene() == this)
+	if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this)
 	{
-		if(!GetInput()->GetTouchedStatus() && GetInput()->GetPrevTouchedStatus())
+		if(!INPUT_MANAGER->GetTouchedStatus() && INPUT_MANAGER->GetPrevTouchedStatus())
 		{
 			// Reset input
-			GetInput()->Reset();
-			if(this->zBackButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+			INPUT_MANAGER->Reset();
+			if(this->zBackButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				this->zTweener.Tween(0.2f,
 					DELAY, 0.25f,
 					ONCOMPLETE, ExitHighscore,
 					END);
 			}
-			if(this->zResetButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+			if(this->zResetButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				this->zTweener.Tween(0.2f,
 					DELAY, 0.25f,
@@ -248,15 +248,15 @@ void HighscoreScreen::Render()
 
 void HighscoreScreen::ExitHighscore( CTween* pTween )
 {
-	HighscoreScreen* screen = (HighscoreScreen*)GetSceneManager()->Find("highscore");
-	Scene* prevScene = GetSceneManager()->GetPreviousScene();
+	HighscoreScreen* screen = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
+	Scene* prevScene = SCENE_MANAGER->GetPreviousScene();
 
-	GetSceneManager()->SwitchTo(prevScene);
+	SCENE_MANAGER->SwitchTo(prevScene);
 }
 
 void HighscoreScreen::ResetScore( CTween* pTween )
 {
-	Game* game = (Game*)GetSceneManager()->Find("game");
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
 
 	Highscore* highscore = game->GetHighscore();
 	highscore->ResetScore();

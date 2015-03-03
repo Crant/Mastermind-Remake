@@ -1,33 +1,21 @@
 #pragma once
 
+#include "ClassUtil.h"
 #include "s3ePointer.h"
 #include "s3eKeyboard.h"
+
+#define INPUT_MANAGER Input::GetInstance()
 
 /*
  @class Input
 
  @brief Input - The Input class is responsible for handling all pointer input.
-
- Example usage:
- @code
-    // Set up input systems
-    g_pInput = new Input();
-
-    // Update
-    while (!s3eDeviceCheckQuitRequest())
-    {
-        // Update input system
-        g_pInput->Update();
-    }
-
-    // Cleanup
-    delete g_pInput;
- @endcode
-
  */
 class Input
 {
 private:
+	CDEFINE_SINGLETONS(Input)
+
 	//Previous Touched Status
 	bool zPrev_Touched;
 	//Current Touched Status
@@ -44,7 +32,8 @@ private:
 	//
 	void SetBackKeyStatus(bool pValue) {this->zBackKeyPressed = pValue;}
 public:
-	Input();
+	void Init();
+	void Release();
 
 	/**
      * @fn    void Input::Update()
@@ -105,7 +94,3 @@ public:
 	static void MultiTouchButtonCB(s3ePointerTouchEvent* event);
 	static void MultiTouchMotionCB(s3ePointerTouchMotionEvent* event);
 };
-
-bool FreeInput();
-Input* GetInput();
-bool InputInit();

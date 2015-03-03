@@ -1,41 +1,9 @@
 #include "Resource.h"
 #include "IwResManager.h"
 
-namespace
-{
-	static Resource* resource = 0;
-}
+CDECLARE_SINGLETONS(Resource)
 
-bool ResourceInit()
-{
-	if(resource)
-		delete resource;
-
-	resource = new Resource();
-
-	return resource != 0;
-}
-
-Resource* GetResource()
-{
-	if(!resource)
-		return 0;
-
-	return resource;
-}
-
-bool FreeResource()
-{
-	if ( !resource )
-		return false;
-
-	delete resource;
-	resource = 0;
-
-	return true;
-}
-
-Resource::Resource()
+void Resource::Init()
 {
 	//IwGetResManager()->SetMode(CIwResManager::MODE_BUILD);
 	IwGetResManager()->LoadGroup("Resources.group");
@@ -64,80 +32,28 @@ Resource::Resource()
 	this->zFontNormal		= Iw2DCreateFontResource("arial10");
 	this->zFontBold			= Iw2DCreateFontResource("arial10_bold");
 	this->zFontLarge		= Iw2DCreateFontResource("arial14");
-
-	// Load images
-	//this->zMarble			= Iw2DCreateImage("textures/marble.png");
-	//this->zMarble_Selected	= Iw2DCreateImage("textures/marble_selected.png");
-	//this->zMarbleBG			= Iw2DCreateImage("textures/marble_bg.png");
-	//
-	//this->zCheckButton		= Iw2DCreateImage("textures/check.png");
-	//this->zArrow			= Iw2DCreateImage("textures/arrow.png");
-	//
-	//this->zPin				= Iw2DCreateImage("textures/pin.png");
-	//this->zPinBG			= Iw2DCreateImage("textures/pin_bg.png");
-	//
-	//this->zBlankButton		= Iw2DCreateImage("textures/Button.png");
-	//this->zButtonSmall		= Iw2DCreateImage("textures/ButtonSmall.png");
-	//
-	//this->zHighscoreBG		= Iw2DCreateImage("textures/bkg2.png");
-	//this->zGameBG			= Iw2DCreateImage("textures/bkg1.png");
-	//this->zBG				= Iw2DCreateImage("textures/bkg.png");
-	//// Load fonts
-	//this->zFontNormal		= Iw2DCreateFont("fonts/arial10.gxfont");
-	//this->zFontBold			= Iw2DCreateFont("fonts/arial10_bold.gxfont");
-	//this->zFontLarge		= Iw2DCreateFont("fonts/arial14.gxfont");
-
-	this->zButtonSmallAnim  = 0;//Iw2DCreateImage("textures/ButtonSmallAnim.png");
-	//Create Atlas
-	//int frame_width = (int)(this->zButtonSmallAnim->GetWidth()) / 2;
-	//int frame_height = (int)(this->zButtonSmallAnim->GetHeight()) / 2;
-	this->zButtonSmallAtlas = 0;//new Iw2DSceneGraph::CAtlas(frame_width, frame_height, 4, this->zButtonSmallAnim);
-	this->zMarble_SelectedAtlas = 0;//new Iw2DSceneGraph::CAtlas(frame_width, frame_height, 1, this->zMarble_Selected);
 }
 
-Resource::~Resource()
+void Resource::Release()
 {
-	if(this->zButtonSmall)
-		delete this->zButtonSmall;
-	if(this->zButtonSmallAnim)
-		delete this->zButtonSmallAnim;
+	SAFE_DELETE(this->zPin);
+	SAFE_DELETE(this->zPinBG);
 
-	if(this->zPin)
-		delete this->zPin;
-	if(this->zPinBG)
-		delete this->zPinBG;
+	SAFE_DELETE(this->zArrow);
 
-	if(this->zArrow)
-		delete this->zArrow;
+	SAFE_DELETE(this->zBG);
+	SAFE_DELETE(this->zGameBG);
+	SAFE_DELETE(this->zHighscoreBG);
 
-	if(this->zBG)
-		delete this->zBG;
-	if(this->zGameBG)
-		delete this->zGameBG;
-	if(this->zHighscoreBG)
-		delete this->zHighscoreBG;
+	SAFE_DELETE(this->zMarble);
+	SAFE_DELETE(this->zMarbleBG);
+	SAFE_DELETE(this->zMarble_Selected);
+	
+	SAFE_DELETE(this->zCheckButton);
+	SAFE_DELETE(this->zBlankButton);
+	SAFE_DELETE(this->zButtonSmall);
 
-	if(this->zMarble)
-		delete this->zMarble;
-	if(this->zMarble_Selected)
-		delete this->zMarble_Selected;
-	if(this->zMarbleBG)
-		delete this->zMarbleBG;
-
-	if(this->zCheckButton)
-		delete this->zCheckButton;
-	if(this->zBlankButton)
-		delete this->zBlankButton;
-
-	if(this->zFontNormal)
-		delete this->zFontNormal;
-	if(this->zFontBold)
-		delete this->zFontBold;
-	if(this->zFontLarge)
-		delete this->zFontLarge;
-
-	if(this->zButtonSmallAtlas)
-		delete this->zButtonSmallAtlas;
-	if(this->zMarble_SelectedAtlas)
-		delete this->zMarble_SelectedAtlas;
+	SAFE_DELETE(this->zFontBold);
+	SAFE_DELETE(this->zFontLarge);
+	SAFE_DELETE(this->zFontNormal);
 }

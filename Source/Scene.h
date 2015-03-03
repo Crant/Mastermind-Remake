@@ -1,11 +1,14 @@
 #pragma once
 
+#include "ClassUtil.h"
 #include <list>
 #include "Iw2DSceneGraph.h"
 #include "IwTween.h"
 
 using namespace Iw2DSceneGraphCore;
 using namespace IwTween;
+
+#define SCENE_MANAGER SceneManager::GetInstance()
 
 class SceneManager;
 
@@ -63,6 +66,8 @@ public:
 
 class SceneManager
 {
+private:
+	CDEFINE_SINGLETONS(SceneManager)
 protected:
 	bool				zQuitRequest;
 	Scene*				zCurrentScene;	// Currently active scene
@@ -70,11 +75,11 @@ protected:
 	Scene*				zPrevScene;		// Previous scene (that was switched from)
 	std::list<Scene*>	zScenes;		// Scenes list
 public:
+	void Init();
+	void Release();
+
 	Scene* GetCurrentScene()	{return this->zCurrentScene;}
 	Scene* GetPreviousScene()	{return this->zPrevScene;}
-
-	SceneManager();
-	~SceneManager();
 
 	/**
      * @fn    void SceneManager::SwitchTo(Scene* pScene);
@@ -141,7 +146,3 @@ public:
 	static void OnSwitchComplete(CTween* pTween);
 	void	FinishSwitch();
 };
-
-bool SceneManagerInit();
-SceneManager* GetSceneManager();
-bool FreeSceneManager();

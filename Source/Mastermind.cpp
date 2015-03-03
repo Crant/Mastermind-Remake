@@ -4,64 +4,65 @@
 #include "SceneMainMenu.h"
 #include "ScenePauseMenu.h"
 #include "SceneHighscoreScreen.h"
+#include "Input.h"
 
 Mastermind::Mastermind()
 {
-	this->zInput = 0;
-	this->zSceneManager = 0;
 	this->zGlobalTweener = 0;
 }
 
 Mastermind::~Mastermind()
 {
-	FreeInput();
-	FreeResource();
-	FreeSceneManager();
+	INPUT_MANAGER->Release();
+	Input::Destroy();
+	SCENE_MANAGER->Release();
+	SceneManager::Destroy();
+	RESOURCE_MANAGER->Release();
+	Resource::Destroy();
 	
-	if(this->zGlobalTweener)
-		delete this->zGlobalTweener;
+	SAFE_DELETE(this->zGlobalTweener);
 }
 
 void Mastermind::Init()
 {
 	//Set up Input System
-	InputInit();
+	Input::Create();
+	INPUT_MANAGER->Init();
 	//Set up Scene Manager
-	SceneManagerInit();
+	SceneManager::Create();
+	SCENE_MANAGER->Init();
 	//Set up Resources
-	ResourceInit();
+	Resource::Create();
+	RESOURCE_MANAGER->Init();
 	
 	this->zGlobalTweener = new CTweenManager();
-
-	this->zInput = GetInput();
-	this->zSceneManager = GetSceneManager();
 
 	Game* game = new Game();
 	game->SetName("game");
 	game->Init();
 	game->SetGlobalTween(this->zGlobalTweener);
 	game->New_Game();
-	this->zSceneManager->Add(game);
+	SCENE_MANAGER->Add(game);
 
 	MainMenu* mainmenu = new MainMenu();
 	mainmenu->SetName("mainmenu");
 	mainmenu->Init();
 	mainmenu->SetGlobalTween(this->zGlobalTweener);
-	this->zSceneManager->Add(mainmenu);
+	SCENE_MANAGER->Add(mainmenu);
 
 	PauseMenu* pausemenu = new PauseMenu();
 	pausemenu->SetName("pausemenu");
 	pausemenu->Init();
 	pausemenu->SetGlobalTween(this->zGlobalTweener);
-	this->zSceneManager->Add(pausemenu);
+	SCENE_MANAGER->Add(pausemenu);
 
 	HighscoreScreen* highscoreScreen = new HighscoreScreen();
 	highscoreScreen->SetName("highscore");
 	highscoreScreen->Init();
 	highscoreScreen->SetGlobalTween(this->zGlobalTweener);
-	this->zSceneManager->Add(highscoreScreen);
+	SCENE_MANAGER->Add(highscoreScreen);
 
-	this->zSceneManager->SwitchTo(mainmenu);
+	SCENE_MANAGER->SwitchTo(mainmenu);
 }
 
 void Mastermind::Run()
@@ -73,17 +74,17 @@ void Mastermind::Run()
 
 	// Loop forever, until the user or the OS performs some action to quit the app
 	while(!s3eDeviceCheckQuitRequest() && 
-		!GetSceneManager()->QuitRequested())
+		!SCENE_MANAGER->QuitRequested())
 	{
-		this->zInput->Update();
+		INPUT_MANAGER->Update();
 
-		if(GetInput()->GetBackKeyStatus())
+		if(INPUT_MANAGER->GetBackKeyStatus())
 		{
-			GetSceneManager()->OnBackButtonPressed();
+			SCENE_MANAGER->OnBackButtonPressed();
 		}
-		if(GetInput()->GetHomeKeyStatus())
+		if(INPUT_MANAGER->GetHomeKeyStatus())
 		{
-			GetSceneManager()->QuitGame();
+			SCENE_MANAGER->QuitGame();
 		}
 
 		int deltaTime = uint32(s3eTimerGetMs()) - timer;
@@ -100,7 +101,7 @@ void Mastermind::Run()
 		// Clear the drawing surface
 		Iw2DSurfaceClear(0xff000000);
 
-		this->zSceneManager->Render();
+		SCENE_MANAGER->Render();
 
 		// Show the drawing surface
 		Iw2DSurfaceShow();
@@ -114,15 +115,15 @@ void Mastermind::Update( int delta )
 {
 	this->zGlobalTweener->Update(delta / 1000.0f);
 
-	this->zSceneManager->Update(delta / 1000.0f);
+	SCENE_MANAGER->Update(delta / 1000.0f);
 }
 
 void Mastermind::PauseCallback( void* systemData, void* userData )
 {
-	GetSceneManager()->OnPause();
+	SCENE_MANAGER->OnPause();
 }
 
 void Mastermind::ResumeCallback( void* systemData, void* userData )
 {
-	GetSceneManager()->OnResume();
+	SCENE_MANAGER->OnResume();
 }

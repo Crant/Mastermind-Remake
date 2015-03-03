@@ -50,19 +50,8 @@ void Scene::Render()
 // SceneManager class
 //
 //
-SceneManager::SceneManager()
-{
-	this->zQuitRequest = false;
-	this->zCurrentScene = 0;
-	this->zNextScene = 0;
-	this->zPrevScene = 0;
-}
 
-SceneManager::~SceneManager()
-{
-	for(std::list<Scene*>::iterator it = this->zScenes.begin(); it != this->zScenes.end(); it++)
-		delete (*it);
-}
+CDECLARE_SINGLETONS(SceneManager)
 
 void SceneManager::SwitchTo( Scene* pScene )
 {
@@ -143,7 +132,7 @@ void SceneManager::FinishSwitch()
 
 void SceneManager::OnSwitchComplete( CTween* pTween )
 {
-	GetSceneManager()->FinishSwitch();
+	SCENE_MANAGER->FinishSwitch();
 }
 
 void SceneManager::OnBackButtonPressed()
@@ -173,36 +162,16 @@ void SceneManager::OnResume()
 	}
 }
 
-namespace
+void SceneManager::Init()
 {
-	static SceneManager* sceneManager = 0;
+	this->zQuitRequest = false;
+	this->zCurrentScene = 0;
+	this->zNextScene = 0;
+	this->zPrevScene = 0;
 }
 
-bool SceneManagerInit()
+void SceneManager::Release()
 {
-	if(sceneManager)
-		delete sceneManager;
-
-	sceneManager = new SceneManager();
-
-	return sceneManager != 0;
-}
-
-SceneManager* GetSceneManager()
-{
-	if(!sceneManager)
-		return 0;
-
-	return sceneManager;
-}
-
-bool FreeSceneManager()
-{
-	if ( !sceneManager )
-		return false;
-
-	delete sceneManager;
-	sceneManager = 0;
-
-	return true;
+	for(std::list<Scene*>::iterator it = this->zScenes.begin(); it != this->zScenes.end(); it++)
+		delete (*it);
 }

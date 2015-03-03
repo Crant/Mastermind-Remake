@@ -23,30 +23,30 @@ PauseMenu::~PauseMenu()
 void PauseMenu::NewGame( CTween* pTween )
 {
 	//Switch to game mode Scene
-	MainMenu* gameMode = (MainMenu*)GetSceneManager()->Find("mainmenu");
-	GetSceneManager()->SwitchTo(gameMode);
+	MainMenu* gameMode = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
+	SCENE_MANAGER->SwitchTo(gameMode);
 }
 
 void PauseMenu::ResumeGame( CTween* pTween )
 {
 	//Switch to game Scene
-	Game* game = (Game*)GetSceneManager()->Find("game");
-	GetSceneManager()->SwitchTo(game);
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
+	SCENE_MANAGER->SwitchTo(game);
 }
 
 void PauseMenu::ExitGame( CTween* pTween )
 {
-	Game* game = (Game*)GetSceneManager()->Find("game");
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
 	game->SaveHighscore();
 
-	GetSceneManager()->QuitGame();
+	SCENE_MANAGER->QuitGame();
 }
 
 void PauseMenu::ShowHighscore( CTween* pTween )
 {
-	HighscoreScreen* highscore = (HighscoreScreen*)GetSceneManager()->Find("highscore");
+	HighscoreScreen* highscore = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
 
-	GetSceneManager()->SwitchTo(highscore);
+	SCENE_MANAGER->SwitchTo(highscore);
 }
 
 void PauseMenu::Init()
@@ -57,7 +57,7 @@ void PauseMenu::Init()
 	CSprite* bg = new CSprite();
 	bg->m_X = (float)IwGxGetScreenWidth() / 2;
 	bg->m_Y = (float)IwGxGetScreenHeight() / 2;
-	bg->SetImage(GetResource()->GetBG());
+	bg->SetImage(RESOURCE_MANAGER->GetBG());
 	bg->m_W = bg->GetImage()->GetWidth();
 	bg->m_H = bg->GetImage()->GetHeight();
 	bg->m_AnchorX = 0.5f;
@@ -68,12 +68,12 @@ void PauseMenu::Init()
 
 	AddChild(bg);
 
-	Game* game = (Game*)GetSceneManager()->Find("game");
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
 
 	this->zNewGameButton = new CSprite();
 	this->zNewGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zNewGameButton->m_Y = (IwGxGetScreenHeight() / 2) - GetResource()->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 2.0f;
-	this->zNewGameButton->SetImage(GetResource()->GetButton());
+	this->zNewGameButton->m_Y = (IwGxGetScreenHeight() / 2) - RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 2.0f;
+	this->zNewGameButton->SetImage(RESOURCE_MANAGER->GetButton());
 	this->zNewGameButton->m_AnchorX = 0.5f;
 	this->zNewGameButton->m_AnchorY = 0.5f;
 	this->zNewGameButton->m_ScaleX = game->GetGraphicsScaleX();
@@ -92,15 +92,15 @@ void PauseMenu::Init()
 	newGameLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
 	newGameLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
 	newGameLabel->m_ScaleY = game->GetFontScale() / game->GetGraphicsScaleY();
-	newGameLabel->m_Font = GetResource()->GetFontLarge();
+	newGameLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
 	newGameLabel->m_Text = "New Game";
 
 	this->zNewGameButton->AddChild(newGameLabel);
 
 	this->zResumeGameButton = new CSprite();
 	this->zResumeGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zResumeGameButton->m_Y = (IwGxGetScreenHeight() / 2) - GetResource()->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 0.5f;
-	this->zResumeGameButton->SetImage(GetResource()->GetButton());
+	this->zResumeGameButton->m_Y = (IwGxGetScreenHeight() / 2) - RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 0.5f;
+	this->zResumeGameButton->SetImage(RESOURCE_MANAGER->GetButton());
 	this->zResumeGameButton->m_AnchorX = 0.5f;
 	this->zResumeGameButton->m_AnchorY = 0.5f;
 	this->zResumeGameButton->m_ScaleX = game->GetGraphicsScaleX();
@@ -119,15 +119,15 @@ void PauseMenu::Init()
 	resumeGameLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
 	resumeGameLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
 	resumeGameLabel->m_ScaleY = game->GetFontScale() / game->GetGraphicsScaleY();
-	resumeGameLabel->m_Font = GetResource()->GetFontLarge();
+	resumeGameLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
 	resumeGameLabel->m_Text = "Resume Game";
 
 	this->zResumeGameButton->AddChild(resumeGameLabel);
 
 	this->zExitGameButton = new CSprite();
 	this->zExitGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zExitGameButton->m_Y = (IwGxGetScreenHeight() / 2) + GetResource()->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 2.5f;
-	this->zExitGameButton->SetImage(GetResource()->GetButton());
+	this->zExitGameButton->m_Y = (IwGxGetScreenHeight() / 2) + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 2.5f;
+	this->zExitGameButton->SetImage(RESOURCE_MANAGER->GetButton());
 	this->zExitGameButton->m_AnchorX = 0.5f;
 	this->zExitGameButton->m_AnchorY = 0.5f;
 	this->zExitGameButton->m_ScaleX = game->GetGraphicsScaleX();
@@ -146,15 +146,15 @@ void PauseMenu::Init()
 	exitGameLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
 	exitGameLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
 	exitGameLabel->m_ScaleY = game->GetFontScale() / game->GetGraphicsScaleY();
-	exitGameLabel->m_Font = GetResource()->GetFontLarge();
+	exitGameLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
 	exitGameLabel->m_Text = "Exit Game";
 
 	this->zExitGameButton->AddChild(exitGameLabel);
 
 	this->zHighscoreButton = new CSprite();
 	this->zHighscoreButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zHighscoreButton->m_Y = (IwGxGetScreenHeight() / 2) + GetResource()->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 1.0f;
-	this->zHighscoreButton->SetImage(GetResource()->GetButton());
+	this->zHighscoreButton->m_Y = (IwGxGetScreenHeight() / 2) + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 1.0f;
+	this->zHighscoreButton->SetImage(RESOURCE_MANAGER->GetButton());
 	this->zHighscoreButton->m_AnchorX = 0.5f;
 	this->zHighscoreButton->m_AnchorY = 0.5f;
 	this->zHighscoreButton->m_ScaleX = game->GetGraphicsScaleX();
@@ -173,7 +173,7 @@ void PauseMenu::Init()
 	highscoreLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
 	highscoreLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
 	highscoreLabel->m_ScaleY = game->GetFontScale() / game->GetGraphicsScaleY();
-	highscoreLabel->m_Font = GetResource()->GetFontLarge();
+	highscoreLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
 	highscoreLabel->m_Text = "Highscore";
 
 	this->zHighscoreButton->AddChild(highscoreLabel);
@@ -187,33 +187,33 @@ void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f
 	Scene::Update(pDeltaTime, pAlphaMul);
 
 	//Detect screen tap
-	if(this->zIsInputActive && this->zSceneManager->GetCurrentScene() == this)
+	if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this)
 	{
-		if(!GetInput()->GetTouchedStatus() && GetInput()->GetPrevTouchedStatus())
+		if(!INPUT_MANAGER->GetTouchedStatus() && INPUT_MANAGER->GetPrevTouchedStatus())
 		{
 			// Reset input
-			GetInput()->Reset();
-			if(this->zNewGameButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+			INPUT_MANAGER->Reset();
+			if(this->zNewGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				this->zTweener.Tween(0.15f,
 					DELAY, 0.1f,
 					ONCOMPLETE, NewGame,
 					END);
 			}
-			else if(this->zResumeGameButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+			else if(this->zResumeGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				this->zTweener.Tween(0.15f,
 					DELAY, 0.1f,
 					ONCOMPLETE, ResumeGame,
 					END);
 			}
-			else if(this->zExitGameButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+			else if(this->zExitGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				this->zTweener.Tween(0.2f,
 					ONCOMPLETE, ExitGame,
 					END);
 			}
-			else if(this->zHighscoreButton->HitTest(GetInput()->GetX_Position(), GetInput()->GetY_Position()))
+			else if(this->zHighscoreButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				this->zTweener.Tween(0.15f,
 					DELAY, 0.1f,
