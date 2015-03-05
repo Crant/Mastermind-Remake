@@ -1,137 +1,102 @@
 #include "Ads.h"
-#include "IwGameAds.h"
-#include "IwGameInput.h"
-#include "IwGameAdsView.h"
-#include "IwGameAdsMediator.h"
-#include "IwGameAdsViewAnimator.h"
+#include "s3eTimer.h"
 
 CDECLARE_SINGLETONS(Ads);
 
 void Ads::Init()
 {
-	// Init http manager
-	CIwGameHttpManager::Create();
-	IW_GAME_HTTP_MANAGER->Init();
+	if(CGAdMobAvailable())
+	{
+		//Set up both Ad spot keys.
+		SetGoogleAppKey("ca-app-pub-3486822110039240/3494030387", "ca-app-pub-3486822110039240/1250731188");
+		SetGoogleAppKey("<bannerAdId>", "<Interstatial>");
+	
+		//Add the device hash id so that you recieve test ads on your test device.
+		//Unfortunately this version requires it.
+		TestDeviceHashedId("12345");
 
-	// Initialise the input system
-	CIwGameInput::Create();
-	IW_GAME_INPUT->Init();
+		//Optional but not tested without: Specify the position of the ad.
+		BannerAdPosition(CG_ADMOB_POSITION_TOP);
+		//BannerAdPosition(CG_ADMOB_POSITION_BOTTOM);
 
-	// Create ad view
-	CIwGameAdsView::Create();
+		//(Android Only) Optional: Specify the ad size. Default Smart Size.
+		//BannerAdSize(CG_ADMOB_320x100);
 
-	// Initialise with Application ID (yuo get this from your ad provider)
-	IW_GAME_ADS_VIEW->Init("");
+		//Optional: Register callbacks:
+		CGAdMobRegister(CG_ADMOB_CALLBACK_INTERSTITIALWILLDISMISS, OnAdMobWillDismiss, this);
+		CGAdMobRegister(CG_ADMOB_CALLBACK_INTERSTITIALWILLPRESENT, OnAdMobPresent, this);
+		CGAdMobRegister(CG_ADMOB_CALLBACK_INTERSTITIALRECEIVED, OnAdMobRecieve, this);
+		CGAdMobRegister(CG_ADMOB_CALLBACK_INTERSTITIALFAILED, OnAdMobFailed, this);
+		CGAdMobRegister(CG_ADMOB_CALLBACK_INTERSTITIALDISMISS, OnAdMobDismiss, this);
+		CGAdMobRegister(CG_ADMOB_CALLBACK_INTERSTITIALLEAVEAPP, OnAdLeaveApp, this);
+	
+		//Required: Set up the views.
+		InitAdView();
+		//Call this once to show banner ad. 
+		//And if you have not specified a refresh interval, 
+		//call it every time you need to refresh the banner ad.
+		BannerAdLoad();
 
-	// Set ad provider
-	IW_GAME_ADS_VIEW->setAdProvider(CIwGameAds::InnerActive);
-
-	// Set ad request interval in seconds
-	IW_GAME_ADS_VIEW->setNewAdInterval(30);
-
-	// Force a request for an initial ad
-	IW_GAME_ADS_VIEW->RequestNewAd(CIwGameAds::InnerActive);
-
-	// Set total number of ads visible in te ads view
-	IW_GAME_ADS_VIEW->setNumAdsVisible(1);
-
-	// Tell animators to loop
-	IW_GAME_ADS_VIEW->setLooped(true);
-
-	//InitAnimator();
-
-	// Set the ads view position
-	IW_GAME_ADS_VIEW->setPosition(0, (float)IwGxGetScreenWidth() / 2, 20);
-
-	InitAdsMediator();
-}
-
-void Ads::InitAdsMediator()
-{
-	// Create ad mediator and attach it to the ads system
-	CIwGameAdsMediator* ad_mediator = new CIwGameAdsMediator();
-	IW_GAME_ADS->setMediator(ad_mediator);
-
-	// Create inner-active ad party and ad it to the mediator
-	CIwGameAdsParty* party = new CIwGameAdsParty();
-	party->ApplicationID = "Put your ID here";
-	party->Provider = CIwGameAds::InnerActive;
-	ad_mediator->addAdParty(party);
-
-	// Create Adfonic ad party and ad it to the mediator
-	//party = new CIwGameAdsParty();
-	//party->ApplicationID = "Put your ID here";
-	//party->Provider = CIwGameAds::AdFonic;
-	//ad_mediator->addAdParty(party);
-
-	// Create Vserv ad party and ad it to the mediator
-	party = new CIwGameAdsParty();
-	party->ApplicationID = "842f4188";
-	party->Provider = CIwGameAds::VServ;
-	ad_mediator->addAdParty(party);
-
-	// Create Mojiva ad party and ad it to the mediator
-	party = new CIwGameAdsParty();
-	party->ApplicationID = "d1ba6188";
-	party->Provider = CIwGameAds::Mojiva;
-	ad_mediator->addAdParty(party);
-
-	// Create MillennialMedia ad party and ad it to the mediator
-	//party = new CIwGameAdsParty();
-	//party->ApplicationID = "Put your ID here";
-	//party->Provider = CIwGameAds::MillennialMedia;
-	//ad_mediator->addAdParty(party);
-
-	// Create AdModa ad party and ad it to the mediator
-	//party = new CIwGameAdsParty();
-	//party->ApplicationID = "Put your ID here";
-	//party->Provider = CIwGameAds::AdModa;
-	//ad_mediator->addAdParty(party);
+		//Timer to load the next one.
+		s3eTimerSetTimer(5000, _ad, NULL);
+	}
 }
 
 void Ads::Release()
 {
-	// Shut down http manager
-	IW_GAME_HTTP_MANAGER->Release();
-	CIwGameHttpManager::Destroy();
-
-	// Shut down the input system
-	IW_GAME_INPUT->Release();
-	CIwGameInput::Destroy();
-
-	// Clean up ads system
-	IW_GAME_ADS_VIEW->Release();
-	CIwGameAdsView::Destroy();
+	CGAdMobUnRegister(CG_ADMOB_CALLBACK_INTERSTITIALWILLDISMISS, OnAdMobWillDismiss);
+	CGAdMobUnRegister(CG_ADMOB_CALLBACK_INTERSTITIALWILLPRESENT, OnAdMobPresent);
+	CGAdMobUnRegister(CG_ADMOB_CALLBACK_INTERSTITIALRECEIVED, OnAdMobRecieve);
+	CGAdMobUnRegister(CG_ADMOB_CALLBACK_INTERSTITIALFAILED, OnAdMobFailed);
+	CGAdMobUnRegister(CG_ADMOB_CALLBACK_INTERSTITIALDISMISS, OnAdMobDismiss);
+	CGAdMobUnRegister(CG_ADMOB_CALLBACK_INTERSTITIALLEAVEAPP, OnAdLeaveApp);
 }
 
-void Ads::Update()
+int32 Ads::_ad(void *systemData, void *userData)
 {
-	if(IW_GAME_HTTP_MANAGER != NULL)
-	{
-		IW_GAME_HTTP_MANAGER->Update();
-	}
+	BannerAdLoad();
+	ShowInterstitialAd();
+	s3eTimerSetTimer(30000, _ad, NULL);
 
-	// Update the ads view
-	IW_GAME_ADS_VIEW->Update(1.0f);
+	return 0;
 }
 
-void Ads::Draw()
+int32 Ads::OnAdMobWillDismiss( void *systemData, void *userData )
 {
-	IW_GAME_ADS_VIEW->Draw();
+	return 0;
 }
 
-void Ads::InitAnimator()
+int32 Ads::OnAdMobPresent( void *systemData, void *userData )
 {
-	// Create and attach an animator that fades the ad in over 1 second, pauses for 7
-	// seconds and then fades the ad back out
-	CIwGameAdsViewAnimator* anim = new CIwGameAdsViewAnimator();
-	int width = IwGxGetScreenWidth();
-	int height = IwGxGetScreenHeight() / 10;
-	anim->Init();
-	anim->setAdViewDataIndex(0);
-	anim->setCanvasSize(width, height);
-	anim->setInAnim(CIwGameAdsViewAnimator::AnimFadeIn, 1000);
-	anim->setOutAnim(CIwGameAdsViewAnimator::AnimFadeOut, 1000);
-	anim->setStayDuration(7000);
-	IW_GAME_ADS_VIEW->addAnimator(0, anim);
+	return 0;
+}
+
+int32 Ads::OnAdMobRecieve( void *systemData, void *userData )
+{
+	return 0;
+}
+
+int32 Ads::OnAdMobFailed( void *systemData, void *userData )
+{
+	return 0;
+}
+
+int32 Ads::OnAdMobDismiss( void *systemData, void *userData )
+{
+	return 0;
+}
+
+int32 Ads::OnAdLeaveApp( void *systemData, void *userData )
+{
+	return 0;
+}
+
+void Ads::Show()
+{
+	BannerAdShow();
+}
+
+void Ads::Hide()
+{
+	BannerAdHide();
 }

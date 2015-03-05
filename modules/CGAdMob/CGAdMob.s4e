@@ -1,0 +1,150 @@
+#
+callbacks
+
+include:
+#include <s3eTypes.h>
+
+/**
+ * Callback events.
+ *
+ * @par Required Header Files
+ * CGAdMob.h
+ */
+typedef enum CGAdMobCallback
+{
+    /**
+     * Called when an interstitial ad request succeeded. Show it at the next transition point in your
+     * application such as when transitioning between view controllers.
+     */
+    CG_ADMOB_CALLBACK_INTERSTITIALRECEIVED = 0,
+
+    /**
+    * Called when an interstitial ad request completed without an interstitial to
+    * show. This is common since interstitials are shown sparingly to users.
+    */
+    CG_ADMOB_CALLBACK_INTERSTITIALFAILED = 1,
+
+    /**
+    * Called just before presenting an interstitial. After this method finishes the interstitial will
+    * animate onto the screen. Use this opportunity to stop animations and save the state of your
+    * application in case the user leaves while the interstitial is on screen (e.g. to visit the App
+    Store from a link on the interstitial).
+    */
+    CG_ADMOB_CALLBACK_INTERSTITIALWILLPRESENT = 2,
+    
+    /**
+    * Called before the interstitial is to be animated off the screen.
+    */
+    CG_ADMOB_CALLBACK_INTERSTITIALWILLDISMISS = 3,
+    
+    /**
+    * Called just after dismissing an interstitial and it has animated off the screen.
+    */
+    CG_ADMOB_CALLBACK_INTERSTITIALDISMISS = 4,
+    
+    /** Called just before the application will background or terminate because the user clicked on an
+    * ad that will launch another application (such as the App Store). The normal
+    * UIApplicationDelegate methods, like applicationDidEnterBackground:, will be called immediately
+    * before this.
+    */
+    CG_ADMOB_CALLBACK_INTERSTITIALLEAVEAPP = 5,
+
+    CGADMOB_CALLBACK_MAX
+} CGAdMobCallback;
+
+
+
+/**
+ * Ad position.
+ *
+ * @par Required Header Files
+ * CGAdMob.h
+ */
+typedef enum CGAdMobPosition
+{
+    CG_ADMOB_POSITION_TOP    = 1,  ///< Ad is positioned at top of screen.
+    CG_ADMOB_POSITION_BOTTOM = 2,  ///< Ad is positioned at bottom of screen.
+} CGAdMobPosition;
+
+
+/**
+* Banner Ad Size.
+*
+* @par Required Header Files
+* CGAdMob.h
+*/
+typedef enum CGAdMobBannerAdSize
+{
+
+    CG_ADMOB_SMART = 0, ///< Default ad size.
+    CG_ADMOB_320x50 = 1,
+    CG_ADMOB_320x100 = 2,
+    CG_ADMOB_300x250 = 3,
+    CG_ADMOB_468x60 = 4,
+    CG_ADMOB_728x90 = 5,
+
+} CGAdMobBannerAdSize;
+
+
+
+functions:
+
+/**
+ * Most work is done in this method. Call it after setting up the key.
+ */
+void InitAdView() run_on_os_thread
+
+
+/**
+ * Returns true if the interstitial ad ready and was displayed successfully.
+ */
+s3eResult ShowInterstitialAd() run_on_os_thread
+
+
+/**
+* Currently only works with a max of 2 ad units. This might change in the future.
+*/
+void SetGoogleAppKey(const char* bannerAdUnitId, const char* interstatialAdUnitId) run_on_os_thread
+
+
+/**
+ * Load the ad. Needs to be called every time you need the ad refreshed.
+ * Make sure you turn off auto refresh in the admob ad unit configuration.
+ */
+void BannerAdLoad() run_on_os_thread
+
+/**
+ * Show the banner ad.
+ */
+void BannerAdShow() run_on_os_thread
+
+/**
+ * Hide the banner ad.
+ */
+void BannerAdHide() run_on_os_thread
+
+/**
+ * Optional: True to display banner ad in Landscape mode. Default is false.
+ */
+void IsLandscape(bool landscape) run_on_os_thread
+
+/**
+* Optional: If not called banner will display at the top.
+*/
+void BannerAdPosition(CGAdMobPosition position) run_on_os_thread
+
+/**
+* Optional: If not called banner size will be "Smart Banner" as defined by Google.
+*/
+void BannerAdSize(CGAdMobBannerAdSize size) run_on_os_thread
+
+
+/**
+* Optional: Sets the test device string.
+*/
+void TestDeviceHashedId(const char* deviceHashId) run_on_os_thread
+
+/**
+ * Release any resources.
+ */
+void Release() void run_on_os_thread

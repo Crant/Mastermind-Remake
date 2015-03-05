@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "Resource.h"
 #include "IwGx.h"
+#include "Ads.h"
 
 using namespace Iw2DSceneGraph;
 
@@ -48,54 +49,44 @@ Game::Game()
 
 Game::~Game()
 {
-	if(this->zAnswers)
+	for(int i = 0; i < COLS; i++)
 	{
-		for(int i = 0; i < COLS; i++)
-		{
-			SAFE_DELETE(this->zAnswers[i]);
-		}
-		SAFE_DELETE_ARRAY(this->zAnswers);
+		SAFE_DELETE(this->zAnswers[i]);
 	}
+	SAFE_DELETE_ARRAY(this->zAnswers);
 
-	if(this->zGrid)
+	for (int i = 0; i < COLS; i++)
 	{
-		for (int i = 0; i < COLS; i++)
+		for(int j = 0; j < this->zMaxRounds; j++)
 		{
-			for(int j = 0; j < this->zMaxRounds; j++)
-			{
-				SAFE_DELETE(this->zGrid[i][j]);
-			}
-			SAFE_DELETE_ARRAY(this->zGrid[i]);
+			SAFE_DELETE(this->zGrid[i][j]);
 		}
-		SAFE_DELETE_ARRAY(this->zGrid);
+		SAFE_DELETE_ARRAY(this->zGrid[i]);
 	}
+	SAFE_DELETE_ARRAY(this->zGrid);
 	
-	if(this->zColorChoices)
+
+	for(int i = 0; i < COLORS; i++)
 	{
-		for(int i = 0; i < COLORS; i++)
-		{
-			SAFE_DELETE(this->zColorChoices[i]);
-		}
-		SAFE_DELETE_ARRAY(this->zColorChoices);
+		SAFE_DELETE(this->zColorChoices[i]);
 	}
+	SAFE_DELETE_ARRAY(this->zColorChoices);
 	
 	SAFE_DELETE(this->zArrow);
 
 	SAFE_DELETE(this->zCheckButton);
 
 
-	if(this->zPins)
+	for (int i = 0; i < COLS; i++)
 	{
-		for (int i = 0; i < COLS; i++)
+		for(int j = 0; j < this->zMaxRounds; j++)
 		{
-			for(int j = 0; j < this->zMaxRounds; j++)
-			{
-				SAFE_DELETE(this->zPins[i][j]);
-			}
-			SAFE_DELETE_ARRAY(this->zPins[i]);
+			SAFE_DELETE(this->zPins[i][j]);
 		}
-		SAFE_DELETE_ARRAY(this->zPins);
+		SAFE_DELETE_ARRAY(this->zPins[i]);
 	}
+	SAFE_DELETE_ARRAY(this->zPins);
+
 	SAFE_DELETE(this->zFinalLabel);
 
 	this->zHighscore->SaveHighscore();
@@ -371,32 +362,10 @@ void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
 
 	TimeHelper::CalcTime(hour, minute, seconds, (int)this->zCurrentGametimeSec);
 
-	std::string finalstring = "";
-	char str[32];
-	if(hour > 0)
-	{
-		snprintf(str, 32, "%d", (int)hour);
-		finalstring = str;
-		finalstring += ":";
-		if(minute < 1)
-			finalstring += "00:";
-	}
-	if(minute > 0)
-	{
-		if(minute < 10)
-			finalstring += '0';
+	std::string text;
+	this->CreateTimeText(hour, minute, seconds, text);
 
-		snprintf(str, 32, "%d", (int)minute);
-		finalstring += str;
-		finalstring += ":";
-	}
-	
-	if(seconds < 10)
-		finalstring += '0';
-	snprintf(str, 32, "%d", (int)seconds);
-	finalstring += str;
-
-	this->zGametimeLabel->m_Text = finalstring;
+	this->zGametimeLabel->m_Text = text;
 }
 
 void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
@@ -910,6 +879,35 @@ int Game::GetImageColorValue( const Image* pImage )
 	return -1;
 }
 
+void Game::CreateTimeText( int hour, int minute, int seconds, std::string& text )
+{
+	char str[32];
+
+	if(hour > 0)
+	{
+		if(hour < 10)
+			text = "0";
+
+		snprintf(str, 32, "%d", (int)hour);
+		text += str;
+		text += ":";
+	}
+	if(minute > 0)
+	{
+		if(minute < 10)
+			text += "0";
+
+		snprintf(str, 32, "%d", (int)minute);
+		text += str;
+		text += ":";
+	}
+	if(seconds < 10)
+		text += "0";
+
+	snprintf(str, 32, "%d", (int)seconds);
+	text += str;
+}
+
 void Game::ShowEndScreen( CTween* pTween )
 {
 	MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
@@ -972,6 +970,8 @@ void Game::OnBackKeyPress()
 {
 	if(this->zGameState == GAME_STATE_PLAYING || this->zGameState == GAME_STATE_PLAYING)
 	{
+		ADVERT_MANAGER->Show();
+
 		this->zTweener.Tween(0.2f,
 			DELAY, 0.2f,
 			ONCOMPLETE, ShowPauseScreen,
@@ -979,6 +979,8 @@ void Game::OnBackKeyPress()
 	}
 	else if(this->zGameState == GAME_STATE_VICTORY || this->zGameState == GAME_STATE_GAMEOVER)
 	{
+		ADVERT_MANAGER->Show();
+
 		this->zTweener.Tween(0.2f,
 			DELAY, 0.2f,
 			ONCOMPLETE, ShowEndScreen,

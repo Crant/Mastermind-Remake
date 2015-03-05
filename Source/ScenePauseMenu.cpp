@@ -6,6 +6,7 @@
 #include "Resource.h"
 #include "IwGx.h"
 #include "SceneMainMenu.h"
+#include "Ads.h"
 
 using namespace Iw2DSceneGraph;
 
@@ -195,6 +196,7 @@ void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f
 			INPUT_MANAGER->Reset();
 			if(this->zNewGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
+				ADVERT_MANAGER->Show();
 				this->zTweener.Tween(0.15f,
 					DELAY, 0.1f,
 					ONCOMPLETE, NewGame,
@@ -202,6 +204,7 @@ void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f
 			}
 			else if(this->zResumeGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
+				ADVERT_MANAGER->Show();
 				this->zTweener.Tween(0.15f,
 					DELAY, 0.1f,
 					ONCOMPLETE, ResumeGame,
@@ -209,12 +212,14 @@ void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f
 			}
 			else if(this->zExitGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
+				ADVERT_MANAGER->Hide();
 				this->zTweener.Tween(0.2f,
 					ONCOMPLETE, ExitGame,
 					END);
 			}
 			else if(this->zHighscoreButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
+				ADVERT_MANAGER->Hide();
 				this->zTweener.Tween(0.15f,
 					DELAY, 0.1f,
 					ONCOMPLETE, ShowHighscore,

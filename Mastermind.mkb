@@ -2,7 +2,7 @@
 
 options
 {
-   module_path="modules/IwGameAds"
+   module_path="modules/CGAdMob"
 }
 
 files
@@ -45,11 +45,13 @@ files
 
 subprojects
 {
+	CGAdMob
 	derbh
-	iw2d
+
 	iwtween
-	IwGameAds
 	iwresmanager
+
+	iw2d
 	iw2dscenegraph
 	iw2dscenegraphcore
 }
@@ -68,4 +70,6 @@ deployments
 	android-icon-hdpi='deployments/icon_72.png'
 	icon='deployments'
 	version=1.0.0
+
+	android-extra-strings='(gps_app_id,0)' 
 }

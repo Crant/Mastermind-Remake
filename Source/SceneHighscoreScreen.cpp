@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "SceneGame.h"
 #include "Highscore.h"
+#include "Ads.h"
 
 using namespace Iw2DSceneGraph;
 
@@ -190,26 +191,8 @@ void HighscoreScreen::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* 
 		TimeHelper::CalcTime(hour, minute, seconds, (int)time);
 
 		std::string text;
-		if(hour > 0)
-		{
-			if(hour < 10)
-				text = "0";
-			snprintf(str, 32, "%d", (int)hour);
-			text += str;
-			text += ":";
-		}
-		if(minute > 0)
-		{
-			if(minute < 10)
-				text += "0";
-			snprintf(str, 32, "%d", (int)minute);
-			text += str;
-			text += ":";
-		}
-		if(seconds < 10)
-			text += "0";
-		snprintf(str, 32, "%d", (int)seconds);
-		text += str;
+		this->CreateTimeText(hour, minute, seconds, text);
+
 		this->zTimeLabel[i]->SetText(text);
 	}
 
@@ -244,6 +227,35 @@ void HighscoreScreen::Render()
 		return;
 
 	Scene::Render();
+}
+
+void HighscoreScreen::CreateTimeText( int hour, int minute, int seconds, std::string& text )
+{
+	char str[32];
+
+	if(hour > 0)
+	{
+		if(hour < 10)
+			text = "0";
+
+		snprintf(str, 32, "%d", (int)hour);
+		text += str;
+		text += ":";
+	}
+	if(minute > 0)
+	{
+		if(minute < 10)
+			text += "0";
+
+		snprintf(str, 32, "%d", (int)minute);
+		text += str;
+		text += ":";
+	}
+	if(seconds < 10)
+		text += "0";
+
+	snprintf(str, 32, "%d", (int)seconds);
+	text += str;
 }
 
 void HighscoreScreen::ExitHighscore( CTween* pTween )

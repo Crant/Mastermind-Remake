@@ -23,8 +23,8 @@ Mastermind::~Mastermind()
 	RESOURCE_MANAGER->Release();
 	Resource::Destroy();
 	
-	//ADVERT_MANAGER->Release();
-	//Ads::Destroy();
+	ADVERT_MANAGER->Release();
+	Ads::Destroy();
 
 	SAFE_DELETE(this->zGlobalTweener);
 }
@@ -41,9 +41,9 @@ void Mastermind::Init()
 	Resource::Create();
 	RESOURCE_MANAGER->Init();
 	//Set up Adverts
-	//Ads::Create();
-	//ADVERT_MANAGER->Init();
-
+	Ads::Create();
+	ADVERT_MANAGER->Init();
+	
 	this->zGlobalTweener = new CTweenManager();
 
 	Game* game = new Game();
@@ -70,6 +70,8 @@ void Mastermind::Init()
 	highscoreScreen->Init();
 	highscoreScreen->SetGlobalTween(this->zGlobalTweener);
 	SCENE_MANAGER->Add(highscoreScreen);
+
+	ADVERT_MANAGER->Show();
 
 	SCENE_MANAGER->SwitchTo(mainmenu);
 }

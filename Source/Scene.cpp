@@ -56,7 +56,7 @@ CDECLARE_SINGLETONS(SceneManager)
 void SceneManager::SwitchTo( Scene* pScene )
 {
 	this->zNextScene = pScene;
-
+	
 	if(this->zCurrentScene == 0) // No scene exist
 	{
 		this->zCurrentScene = this->zNextScene;
