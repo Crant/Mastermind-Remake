@@ -171,7 +171,7 @@ s3eResult ShowInterstitialAd()
 #endif
 
     s3eResult ret = g_Ext.m_ShowInterstitialAd();
-
+	
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
 #endif

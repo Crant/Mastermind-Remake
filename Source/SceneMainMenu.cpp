@@ -25,21 +25,6 @@ MainMenu::~MainMenu()
 {
 }
 
-void MainMenu::ExitGame( CTween* pTween )
-{
-	Game* game = (Game*)SCENE_MANAGER->Find("game");
-	game->SaveHighscore();
-
-	SCENE_MANAGER->QuitGame();
-}
-
-void MainMenu::ShowHighscore( CTween* pTween )
-{
-	HighscoreScreen* highscore = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
-
-	SCENE_MANAGER->SwitchTo(highscore);
-}
-
 void MainMenu::Init()
 {
 	Scene::Init();
@@ -105,7 +90,8 @@ void MainMenu::Init()
 	this->zSinglePlayerLabel->m_Y = this->zSinglePlayerButton->m_H / 2;
 	this->zSinglePlayerLabel->m_W = this->zSinglePlayerButton->m_W;
 	this->zSinglePlayerLabel->m_H = this->zSinglePlayerButton->m_H;
-	this->zSinglePlayerLabel->m_Text = "Singleplayer";
+	this->zSinglePlayerLabel->m_Text = "One Player";
+
 	this->zSinglePlayerLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
 	this->zSinglePlayerLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
 	this->zSinglePlayerLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
@@ -133,7 +119,7 @@ void MainMenu::Init()
 	this->zMultiPlayerLabel->m_Y = this->zMultiPlayerButton->m_H / 2;
 	this->zMultiPlayerLabel->m_W = this->zMultiPlayerButton->m_W;
 	this->zMultiPlayerLabel->m_H = this->zMultiPlayerButton->m_H;
-	this->zMultiPlayerLabel->m_Text = "Multiplayer";
+	this->zMultiPlayerLabel->m_Text = "Two Players";
 	this->zMultiPlayerLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
 	this->zMultiPlayerLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
 	this->zMultiPlayerLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
@@ -268,18 +254,18 @@ void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f 
 			{
 				ADVERT_MANAGER->Hide();
 
-				this->zTweener.Tween(0.2f,
-					ONCOMPLETE, ExitGame,
-					END);
+				Game* game = (Game*)SCENE_MANAGER->Find("game");
+				game->SaveHighscore();
+
+				SCENE_MANAGER->QuitGame();
 			}
 			else if(this->zHighscoreButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				ADVERT_MANAGER->Hide();
 
-				this->zTweener.Tween(0.15f,
-					DELAY, 0.1f,
-					ONCOMPLETE, ShowHighscore,
-					END);
+				HighscoreScreen* highscore = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
+
+				SCENE_MANAGER->SwitchTo(highscore);
 			}
 		}
 	}
@@ -291,16 +277,16 @@ void MainMenu::Render()
 		return;
 
 	Scene::Render();
-
-	ADVERT_MANAGER->Show();
 }
 
 void MainMenu::OnBackKeyPress()
 {
-	this->zTweener.Tween(0.2f,
-		DELAY, 0.25f,
-		ONCOMPLETE, ExitGame,
-		END);
+	ADVERT_MANAGER->Hide();
+
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
+	game->SaveHighscore();
+
+	SCENE_MANAGER->QuitGame();
 }
 
 void MainMenu::OnPause()

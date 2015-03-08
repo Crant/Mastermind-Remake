@@ -23,12 +23,6 @@ public:
 	//Render the game
 	void Render();
 
-	static void NewGame(CTween* pTween);
-
-	static void ResumeGame(CTween* pTween);
-	static void ExitGame(CTween* pTween);
-	static void ShowHighscore(CTween* pTween);
-
 	virtual void OnBackKeyPress();
 
 	virtual void OnPause();

@@ -19,35 +19,7 @@ PauseMenu::PauseMenu()
 
 PauseMenu::~PauseMenu()
 {
-}
 
-void PauseMenu::NewGame( CTween* pTween )
-{
-	//Switch to game mode Scene
-	MainMenu* gameMode = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
-	SCENE_MANAGER->SwitchTo(gameMode);
-}
-
-void PauseMenu::ResumeGame( CTween* pTween )
-{
-	//Switch to game Scene
-	Game* game = (Game*)SCENE_MANAGER->Find("game");
-	SCENE_MANAGER->SwitchTo(game);
-}
-
-void PauseMenu::ExitGame( CTween* pTween )
-{
-	Game* game = (Game*)SCENE_MANAGER->Find("game");
-	game->SaveHighscore();
-
-	SCENE_MANAGER->QuitGame();
-}
-
-void PauseMenu::ShowHighscore( CTween* pTween )
-{
-	HighscoreScreen* highscore = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
-
-	SCENE_MANAGER->SwitchTo(highscore);
 }
 
 void PauseMenu::Init()
@@ -197,33 +169,35 @@ void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f
 			if(this->zNewGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				ADVERT_MANAGER->Show();
-				this->zTweener.Tween(0.15f,
-					DELAY, 0.1f,
-					ONCOMPLETE, NewGame,
-					END);
+
+				//Switch to main menu Scene
+				MainMenu* mainmenu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
+				SCENE_MANAGER->SwitchTo(mainmenu);
 			}
 			else if(this->zResumeGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Show();
-				this->zTweener.Tween(0.15f,
-					DELAY, 0.1f,
-					ONCOMPLETE, ResumeGame,
-					END);
+				ADVERT_MANAGER->Hide();
+				
+				//Switch to game Scene
+				Game* game = (Game*)SCENE_MANAGER->Find("game");
+				SCENE_MANAGER->SwitchTo(game);
 			}
 			else if(this->zExitGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				ADVERT_MANAGER->Hide();
-				this->zTweener.Tween(0.2f,
-					ONCOMPLETE, ExitGame,
-					END);
+
+				Game* game = (Game*)SCENE_MANAGER->Find("game");
+				game->SaveHighscore();
+
+				SCENE_MANAGER->QuitGame();
 			}
 			else if(this->zHighscoreButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
 				ADVERT_MANAGER->Hide();
-				this->zTweener.Tween(0.15f,
-					DELAY, 0.1f,
-					ONCOMPLETE, ShowHighscore,
-					END);
+
+				HighscoreScreen* highscore = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
+
+				SCENE_MANAGER->SwitchTo(highscore);
 			}
 		}
 	}
@@ -239,10 +213,10 @@ void PauseMenu::Render()
 
 void PauseMenu::OnBackKeyPress()
 {
-	this->zTweener.Tween(0.2f,
-		DELAY, 0.25f,
-		ONCOMPLETE, ExitGame,
-		END);
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
+	game->SaveHighscore();
+
+	SCENE_MANAGER->QuitGame();
 }
 
 void PauseMenu::OnPause()

@@ -139,7 +139,7 @@ void SceneManager::OnBackButtonPressed()
 {
 	for (std::list<Scene*>::iterator it = this->zScenes.begin(); it != this->zScenes.end(); it++)
 	{
-		if( (*it)->IsActive())
+		if( (*it) == this->zCurrentScene)
 			(*it)->OnBackKeyPress();
 	}
 }

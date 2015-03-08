@@ -3,6 +3,7 @@
 #include "Scene.h"
 #include "Image.h"
 #include "Highscore.h"
+#include "s3eDialog.h"
 #include <map>
 
 #define COLS 5
@@ -47,7 +48,6 @@ private:
 
 	Image* zArrow;
 	Image* zCheckButton;
-	Iw2DSceneGraph::CLabel* zFinalLabel;
 	Iw2DSceneGraph::CLabel* zGametimeLabel;
 	Iw2DSceneGraph::CSprite* zBackground;
 	int zMaxRounds;
@@ -65,6 +65,8 @@ private:
 	float zCurrentGametimeSec;
 
 	GAME_MODE zGameMode;
+
+	int zButtonPressed;
 
 private:
 	void CheckInput();
@@ -99,21 +101,20 @@ public:
 
 	void SwitchToScene(const char* pScene_Name);
 	
-	
 	float GetGraphicsScaleY() {return this->zGraphics_ScaleY;}
 	float GetGraphicsScaleX() {return this->zGraphics_ScaleX;}
 	float GetFontScale() {return this->zFont_Scale;}
 	float GetActualFontHeight() {return this->zActualFontHeight;}
 
-	static void ShowEndScreen(CTween* pTween);
-	static void ShowPauseScreen(CTween* pTween);
+	static int32 DialogCallback(s3eDialogCallbackData* data, void* userData);
 
 	void SaveHighscore();
 
 	Highscore* GetHighscore() {return this->zHighscore;}
 
 	void SetGameMode(GAME_MODE pMode);
-	void SetAnswers(Image** colors);
+
+	void SetButtonPress(int button) {this->zButtonPressed = button;}
 
 	virtual void OnBackKeyPress();
 

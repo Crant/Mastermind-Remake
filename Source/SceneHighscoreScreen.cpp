@@ -205,17 +205,18 @@ void HighscoreScreen::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* 
 			INPUT_MANAGER->Reset();
 			if(this->zBackButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				this->zTweener.Tween(0.2f,
-					DELAY, 0.25f,
-					ONCOMPLETE, ExitHighscore,
-					END);
+				ADVERT_MANAGER->Show();
+
+				Scene* prevScene = SCENE_MANAGER->GetPreviousScene();
+
+				SCENE_MANAGER->SwitchTo(prevScene);
 			}
 			if(this->zResetButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				this->zTweener.Tween(0.2f,
-					DELAY, 0.25f,
-					ONCOMPLETE, ResetScore,
-					END);
+				Game* game = (Game*)SCENE_MANAGER->Find("game");
+
+				Highscore* highscore = game->GetHighscore();
+				highscore->ResetScore();
 			}
 		}
 	}
@@ -258,26 +259,13 @@ void HighscoreScreen::CreateTimeText( int hour, int minute, int seconds, std::st
 	text += str;
 }
 
-void HighscoreScreen::ExitHighscore( CTween* pTween )
+void HighscoreScreen::OnBackKeyPress()
 {
+	ADVERT_MANAGER->Show();
+
 	Scene* prevScene = SCENE_MANAGER->GetPreviousScene();
 
 	SCENE_MANAGER->SwitchTo(prevScene);
-}
-
-void HighscoreScreen::ResetScore( CTween* pTween )
-{
-	Game* game = (Game*)SCENE_MANAGER->Find("game");
-
-	Highscore* highscore = game->GetHighscore();
-	highscore->ResetScore();
-}
-
-void HighscoreScreen::OnBackKeyPress()
-{
-	this->zTweener.Tween(0.5f,
-		ONCOMPLETE, ExitHighscore, 
-		END);
 }
 
 void HighscoreScreen::OnPause()

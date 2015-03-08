@@ -23,7 +23,7 @@ Mastermind::~Mastermind()
 	RESOURCE_MANAGER->Release();
 	Resource::Destroy();
 	
-	ADVERT_MANAGER->Release();
+	ADVERT_MANAGER->Cleanup();
 	Ads::Destroy();
 
 	SAFE_DELETE(this->zGlobalTweener);

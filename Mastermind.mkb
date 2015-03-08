@@ -2,7 +2,7 @@
 
 options
 {
-   module_path="modules/CGAdMob"
+ 	module_path="modules/CGAdMob"
 }
 
 files
@@ -50,7 +50,7 @@ subprojects
 
 	iwtween
 	iwresmanager
-
+	s3eDialog
 	iw2d
 	iw2dscenegraph
 	iw2dscenegraphcore

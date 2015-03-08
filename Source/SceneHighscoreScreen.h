@@ -31,13 +31,9 @@ public:
 	//Render the game
 	void Render();
 
-	static void ExitHighscore( CTween* pTween );
-	static void ResetScore(CTween* pTween);
-
 	virtual void OnBackKeyPress();
 
 	virtual void OnPause();
 
 	virtual void OnResume();
-
 };

@@ -1,11 +1,12 @@
 #include "SceneGame.h"
 
-#include "ScenePauseMenu.h"
-#include "SceneMainMenu.h"
+#include "Ads.h"
+#include "IwGx.h"
 #include "Input.h"
 #include "Resource.h"
-#include "IwGx.h"
-#include "Ads.h"
+#include "SceneMainMenu.h"
+#include "ScenePauseMenu.h"
+
 
 using namespace Iw2DSceneGraph;
 
@@ -32,7 +33,6 @@ Game::Game()
 	this->zColorChoices = 0;
 	this->zSelectedRect = 0;
 	this->zSelectedMarble = 0;
-	this->zFinalLabel = 0;
 	this->zGametimeLabel = 0;
 	this->zBackground = 0;
 
@@ -87,8 +87,6 @@ Game::~Game()
 	}
 	SAFE_DELETE_ARRAY(this->zPins);
 
-	SAFE_DELETE(this->zFinalLabel);
-
 	this->zHighscore->SaveHighscore();
 	SAFE_DELETE(this->zHighscore);
 }
@@ -118,20 +116,6 @@ void Game::Init()
 	
 	AddChild(this->zBackground);
 
-	this->zFinalLabel = new CLabel();
-	this->zFinalLabel->m_X = (float)IwGxGetScreenWidth() / 2.0f;
-	this->zFinalLabel->m_Y = 545 * this->zGraphics_ScaleY;
-	//this->zFinalLabel->m_W = FONT_DESIGN_WIDTH;
-	//this->zFinalLabel->m_H = this->zActualFontHeight;
-	this->zFinalLabel->m_AlignHor = IW_2D_FONT_ALIGN_LEFT;
-	this->zFinalLabel->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
-	this->zFinalLabel->m_Font = RESOURCE_MANAGER->GetFontBold();
-	this->zFinalLabel->m_ScaleX = this->zFont_Scale;
-	this->zFinalLabel->m_ScaleY = this->zFont_Scale;
-	this->zFinalLabel->m_AnchorX = 0.5f;
-	this->zFinalLabel->m_AnchorY = 0.5f;
-	this->zFinalLabel->m_Color = CColor(0, 0, 0, 255);
-
 	// Total Height * scale - Req Height * scale
 	this->zY_Spacing = (885 - RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zMaxRounds) * this->zGraphics_ScaleY;
 	this->zY_Spacing /= this->zMaxRounds - 1;
@@ -139,10 +123,13 @@ void Game::Init()
 
 	this->zHighscore = new Highscore();
 	this->zHighscore->LoadHighscore();
+
+	s3eDialogRegister(S3E_DIALOG_FINISHED, (s3eCallback)DialogCallback, NULL);
 }
 
 void Game::New_Game()
 {
+	this->zButtonPressed = -1;
 	this->zCurrentRound = 0;
 	this->zCurrentGametimeSec = 0.0f;
 
@@ -151,9 +138,6 @@ void Game::New_Game()
 	float checkButtonStartX = 538.0f;
 	float pinStart = 621.0f;
 	float arrowStart = 45.0f;
-
-	this->zFinalLabel->m_Text = "";
-	this->zFinalLabel->m_IsVisible = false;
 
 	if(this->zGametimeLabel == 0)
 	{
@@ -169,11 +153,11 @@ void Game::New_Game()
 		this->zGametimeLabel->m_ScaleX = this->zFont_Scale;// / this->zGraphics_Scale;
 		this->zGametimeLabel->m_ScaleY = this->zFont_Scale;// / this->zGraphics_Scale;
 		this->zGametimeLabel->m_Color = CColor(0, 0, 0, 255);
+
+		AddChild(this->zGametimeLabel);
 	}
-	char str[32];
-	snprintf(str, 32, "%f", (float)this->zY_Spacing);
-	this->zGametimeLabel->m_Text = str;//"";
-	AddChild(this->zGametimeLabel);
+
+	this->zGametimeLabel->m_Text = "";
 
 	if(this->zGrid)
 	{
@@ -376,8 +360,6 @@ void Game::UpdateGameObjects(float pDeltaTime, float pAlphaMul)
 		{
 			this->zAnswers[i]->Update(pDeltaTime, pAlphaMul);
 		}
-
-		this->zFinalLabel->Update(pDeltaTime, pAlphaMul);
 	}
 	else if(this->zGameState == GAME_STATE_PICKING_ANSWERS)
 	{
@@ -498,14 +480,13 @@ void Game::CheckInput()
 	}
 	else if(this->zGameState == GAME_STATE_VICTORY || this->zGameState == GAME_STATE_GAMEOVER)
 	{
-		if(this->zBackground->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
-		{
-			this->zTweener.Tween(0.15f,
-				DELAY, 0.1f,
-				ONCOMPLETE, ShowEndScreen,
-				END);
-			this->zGameMode = GAME_MODE_SINGLE;
-		}
+		//if(this->zBackground->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
+		//{
+		//	MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
+		//	SCENE_MANAGER->SwitchTo(menu);
+
+		//	this->zGameMode = GAME_MODE_SINGLE;
+		//}
 	}
 }
 
@@ -517,34 +498,30 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	//Update base scene
 	Scene::Update(pDeltaTime, pAlphaMul);
 
-	if(this->zCurrentRound >= this->zMaxRounds)
+	if(this->zGameState != GAME_STATE_GAMEOVER && 
+		this->zCurrentRound >= this->zMaxRounds)
 	{
 		this->zGameState = GAME_STATE_GAMEOVER;
+
+		s3eDialogAlertInfo info;
+		info.m_Message = "you failed to solve the code";
+		info.m_Title = "Defeat";
+		info.m_Button[0] = "Main menu";
+		info.m_Button[1] = "Close";
+		s3eDialogAlertBox(&info);
 	}
 
 	this->UpdateGameObjects(pDeltaTime, pAlphaMul);
 
+	//Detect screen tap
+	if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this && 
+		!INPUT_MANAGER->GetTouchedStatus() && INPUT_MANAGER->GetPrevTouchedStatus())
+	{
+		this->CheckInput();
+	}
+
 	if(this->zGameState == GAME_STATE_PICKING_ANSWERS)
 	{
-		//Detect screen tap
-		if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this)
-		{
-			if(INPUT_MANAGER->GetBackKeyStatus())
-			{
-				// Reset input
-				INPUT_MANAGER->Reset();
-
-				this->zTweener.Tween(0.2f,
-					DELAY, 0.2f,
-					ONCOMPLETE, ShowPauseScreen,
-					END);
-			}
-			else if(!INPUT_MANAGER->GetTouchedStatus() && INPUT_MANAGER->GetPrevTouchedStatus())
-			{
-				this->CheckInput();
-			}
-		}
-
 		if(this->zSelectedMarble && this->zSelectedRect)
 		{
 			this->MoveMarble();
@@ -566,14 +543,6 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	else if(this->zGameState == GAME_STATE_PLAYING)
 	{
 		this->UpdateGameTimer(pDeltaTime, pAlphaMul);
-		//Detect screen tap
-		if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this)
-		{
-			if(!INPUT_MANAGER->GetTouchedStatus() && INPUT_MANAGER->GetPrevTouchedStatus())
-			{
-				this->CheckInput();
-			}
-		}
 
 		if(this->zSelectedMarble && this->zSelectedRect)
 		{
@@ -584,19 +553,6 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	}
 	else if(this->zGameState == GAME_STATE_VICTORY)
 	{
-		this->zFinalLabel->m_IsVisible = true;
-		this->zFinalLabel->m_Text = "Victory, Touch the screen to return to menu";
-		this->zFinalLabel->Update(pDeltaTime, pAlphaMul);
-
-		//Detect screen tap
-		if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this)
-		{
-			if(!INPUT_MANAGER->GetTouchedStatus() && INPUT_MANAGER->GetPrevTouchedStatus())
-			{
-				this->CheckInput();
-			}
-		}	
-
 		for (int i = 0; i < COLS; i++)
 		{
 			for(int j = 0; j < this->zMaxRounds; j++)
@@ -605,29 +561,43 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 				this->zPins[i][j]->m_Alpha = 0.5f;
 			}
 		}
+		
+		if(this->zButtonPressed == 0) //Main menu
+		{
+			ADVERT_MANAGER->Show();
+
+			this->zGameMode = GAME_MODE_SINGLE;
+
+			MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
+			SCENE_MANAGER->SwitchTo(menu);
+		}
+		else if(this->zButtonPressed == 1) // Close Window
+		{
+
+		}
 
 	}
 	else if(this->zGameState == GAME_STATE_GAMEOVER)
 	{
-		this->zFinalLabel->m_IsVisible = true;
-		this->zFinalLabel->m_Text = "Game over, Touch the screen to return to menu";
-		this->zFinalLabel->Update(pDeltaTime, pAlphaMul);
-
-		//Detect screen tap
-		if(this->zIsInputActive && SCENE_MANAGER->GetCurrentScene() == this)
-		{
-			if(!INPUT_MANAGER->GetTouchedStatus() && INPUT_MANAGER->GetPrevTouchedStatus())
-			{
-				this->CheckInput();
-			}
-		}
-
 		for (int i = 0; i < COLS; i++)
 		{
 			for(int j = 0; j < this->zMaxRounds; j++)
 			{
 				this->zGrid[i][j]->m_Alpha = 0.5f;
 			}
+		}
+		if(this->zButtonPressed == 0) //Main menu
+		{
+			ADVERT_MANAGER->Show();
+
+			this->zGameMode = GAME_MODE_SINGLE;
+
+			MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
+			SCENE_MANAGER->SwitchTo(menu);
+		}
+		else if(this->zButtonPressed == 1) // Close Window
+		{
+
 		}
 	}
 }
@@ -721,7 +691,7 @@ void Game::Render()
 			{
 				this->zAnswers[i]->Render();
 			}
-			this->zFinalLabel->Render();
+			//this->zFinalLabel->Render();
 		}
 	}
 }
@@ -835,6 +805,13 @@ void Game::CalculateCorrectMarbles()
 			Score* score = new Score(this->zCurrentGametimeSec, this->zCurrentRound + 1, this->zMaxRounds);
 			this->zHighscore->AddScore(score);
 		}
+
+		s3eDialogAlertInfo info;
+		info.m_Message = "Congratulation you have solved the code";
+		info.m_Title = "Victory";
+		info.m_Button[0] = "Main menu";
+		info.m_Button[1] = "Close";
+		s3eDialogAlertBox(&info);
 	}
 	//Edit black/white pins
 	for(int i = 0; i < COLS && (nrOfCorrect > 0 || nrOfCorrectPlaced > 0); i++)
@@ -908,36 +885,9 @@ void Game::CreateTimeText( int hour, int minute, int seconds, std::string& text 
 	text += str;
 }
 
-void Game::ShowEndScreen( CTween* pTween )
-{
-	MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
-	SCENE_MANAGER->SwitchTo(menu);
-}
-
-void Game::ShowPauseScreen( CTween* pTween )
-{
-	PauseMenu* menu = (PauseMenu*)SCENE_MANAGER->Find("pausemenu");
-	SCENE_MANAGER->SwitchTo(menu);
-}
-
 void Game::SaveHighscore()
 {
 	this->zHighscore->SaveHighscore();
-}
-
-void Game::SetAnswers( Image** colors )
-{
-	if(this->zAnswers)
-	{
-		for(int i = 0; i < COLS; i++)
-		{
-			if(this->zAnswers[i])
-				delete this->zAnswers[i];
-		}
-		delete [] this->zAnswers;
-	}
-	this->zAnswers = colors;
-	this->zGameMode = GAME_MODE_MULTI;
 }
 
 void Game::SetupGame()
@@ -968,23 +918,19 @@ void Game::SetGameMode( GAME_MODE pMode )
 
 void Game::OnBackKeyPress()
 {
-	if(this->zGameState == GAME_STATE_PLAYING || this->zGameState == GAME_STATE_PLAYING)
+	if(this->zGameState == GAME_STATE_PLAYING || this->zGameState == GAME_STATE_PICKING_ANSWERS)
 	{
 		ADVERT_MANAGER->Show();
 
-		this->zTweener.Tween(0.2f,
-			DELAY, 0.2f,
-			ONCOMPLETE, ShowPauseScreen,
-			END);
+		PauseMenu* menu = (PauseMenu*)SCENE_MANAGER->Find("pausemenu");
+		SCENE_MANAGER->SwitchTo(menu);
 	}
 	else if(this->zGameState == GAME_STATE_VICTORY || this->zGameState == GAME_STATE_GAMEOVER)
 	{
 		ADVERT_MANAGER->Show();
 
-		this->zTweener.Tween(0.2f,
-			DELAY, 0.2f,
-			ONCOMPLETE, ShowEndScreen,
-			END);
+		MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
+		SCENE_MANAGER->SwitchTo(menu);
 	}
 }
 
@@ -996,4 +942,13 @@ void Game::OnPause()
 void Game::OnResume()
 {
 	this->zIsActive = true;
+}
+
+int32 Game::DialogCallback( s3eDialogCallbackData* data, void* userData )
+{
+	Game* game = (Game*)SCENE_MANAGER->Find("game");
+
+	game->SetButtonPress(data->m_ButtonPressed);
+
+	return 0;
 }

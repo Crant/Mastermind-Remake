@@ -7,8 +7,6 @@
 class Ads
 {
 	CDEFINE_SINGLETONS(Ads)
-private:
-	
 public:
 	void Init();
 
@@ -18,7 +16,7 @@ public:
 
 	void Hide();
 
-	void Release();
+	void Cleanup();
 
 	static int32 _ad(void *systemData, void *userData);
 	static int32 OnAdMobWillDismiss(void *systemData, void *userData);
