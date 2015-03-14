@@ -79,7 +79,7 @@ private:
 	void CountChoosenMarbles();
 	void CalculateCorrectMarbles();
 
-	void CreateTimeText( int hour, int minute, int seconds, std::string& text );
+	void CreateTimeText( int hour, int minute, int seconds, std::string& text, bool typeEnabled = false);
 
 	int GetImageColorValue(const Image* pImage);
 	void SetupGame();

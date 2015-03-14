@@ -7,11 +7,7 @@
 #define SAFE_DELETE(x) if (x != NULL) { delete x; x = NULL; }
 #define SAFE_DELETE_ARRAY(x) if (x != NULL) { delete [] x; x = NULL; }	
 
-
-
  //SINGLETONS
-
-
 
  //Define a class as a singleton (Add to class definition in header file)
 

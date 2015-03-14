@@ -33,3 +33,18 @@ bool Score::operator<( const Score& pScore )
 
 	return false;
 }
+
+bool Score::operator>( const Score& pScore )
+{
+	if(this->zRound > pScore.zRound)
+	{
+		return true;
+	}
+	else if(this->zRound == pScore.zRound)
+	{
+		if(this->zTime > pScore.zTime)
+			return true;
+	}
+
+	return false;
+}

@@ -7,7 +7,6 @@
 #include "SceneMainMenu.h"
 #include "ScenePauseMenu.h"
 
-
 using namespace Iw2DSceneGraph;
 
 #define MARBLE_START_Y 128.0f
@@ -125,13 +124,21 @@ void Game::Init()
 	this->zHighscore->LoadHighscore();
 
 	s3eDialogRegister(S3E_DIALOG_FINISHED, (s3eCallback)DialogCallback, NULL);
-}
 
-void Game::New_Game()
-{
-	this->zButtonPressed = -1;
-	this->zCurrentRound = 0;
-	this->zCurrentGametimeSec = 0.0f;
+	this->zGametimeLabel = new CLabel();
+	this->zGametimeLabel->m_X = -20 * this->zGraphics_ScaleX;
+	this->zGametimeLabel->m_Y = 10 * this->zGraphics_ScaleY;
+	this->zGametimeLabel->m_W = FONT_DESIGN_WIDTH;
+	this->zGametimeLabel->m_H = this->zActualFontHeight;
+
+	this->zGametimeLabel->m_AlignHor = IW_2D_FONT_ALIGN_RIGHT;
+	this->zGametimeLabel->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
+	this->zGametimeLabel->m_Font = RESOURCE_MANAGER->GetFontNormal();
+	this->zGametimeLabel->m_ScaleX = this->zFont_Scale;// / this->zGraphics_Scale;
+	this->zGametimeLabel->m_ScaleY = this->zFont_Scale;// / this->zGraphics_Scale;
+	this->zGametimeLabel->m_Color = CColor(0, 0, 0, 255);
+
+	AddChild(this->zGametimeLabel);
 
 	float marbleStartX = 108.0f;
 
@@ -139,49 +146,21 @@ void Game::New_Game()
 	float pinStart = 621.0f;
 	float arrowStart = 45.0f;
 
-	if(this->zGametimeLabel == 0)
-	{
-		this->zGametimeLabel = new CLabel();
-		this->zGametimeLabel->m_X = -20 * this->zGraphics_ScaleX;
-		this->zGametimeLabel->m_Y = 10 * this->zGraphics_ScaleY;
-		this->zGametimeLabel->m_W = FONT_DESIGN_WIDTH;
-		this->zGametimeLabel->m_H = this->zActualFontHeight;
-		
-		this->zGametimeLabel->m_AlignHor = IW_2D_FONT_ALIGN_RIGHT;
-		this->zGametimeLabel->m_AlignVer = IW_2D_FONT_ALIGN_TOP;
-		this->zGametimeLabel->m_Font = RESOURCE_MANAGER->GetFontNormal();
-		this->zGametimeLabel->m_ScaleX = this->zFont_Scale;// / this->zGraphics_Scale;
-		this->zGametimeLabel->m_ScaleY = this->zFont_Scale;// / this->zGraphics_Scale;
-		this->zGametimeLabel->m_Color = CColor(0, 0, 0, 255);
-
-		AddChild(this->zGametimeLabel);
-	}
-
-	this->zGametimeLabel->m_Text = "";
-
-	if(this->zGrid)
-	{
-		for (int i = 0; i < COLS; i++)
-		{
-			for(int j = 0; j < this->zMaxRounds; j++)
-			{
-				if(this->zGrid[i][j])
-					delete this->zGrid[i][j];
-			}
-			delete [] this->zGrid[i];
-		}
-
-		delete [] this->zGrid;
-	}
-
 	this->zGrid = new Image**[COLS];
+	
+	this->zPins = new Image**[COLS];
 
+	this->zAnswers = new Image*[COLS];
+	
 	for(int i = 0; i < COLS; i++)
 	{
 		this->zGrid[i] = new Image*[this->zMaxRounds];
-	
+		
+		this->zPins[i] = new Image*[this->zMaxRounds];
+
 		for(int j = this->zMaxRounds - 1; j >= 0; j--)
 		{
+			//Creating Marble grid sprites
 			this->zGrid[i][j] = new Image();
 			this->zGrid[i][j]->m_X = marbleStartX * this->zGraphics_ScaleX + (float)(i * RESOURCE_MANAGER->GetMarbleBG()->GetWidth() * this->zGraphics_ScaleX);
 			this->zGrid[i][j]->m_Y = (MARBLE_START_Y * this->zGraphics_ScaleY) + (this->zMaxRounds - (j + 1)) * (RESOURCE_MANAGER->GetMarbleBG()->GetHeight() * this->zGraphics_ScaleY + this->zY_Spacing);
@@ -189,22 +168,39 @@ void Game::New_Game()
 			this->zGrid[i][j]->SetImage(RESOURCE_MANAGER->GetMarbleBG());
 			this->zGrid[i][j]->m_ScaleX = this->zGraphics_ScaleX;
 			this->zGrid[i][j]->m_ScaleY = this->zGraphics_ScaleX;
+
+			// Creating Pin grid sprites
+			this->zPins[i][j] = new Image();
+			this->zPins[i][j]->m_X = pinStart * this->zGraphics_ScaleX;
+			this->zPins[i][j]->m_Y = (MARBLE_START_Y * this->zGraphics_ScaleY) + (this->zMaxRounds - (j + 1)) * (RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zGraphics_ScaleY + this->zY_Spacing);
+
+			if(i < 3)
+			{
+				this->zPins[i][j]->m_X += ((i) * RESOURCE_MANAGER->GetPin()->GetWidth() * this->zGraphics_ScaleX);
+			}
+			else
+			{
+				this->zPins[i][j]->m_X += ((i - 3 + 0.5f) * RESOURCE_MANAGER->GetPin()->GetWidth() * this->zGraphics_ScaleX);
+				this->zPins[i][j]->m_Y += RESOURCE_MANAGER->GetPin()->GetHeight() * this->zGraphics_ScaleY;
+			}
+
+			this->zPins[i][j]->SetImage(RESOURCE_MANAGER->GetPinBG());
+
+			this->zPins[i][j]->m_ScaleX = this->zGraphics_ScaleX;
+			this->zPins[i][j]->m_ScaleY = this->zGraphics_ScaleX;
 		}
+
+		this->zAnswers[i] = new Image();
+		this->zAnswers[i]->m_X = marbleStartX * this->zGraphics_ScaleX + (float)(i * RESOURCE_MANAGER->GetMarble()->GetWidth() * this->zGraphics_ScaleX);
+		this->zAnswers[i]->m_Y = 0.0f;
+		this->zAnswers[i]->m_ScaleX = this->zGraphics_ScaleX;
+		this->zAnswers[i]->m_ScaleY = this->zGraphics_ScaleX;
 	}
 
-	if(this->zColorChoices)
-	{
-		for(int i = 0; i < COLORS; i++)
-		{
-			if(this->zColorChoices[i])
-				delete this->zColorChoices[i];
-		}
-		delete [] this->zColorChoices;
-	}
 	static Iw2DSceneGraph::CColor col[COLORS] = 
 	{
-		CColor(255, 0, 255, 255), //Yellow
-		CColor(255, 255, 0, 255), //Purple
+		CColor(255, 0, 255, 255), //Purple
+		CColor(255, 255, 0, 255), //Yellow
 		CColor(255, 0, 0, 255), //Red
 		CColor(0, 255, 0, 255), //Green
 		CColor(0, 100, 255, 255) //Blue
@@ -222,107 +218,44 @@ void Game::New_Game()
 		this->zColorChoices[i]->m_Color = col[i];
 	}
 
-	if(this->zPins)
-	{
-		for (int i = 0; i < COLS; i++)
-		{
-			for(int j = 0; j < this->zMaxRounds; j++)
-			{
-				if(this->zPins[i][j])
-					delete this->zPins[i][j];
-			}
-			delete [] this->zPins[i];
-		}
-		delete [] this->zPins;
-	}
-
-	this->zPins = new Image**[COLS];
-
-	for(int i = 0; i < COLS; i++)
-	{
-		this->zPins[i] = new Image*[this->zMaxRounds];
-
-		for(int j = this->zMaxRounds - 1; j >= 0; j--)
-		{
-			this->zPins[i][j] = new Image();
-			this->zPins[i][j]->m_X = pinStart * this->zGraphics_ScaleX;
-			this->zPins[i][j]->m_Y = (MARBLE_START_Y * this->zGraphics_ScaleY) + (this->zMaxRounds - (j + 1)) * (RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zGraphics_ScaleY + this->zY_Spacing);
-		
-			if(i < 3)
-			{
-				this->zPins[i][j]->m_X += ((i) * RESOURCE_MANAGER->GetPin()->GetWidth() * this->zGraphics_ScaleX);
-			}
-			else
-			{
-				this->zPins[i][j]->m_X += ((i - 3 + 0.5f) * RESOURCE_MANAGER->GetPin()->GetWidth() * this->zGraphics_ScaleX);
-				this->zPins[i][j]->m_Y += RESOURCE_MANAGER->GetPin()->GetHeight() * this->zGraphics_ScaleY;
-			}
-
-			this->zPins[i][j]->SetImage(RESOURCE_MANAGER->GetPinBG());
-
-			this->zPins[i][j]->m_ScaleX = this->zGraphics_ScaleX;
-			this->zPins[i][j]->m_ScaleY = this->zGraphics_ScaleX;
-		}
-	}
-
-	if(this->zArrow)
-		delete this->zArrow;
-
+	//Arrow
 	this->zArrow = new Image();
 	this->zArrow->m_X = arrowStart * this->zGraphics_ScaleX;
-
-	if(this->zGameMode == GAME_MODE_MULTI)
-	{
-		this->zArrow->m_Y = 0.5f * RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zGraphics_ScaleX;
-	}
-	else
-	{
-		this->zArrow->m_Y = (MARBLE_START_Y * this->zGraphics_ScaleY) + RESOURCE_MANAGER->GetMarble()->GetHeight() * (this->zMaxRounds - 0.0f) * this->zGraphics_ScaleY - this->zY_Spacing;
-	}
 
 	this->zArrow->m_AnchorY = 0.5f;
 	this->zArrow->SetImage(RESOURCE_MANAGER->GetArrow());
 	this->zArrow->m_ScaleX = this->zGraphics_ScaleX;
 	this->zArrow->m_ScaleY = this->zGraphics_ScaleX;
 
-	if(this->zCheckButton)
-		delete this->zCheckButton;
-
+	//Check button
 	this->zCheckButton = new Image();
 	this->zCheckButton->m_X = checkButtonStartX * this->zGraphics_ScaleX;
-	
+
 	this->zCheckButton->SetImage(RESOURCE_MANAGER->GetCheckButton());
 	this->zCheckButton->m_ScaleX = this->zGraphics_ScaleX;
 	this->zCheckButton->m_ScaleY = this->zGraphics_ScaleX;
 	this->zCheckButton->SetVisibility(false);
 	this->zCheckButton->m_AnchorY = 0.5f;
-	if(this->zGameMode == GAME_MODE_MULTI)
-	{
-		this->zCheckButton->m_Y = 0.5f * RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zGraphics_ScaleX;
-	}
-	else
-	{
-		this->zCheckButton->m_Y = (MARBLE_START_Y * this->zGraphics_ScaleY) + RESOURCE_MANAGER->GetMarble()->GetHeight() * (this->zMaxRounds - 0.0f) * this->zGraphics_ScaleY - this->zY_Spacing;
-	}
+}
 
-	if(this->zAnswers)
-	{
-		for(int i = 0; i < COLS; i++)
-		{
-			if(this->zAnswers[i])
-				delete this->zAnswers[i];
-		}
-		delete [] this->zAnswers;
-	}
-	this->zAnswers = new Image*[COLS];
+void Game::New_Game()
+{
+	this->zButtonPressed = -1;
+	this->zCurrentRound = 0;
+	this->zCurrentGametimeSec = 0.0f;
+
+	this->zGametimeLabel->m_Text = "";
 
 	for(int i = 0; i < COLS; i++)
 	{
-		this->zAnswers[i] = new Image();
-		this->zAnswers[i]->m_X = marbleStartX * this->zGraphics_ScaleX + (float)(i * RESOURCE_MANAGER->GetMarble()->GetWidth() * this->zGraphics_ScaleX);
-		this->zAnswers[i]->m_Y = 0.0f;
-		this->zAnswers[i]->m_ScaleX = this->zGraphics_ScaleX;
-		this->zAnswers[i]->m_ScaleY = this->zGraphics_ScaleX;
+		for(int j = this->zMaxRounds - 1; j >= 0; j--)
+		{
+			this->zGrid[i][j]->SetImage(RESOURCE_MANAGER->GetMarbleBG());
+			this->zGrid[i][j]->m_Color = CColor(0, 0, 0, 255);
+
+			this->zPins[i][j]->SetImage(RESOURCE_MANAGER->GetPinBG());
+			this->zPins[i][j]->m_Color = CColor(0, 0, 0, 255);
+		}
 
 		if(this->zGameMode == GAME_MODE_SINGLE)
 		{
@@ -332,7 +265,23 @@ void Game::New_Game()
 		else
 		{
 			this->zAnswers[i]->SetImage(RESOURCE_MANAGER->GetMarbleBG());
+			this->zAnswers[i]->m_Color = CColor(0, 0, 0, 255);
 		}
+	}
+
+	if(this->zGameMode == GAME_MODE_MULTI)
+	{
+		//Arrow
+		this->zArrow->m_Y = 0.5f * RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zGraphics_ScaleX;
+		//Check button
+		this->zCheckButton->m_Y = 0.5f * RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zGraphics_ScaleX;
+	}
+	else
+	{
+		//Arrow
+		this->zArrow->m_Y = (MARBLE_START_Y * this->zGraphics_ScaleY) + RESOURCE_MANAGER->GetMarble()->GetHeight() * (this->zMaxRounds - 0.0f) * this->zGraphics_ScaleY - this->zY_Spacing;
+		//Check button
+		this->zCheckButton->m_Y = (MARBLE_START_Y * this->zGraphics_ScaleY) + RESOURCE_MANAGER->GetMarble()->GetHeight() * (this->zMaxRounds - 0.0f) * this->zGraphics_ScaleY - this->zY_Spacing;
 	}
 }
 
@@ -346,7 +295,7 @@ void Game::UpdateGameTimer( float pDeltaTime, float pAlphaMul )
 
 	TimeHelper::CalcTime(hour, minute, seconds, (int)this->zCurrentGametimeSec);
 
-	std::string text;
+	std::string text = "";
 	this->CreateTimeText(hour, minute, seconds, text);
 
 	this->zGametimeLabel->m_Text = text;
@@ -478,16 +427,6 @@ void Game::CheckInput()
 			}
 		}
 	}
-	else if(this->zGameState == GAME_STATE_VICTORY || this->zGameState == GAME_STATE_GAMEOVER)
-	{
-		//if(this->zBackground->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
-		//{
-		//	MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
-		//	SCENE_MANAGER->SwitchTo(menu);
-
-		//	this->zGameMode = GAME_MODE_SINGLE;
-		//}
-	}
 }
 
 void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ ) 
@@ -498,13 +437,13 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	//Update base scene
 	Scene::Update(pDeltaTime, pAlphaMul);
 
-	if(this->zGameState != GAME_STATE_GAMEOVER && 
+	if( (this->zGameState != GAME_STATE_GAMEOVER && this->zGameState != GAME_STATE_VICTORY) && 
 		this->zCurrentRound >= this->zMaxRounds)
 	{
 		this->zGameState = GAME_STATE_GAMEOVER;
 
 		s3eDialogAlertInfo info;
-		info.m_Message = "you failed to solve the code";
+		info.m_Message = "You didn't manage to solve the code";
 		info.m_Title = "Defeat";
 		info.m_Button[0] = "Main menu";
 		info.m_Button[1] = "Close";
@@ -570,10 +509,12 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 
 			MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
 			SCENE_MANAGER->SwitchTo(menu);
+
+			this->zButtonPressed = -1;
 		}
 		else if(this->zButtonPressed == 1) // Close Window
 		{
-
+			this->zButtonPressed = -1;
 		}
 
 	}
@@ -594,10 +535,12 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 
 			MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
 			SCENE_MANAGER->SwitchTo(menu);
+
+			this->zButtonPressed = -1;
 		}
 		else if(this->zButtonPressed == 1) // Close Window
 		{
-
+			this->zButtonPressed = -1;
 		}
 	}
 }
@@ -619,20 +562,9 @@ void Game::CountChoosenMarbles()
 
 void Game::MoveMarble()
 {
-	//float x = this->zSelectedRect->GetX();
-	//float y = this->zSelectedRect->GetY();
-
-	//this->zSelectedRect->m_X = this->zSelectedMarble->GetX();
-	//this->zSelectedRect->m_Y = this->zSelectedMarble->GetY();
 	this->zSelectedRect->SetImage(RESOURCE_MANAGER->GetMarble());
 
 	this->zSelectedRect->m_Color = this->zSelectedMarble->GetImageColor();
-
-	//this->zTweener.Tween(0.25f, 
-	//	FLOAT, &this->zSelectedRect->m_X, x,
-	//	FLOAT, &this->zSelectedRect->m_Y, y,
-	//	EASING, Ease::linear,
-	//	END);
 }
 
 void Game::Render()
@@ -664,6 +596,7 @@ void Game::Render()
 			for (int j = 0; j < this->zMaxRounds; j++)
 			{
 				this->zGrid[i][j]->Render();
+				this->zPins[i][j]->Render();
 			}
 		}
 
@@ -677,21 +610,12 @@ void Game::Render()
 		if(this->zGameState == GAME_STATE_PLAYING)
 			this->zArrow->Render();
 
-		for(int i = 0; i < COLS; i++)
-		{
-			for (int j = 0; j < this->zMaxRounds; j++)
-			{
-				this->zPins[i][j]->Render();
-			}
-		}
-
 		if(this->zGameState == GAME_STATE_VICTORY || this->zGameState == GAME_STATE_GAMEOVER)
 		{
 			for(int i = 0; i < COLS; i++)
 			{
 				this->zAnswers[i]->Render();
 			}
-			//this->zFinalLabel->Render();
 		}
 	}
 }
@@ -764,14 +688,11 @@ void Game::CalculateCorrectMarbles()
 
 			if(tempImage->HasSameColor(this->zAnswers[j]->GetImageColor()) && usedMarbles[i] != true)
 			{
-				if(i == j)
+				if(i == j && marbleColors[value] > 0)
 				{
-					if(marbleColors[value] > 0)
-					{
-						usedMarbles[j] = true;
-						marbleColors[value]--;
-						nrOfCorrectPlaced++;
-					}
+					usedMarbles[j] = true;
+					marbleColors[value]--;
+					nrOfCorrectPlaced++;
 				}
 			}
 		}
@@ -785,14 +706,11 @@ void Game::CalculateCorrectMarbles()
 			int value = this->GetImageColorValue(this->zAnswers[j]);
 			if(tempImage->HasSameColor(this->zAnswers[j]->GetImageColor()) && usedMarbles[i] != true)
 			{
-				if(marbleColors[value] > 0)
+				if(i != j && marbleColors[value] > 0)
 				{
-					if(i != j)
-					{
-						usedMarbles[i] = true;
-						marbleColors[value]--;
-						nrOfCorrect++;
-					}
+					usedMarbles[i] = true;
+					marbleColors[value]--;
+					nrOfCorrect++;
 				}
 			}
 		}
@@ -806,8 +724,14 @@ void Game::CalculateCorrectMarbles()
 			this->zHighscore->AddScore(score);
 		}
 
+		int minute, hour, second;
+		TimeHelper::CalcTime(hour, minute, second, this->zCurrentGametimeSec);
+
+		std::string text = "Congratulation you have solved the code in ";
+		this->CreateTimeText(hour, minute, second, text, true);
+
 		s3eDialogAlertInfo info;
-		info.m_Message = "Congratulation you have solved the code";
+		info.m_Message = text.c_str();
 		info.m_Title = "Victory";
 		info.m_Button[0] = "Main menu";
 		info.m_Button[1] = "Close";
@@ -856,33 +780,41 @@ int Game::GetImageColorValue( const Image* pImage )
 	return -1;
 }
 
-void Game::CreateTimeText( int hour, int minute, int seconds, std::string& text )
+void Game::CreateTimeText( int hour, int minute, int seconds, std::string& text, bool typeEnabled /*= false*/ )
 {
 	char str[32];
 
 	if(hour > 0)
 	{
-		if(hour < 10)
-			text = "0";
+		if(hour < 10 && !typeEnabled)
+			text += "0";
 
 		snprintf(str, 32, "%d", (int)hour);
 		text += str;
-		text += ":";
+		if(typeEnabled)
+			text += "h ";
+		else
+			text += ":";
 	}
 	if(minute > 0)
 	{
-		if(minute < 10)
+		if(minute < 10 && !typeEnabled)
 			text += "0";
 
 		snprintf(str, 32, "%d", (int)minute);
 		text += str;
-		text += ":";
+		if(typeEnabled)
+			text += "m ";
+		else
+			text += ":";
 	}
-	if(seconds < 10)
+	if(seconds < 10 && !typeEnabled)
 		text += "0";
 
 	snprintf(str, 32, "%d", (int)seconds);
 	text += str;
+	if(typeEnabled)
+		text += "s ";
 }
 
 void Game::SaveHighscore()

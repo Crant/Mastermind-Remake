@@ -13,6 +13,7 @@ public:
 	~Score();
 
 	bool operator<(const Score& pScore);
+	bool operator>(const Score& pScore);
 
 	int GetScore()	{return this->zScore;}
 	int GetRound()  {return this->zRound;}
@@ -21,4 +22,5 @@ public:
 	void SetScore(int pScore) {this->zScore = pScore;}
 	void SetRound(int pRound) {this->zRound = pRound;}
 	void SetTime(float pTime) {this->zTime = pTime;}
+	
 };

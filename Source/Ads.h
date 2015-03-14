@@ -19,10 +19,4 @@ public:
 	void Cleanup();
 
 	static int32 _ad(void *systemData, void *userData);
-	static int32 OnAdMobWillDismiss(void *systemData, void *userData);
-	static int32 OnAdMobPresent(void *systemData, void *userData);
-	static int32 OnAdMobRecieve(void *systemData, void *userData);
-	static int32 OnAdMobFailed(void *systemData, void *userData);
-	static int32 OnAdMobDismiss(void *systemData, void *userData);
-	static int32 OnAdLeaveApp(void *systemData, void *userData);
 };

@@ -1,4 +1,5 @@
 #include "Input.h"
+//#include "s3eDevice.h"
 
 CDECLARE_SINGLETONS(Input)
 
@@ -48,8 +49,14 @@ void Input::Update()
 
 	s3eKeyboardUpdate();
 
+	s3eKey key = s3eKeyBack;
+	//// Check the current platform 
+	//const char* platform = s3eDeviceGetString(S3E_DEVICE_OS);
+	//if(platform == "WINDOWS")
+	//	key = s3eKeyP;
+
 	//s3eKeyP s3eKeyBack
-	if(s3eKeyboardGetState(s3eKeyBack) & S3E_KEY_STATE_PRESSED)
+	if(s3eKeyboardGetState(key) & S3E_KEY_STATE_PRESSED)
 	{
 		INPUT_MANAGER->SetBackKeyStatus(true);
 	}

@@ -23,7 +23,7 @@ void Highscore::Sort()
 	for (int i = 1; i < (int)this->zHighscoreList.size(); i++)
 	{
 		int j = i;
-		while (j > 0 && !( (*this->zHighscoreList[j-1]) < (*this->zHighscoreList[j])) )
+		while (j > 0 && (*this->zHighscoreList[j-1]) > (*this->zHighscoreList[j]) )
 		{
 			Score* temp = this->zHighscoreList[j - 1];
 			this->zHighscoreList[j - 1] = this->zHighscoreList[j];
@@ -92,6 +92,8 @@ void Highscore::LoadHighscore()
 		this->zHighscoreList.push_back(scoreClass);
 	}
 	in.close();
+
+	this->Sort();
 }
 
 void Highscore::AddScore( Score* pScore )
