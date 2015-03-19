@@ -46,33 +46,6 @@ void MainMenu::Init()
 
 	Game* game = (Game*)SCENE_MANAGER->Find("game");
 
-	//this->zStartGameButton = new CSprite();
-	//this->zStartGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	//this->zStartGameButton->m_Y = (IwGxGetScreenHeight() / 2) - RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 1.5f;
-	//this->zStartGameButton->SetImage(RESOURCE_MANAGER->GetButton());
-	//this->zStartGameButton->m_AnchorX = 0.5f;
-	//this->zStartGameButton->m_AnchorY = 0.5f;
-	//this->zStartGameButton->m_ScaleX = game->GetGraphicsScaleX();
-	//this->zStartGameButton->m_ScaleY = game->GetGraphicsScaleY();
-	//
-	//AddChild(this->zStartGameButton);
-	//
-	//CLabel* startGameLabel = new CLabel();
-	//startGameLabel->m_X = this->zStartGameButton->m_W / 2;
-	//startGameLabel->m_Y = this->zStartGameButton->m_H / 2;
-	//startGameLabel->m_W = this->zStartGameButton->m_W;
-	//startGameLabel->m_H = this->zStartGameButton->m_H;
-	//startGameLabel->m_Text = "Start Game";
-	//startGameLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
-	//startGameLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
-	//startGameLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
-	//startGameLabel->m_AnchorX = 0.5f;
-	//startGameLabel->m_AnchorY = 0.5f;
-	//startGameLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
-	//startGameLabel->m_ScaleY = game->GetFontScale() / game->GetGraphicsScaleY();
-	//
-	//this->zStartGameButton->AddChild(startGameLabel);
-
 	//One Player
 	this->zSinglePlayerButton = new CSprite();
 	this->zSinglePlayerButton->m_X = (IwGxGetScreenWidth() / 2.0f);
@@ -186,34 +159,6 @@ void MainMenu::Init()
 	exitGameLabel->m_ScaleY = exitGameLabel->m_ScaleX;
 
 	this->zExitButton->AddChild(exitGameLabel);
-	
-	//
-	//this->zOptionsButton = new CSprite();
-	//this->zOptionsButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	//this->zOptionsButton->m_Y = (IwGxGetScreenHeight() / 2) + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScale() * 0.5f;
-	//this->zOptionsButton->SetImage(RESOURCE_MANAGER->GetButton());
-	//this->zOptionsButton->m_AnchorX = 0.5f;
-	//this->zOptionsButton->m_AnchorY = 0.5f;
-	//this->zOptionsButton->m_ScaleX = game->GetGraphicsScale();
-	//this->zOptionsButton->m_ScaleY = game->GetGraphicsScale();
-	//
-	//AddChild(this->zOptionsButton);
-	//
-	//CLabel* optionsLabel = new CLabel();
-	//optionsLabel->m_X = this->zOptionsButton->m_W / 2;
-	//optionsLabel->m_Y = this->zOptionsButton->m_H / 2;
-	//optionsLabel->m_W = this->zOptionsButton->m_W;
-	//optionsLabel->m_H = this->zOptionsButton->m_H;
-	//optionsLabel->m_Text = "Options";
-	//optionsLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
-	//optionsLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
-	//optionsLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
-	//optionsLabel->m_AnchorX = 0.5f;
-	//optionsLabel->m_AnchorY = 0.5f;
-	//optionsLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScale();
-	//optionsLabel->m_ScaleY = optionsLabel->m_ScaleX;// / this->zGraphics_Scale;
-	//
-	//this->zOptionsButton->AddChild(optionsLabel);
 }
 
 void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )

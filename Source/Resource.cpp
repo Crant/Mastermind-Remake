@@ -5,7 +5,6 @@ CDECLARE_SINGLETONS(Resource)
 
 void Resource::Init()
 {
-	//IwGetResManager()->SetMode(CIwResManager::MODE_BUILD);
 	IwGetResManager()->LoadGroup("Resources.group");
 
 	CIwResGroup* group = IwGetResManager()->GetGroupNamed("Resources");

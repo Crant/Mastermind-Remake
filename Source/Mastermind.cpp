@@ -27,6 +27,9 @@ Mastermind::~Mastermind()
 	Ads::Destroy();
 
 	SAFE_DELETE(this->zGlobalTweener);
+
+	s3eDeviceUnRegister(S3E_DEVICE_PAUSE, (s3eCallback)PauseCallback);
+	s3eDeviceUnRegister(S3E_DEVICE_UNPAUSE, (s3eCallback)ResumeCallback);
 }
 
 void Mastermind::Init()
@@ -74,13 +77,13 @@ void Mastermind::Init()
 	ADVERT_MANAGER->Show();
 
 	SCENE_MANAGER->SwitchTo(mainmenu);
+
+	s3eDeviceRegister(S3E_DEVICE_PAUSE, (s3eCallback)PauseCallback, NULL);
+	s3eDeviceRegister(S3E_DEVICE_UNPAUSE, (s3eCallback)ResumeCallback, NULL);
 }
 
 void Mastermind::Run()
 {
-	s3eDeviceRegister(S3E_DEVICE_PAUSE, (s3eCallback)PauseCallback, NULL);
-	s3eDeviceRegister(S3E_DEVICE_UNPAUSE, (s3eCallback)ResumeCallback, NULL);
-
 	uint32 timer = (uint32)s3eTimerGetMs();
 
 	// Loop forever, until the user or the OS performs some action to quit the app

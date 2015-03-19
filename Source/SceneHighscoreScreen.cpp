@@ -6,6 +6,7 @@
 #include "SceneGame.h"
 #include "Highscore.h"
 #include "Ads.h"
+#include <sstream>
 
 using namespace Iw2DSceneGraph;
 
@@ -230,33 +231,31 @@ void HighscoreScreen::Render()
 	Scene::Render();
 }
 
-void HighscoreScreen::CreateTimeText( int hour, int minute, int seconds, std::string& text )
+void HighscoreScreen::CreateTimeText(const int& hour, const int& minute, const int& seconds, std::string& text)
 {
-	char str[32];
-
+	std::stringstream ss;
 	if(hour > 0)
 	{
-		if(hour < 10)
-			text = "0";
+		ss << "0";
 
-		snprintf(str, 32, "%d", (int)hour);
-		text += str;
-		text += ":";
+		if(hour < 10)
+			ss << "0";
+
+		ss << hour << ":";
 	}
 	if(minute > 0)
 	{
 		if(minute < 10)
-			text += "0";
+			ss << "0";
 
-		snprintf(str, 32, "%d", (int)minute);
-		text += str;
-		text += ":";
+		ss << minute << ":";
 	}
 	if(seconds < 10)
-		text += "0";
+		ss << "0";
 
-	snprintf(str, 32, "%d", (int)seconds);
-	text += str;
+	ss << seconds;
+
+	text = ss.str();
 }
 
 void HighscoreScreen::OnBackKeyPress()

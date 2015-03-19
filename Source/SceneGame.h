@@ -9,10 +9,10 @@
 #define COLS 5
 #define COLORS 5
 
-#define EASY 12
-#define NORMAL 10
-#define HARD 8
-#define VHARD 3
+//#define EASY 12
+#define MAX_ROUNDS 10
+//#define HARD 8
+//#define VHARD 3
 
 // Constants that are used to fit the game to different screen sizes
 #define FONT_HEIGHT             10.0f
@@ -41,16 +41,20 @@ private:
 	Image* zSelectedMarble;
 	Image* zSelectedRect;
 
-	Image** zAnswers;
-	Image** zColorChoices;
-	Image*** zGrid;
-	Image*** zPins;
+	//Image** zAnswers;
+	//Image** zColorChoices;
+	Image* zAnswers[COLS];
+	Image* zColorChoices[COLORS];
+	//Image*** zGrid;
+	//Image*** zPins;
+	Image* zGrid[COLS][MAX_ROUNDS];
+	Image* zPins[COLS][MAX_ROUNDS];
 
 	Image* zArrow;
 	Image* zCheckButton;
 	Iw2DSceneGraph::CLabel* zGametimeLabel;
 	Iw2DSceneGraph::CSprite* zBackground;
-	int zMaxRounds;
+	//int zMaxRounds;
 	int zCurrentRound;
 
 	Highscore* zHighscore;
@@ -79,7 +83,7 @@ private:
 	void CountChoosenMarbles();
 	void CalculateCorrectMarbles();
 
-	void CreateTimeText( int hour, int minute, int seconds, std::string& text, bool typeEnabled = false);
+	void CreateTimeText(const int& hour, const int& minute, const int& seconds, std::string& text, bool typeEnabled = false);
 
 	int GetImageColorValue(const Image* pImage);
 	void SetupGame();

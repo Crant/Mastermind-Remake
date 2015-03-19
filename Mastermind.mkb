@@ -65,8 +65,10 @@ assets
 deployments
 {
 	auto-derbh
-	icon='deployments\Icon_1024'
+	s3e-compression=gzip
+	icon='deployments\Icon_1024.png'
+	splashscreen='deployments\Splash\SplashScreen.png'
 	version=1.0.0
-
+	
 	android-extra-strings='(gps_app_id,0)' 
 }

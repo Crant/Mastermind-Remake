@@ -16,7 +16,7 @@ private:
 	Iw2DSceneGraph::CLabel*  zResetButtonLabel;
 
 private:
-	void CreateTimeText(int hour, int minute, int seconds, std::string& text);
+	void CreateTimeText(const int& hour, const int& minute, const int& seconds, std::string& text);
 
 public:
 	HighscoreScreen();
