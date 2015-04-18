@@ -63,11 +63,13 @@ void SceneManager::SwitchTo( Scene* pScene )
 		this->zCurrentScene->m_X = 0;
 		this->zCurrentScene->SetActive(true);
 		this->zCurrentScene->SetInputActive(true);
+		this->zCurrentScene->OnSwap();
 		this->zNextScene = 0;
 	}
 	else
 	{
 		this->zCurrentScene->SetInputActive(false);
+		this->zNextScene->OnSwap();
 		this->zNextScene->SetActive(true);
 		this->zNextScene->m_X = -(float)IwGxGetScreenWidth();
 		this->zNextScene->GetGlobalTween()->Tween(0.5f, 
@@ -121,7 +123,7 @@ void SceneManager::FinishSwitch()
 {
 	this->zNextScene->SetInputActive(true);
 	this->zNextScene->SetActive(true);
-
+	
 	this->zPrevScene = this->zCurrentScene;
 
 	this->zCurrentScene->Update(0);

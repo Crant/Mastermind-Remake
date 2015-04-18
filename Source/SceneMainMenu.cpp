@@ -177,8 +177,6 @@ void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f 
 			INPUT_MANAGER->Reset();
 			if(this->zSinglePlayerButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Hide();
-
 				Game* game = (Game*)SCENE_MANAGER->Find("game");
 
 				game->SetGameMode(GAME_MODE_SINGLE);
@@ -187,8 +185,6 @@ void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f 
 			}
 			else if(this->zMultiPlayerButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Hide();
-
 				Game* game = (Game*)SCENE_MANAGER->Find("game");
 
 				game->SetGameMode(GAME_MODE_MULTI);
@@ -197,8 +193,6 @@ void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f 
 			}
 			else if(this->zExitButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Hide();
-
 				Game* game = (Game*)SCENE_MANAGER->Find("game");
 				game->SaveHighscore();
 
@@ -206,8 +200,6 @@ void MainMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f 
 			}
 			else if(this->zHighscoreButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Hide();
-
 				HighscoreScreen* highscore = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
 
 				SCENE_MANAGER->SwitchTo(highscore);
@@ -242,4 +234,9 @@ void MainMenu::OnPause()
 void MainMenu::OnResume()
 {
 	this->zIsActive = true;
+}
+
+void MainMenu::OnSwap()
+{
+	ADVERT_MANAGER->Show();
 }

@@ -15,6 +15,8 @@ void Resource::Init()
 	this->zMarble_Selected	= Iw2DCreateImageResource("marble_selected");
 	this->zMarbleBG			= Iw2DCreateImageResource("marble_bg");
 
+	this->zHelpButton		= Iw2DCreateImageResource("HelpButton");
+	this->zBackButton		= Iw2DCreateImageResource("BackButton");
 	this->zCheckButton		= Iw2DCreateImageResource("check");
 	this->zArrow			= Iw2DCreateImageResource("arrow");
 
@@ -24,6 +26,7 @@ void Resource::Init()
 	this->zBlankButton		= Iw2DCreateImageResource("Button");
 	this->zButtonSmall		= Iw2DCreateImageResource("ButtonSmall");
 
+	this->zHelpBG			= Iw2DCreateImageResource("bkg3");
 	this->zHighscoreBG		= Iw2DCreateImageResource("bkg2");
 	this->zGameBG			= Iw2DCreateImageResource("bkg1");
 	this->zBG				= Iw2DCreateImageResource("bkg");
@@ -41,6 +44,7 @@ void Resource::Release()
 	SAFE_DELETE(this->zArrow);
 
 	SAFE_DELETE(this->zBG);
+	SAFE_DELETE(this->zHelpBG);
 	SAFE_DELETE(this->zGameBG);
 	SAFE_DELETE(this->zHighscoreBG);
 
@@ -48,6 +52,8 @@ void Resource::Release()
 	SAFE_DELETE(this->zMarbleBG);
 	SAFE_DELETE(this->zMarble_Selected);
 	
+	SAFE_DELETE(this->zHelpButton);
+	SAFE_DELETE(this->zBackButton);
 	SAFE_DELETE(this->zCheckButton);
 	SAFE_DELETE(this->zBlankButton);
 	SAFE_DELETE(this->zButtonSmall);

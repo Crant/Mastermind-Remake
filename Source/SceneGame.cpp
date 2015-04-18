@@ -4,9 +4,12 @@
 #include "IwGx.h"
 #include "Input.h"
 #include "Resource.h"
+#include "SceneHelp.h"
 #include "SceneMainMenu.h"
 #include "ScenePauseMenu.h"
 #include <sstream>
+#include "s3eFlurry.h"
+
 
 using namespace Iw2DSceneGraph;
 
@@ -136,19 +139,9 @@ void Game::Init()
 	float checkButtonStartX = 538.0f;
 	float pinStart = 621.0f;
 	float arrowStart = 45.0f;
-
-	//this->zGrid = new Image**[COLS];
-	
-	//this->zPins = new Image**[COLS];
-
-	//this->zAnswers = new Image*[COLS];
 	
 	for(int i = 0; i < COLS; i++)
 	{
-		//this->zGrid[i] = new Image*[this->zMaxRounds];
-		
-		//this->zPins[i] = new Image*[this->zMaxRounds];
-
 		for(int j = MAX_ROUNDS - 1; j >= 0; j--)
 		{
 			//Creating Marble grid sprites
@@ -197,7 +190,6 @@ void Game::Init()
 		CColor(0, 100, 255, 255) //Blue
 	};
 
-	//this->zColorChoices = new Image*[COLORS];
 	for(int i = 0; i < COLORS; i++)
 	{
 		this->zColorChoices[i] = new Image();
@@ -205,7 +197,7 @@ void Game::Init()
 		this->zColorChoices[i]->m_Y = (float)IwGxGetScreenHeight() - RESOURCE_MANAGER->GetMarble()->GetHeight() * this->zGraphics_ScaleY;
 		this->zColorChoices[i]->SetImage(RESOURCE_MANAGER->GetMarble());
 		this->zColorChoices[i]->m_ScaleX = this->zGraphics_ScaleX;
-		this->zColorChoices[i]->m_ScaleY = this->zGraphics_ScaleY;
+		this->zColorChoices[i]->m_ScaleY = this->zGraphics_ScaleX;
 		this->zColorChoices[i]->m_Color = col[i];
 	}
 
@@ -227,15 +219,46 @@ void Game::Init()
 	this->zCheckButton->m_ScaleY = this->zGraphics_ScaleX;
 	this->zCheckButton->SetVisibility(false);
 	this->zCheckButton->m_AnchorY = 0.5f;
+
+	//Help Button
+	this->zHelpButton = new Image();
+	this->zHelpButton->SetImage(RESOURCE_MANAGER->GetHelpButton());
+
+	this->zHelpButton->m_X = 5.0f * this->zGraphics_ScaleX;
+	this->zHelpButton->m_Y = (float)IwGxGetScreenHeight() - RESOURCE_MANAGER->GetBackButton()->GetHeight() * zGraphics_ScaleY;
+
+	this->zHelpButton->m_ScaleX = this->zGraphics_ScaleX;
+	this->zHelpButton->m_ScaleY = this->zGraphics_ScaleX;
+
+	AddChild(this->zHelpButton);
 }
 
 void Game::New_Game()
 {
-	this->zButtonPressed = -1;
+	this->zSelectedRect = 0;
+	this->zSelectedMarble = 0;
+
 	this->zCurrentRound = 0;
+	this->zButtonPressed = -1;
 	this->zCurrentGametimeSec = 0.0f;
 
 	this->zGametimeLabel->m_Text = "";
+
+	switch (this->zGameMode)
+	{
+	case GAME_MODE_SINGLE:
+		if(s3eFlurryAvailable())
+			s3eFlurryLogEvent("Started Singleplayer game");
+		this->zGameState = GAME_STATE_PLAYING;
+		break;
+	case GAME_MODE_MULTI:
+		if(s3eFlurryAvailable())
+			s3eFlurryLogEvent("Started multiplayer game");
+		this->zGameState = GAME_STATE_PICKING_ANSWERS;
+		break;
+	default:
+		break;
+	}
 
 	for(int i = 0; i < COLS; i++)
 	{
@@ -258,6 +281,11 @@ void Game::New_Game()
 			this->zAnswers[i]->SetImage(RESOURCE_MANAGER->GetMarbleBG());
 			this->zAnswers[i]->m_Color = CColor(0, 0, 0, 255);
 		}
+	}
+
+	for(int i = 0; i < COLORS; i++)
+	{
+		this->zColorChoices[i]->SetImage(RESOURCE_MANAGER->GetMarble());
 	}
 
 	if(this->zGameMode == GAME_MODE_MULTI)
@@ -354,6 +382,7 @@ void Game::CheckInput()
 				this->zColorChoices[i]->SetImage(RESOURCE_MANAGER->GetMarbleSelected());
 			}
 		}
+
 		//Require that user selects a color first
 		if(this->zSelectedMarble != 0)
 		{
@@ -418,6 +447,16 @@ void Game::CheckInput()
 			}
 		}
 	}
+	if(this->zHelpButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
+	{
+		if(s3eFlurryAvailable())
+			s3eFlurryLogEvent("Viewed help screen");
+
+		//Switch to help Scene
+		HelpScreen* help = (HelpScreen*)SCENE_MANAGER->Find("help");
+
+		SCENE_MANAGER->SwitchTo(help);
+	}
 }
 
 void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ ) 
@@ -431,14 +470,18 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	if( (this->zGameState != GAME_STATE_GAMEOVER && this->zGameState != GAME_STATE_VICTORY) && 
 		this->zCurrentRound >= MAX_ROUNDS)
 	{
+		if(s3eFlurryAvailable())
+			s3eFlurryLogEvent("GameOver event");
+
 		this->zGameState = GAME_STATE_GAMEOVER;
 		if (s3eDialogAvailable())
 		{
 			s3eDialogAlertInfo info;
 			info.m_Message = "You didn't manage to solve the code";
 			info.m_Title = "Defeat";
-			info.m_Button[0] = "Main menu";
-			info.m_Button[1] = "Close";
+			info.m_Button[0] = "Main Menu";
+			info.m_Button[1] = "New Game";
+			info.m_Button[2] = "Close";
 			s3eDialogAlertBox(&info);
 		}
 	}
@@ -485,55 +528,34 @@ void Game::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
 	}
 	else if(this->zGameState == GAME_STATE_VICTORY)
 	{
-		//for (int i = 0; i < COLS; i++)
-		//{
-		//	for(int j = 0; j < MAX_ROUNDS; j++)
-		//	{
-		//		this->zGrid[i][j]->m_Alpha = 0.5f;
-		//		this->zPins[i][j]->m_Alpha = 0.5f;
-		//	}
-		//}
-		
 		if(this->zButtonPressed == 0) //Main menu
 		{
-			ADVERT_MANAGER->Show();
-
-			this->zGameMode = GAME_MODE_SINGLE;
-
 			MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
 			SCENE_MANAGER->SwitchTo(menu);
 
 			this->zButtonPressed = -1;
 		}
-		else if(this->zButtonPressed == 1) // Close Window
+		else if(this->zButtonPressed == 1) // New Game
 		{
+			this->New_Game();
+
 			this->zButtonPressed = -1;
 		}
 
 	}
 	else if(this->zGameState == GAME_STATE_GAMEOVER)
 	{
-		//for (int i = 0; i < COLS; i++)
-		//{
-		//	for(int j = 0; j < MAX_ROUNDS; j++)
-		//	{
-		//		this->zGrid[i][j]->m_Alpha = 0.5f;
-		//		this->zPins[i][j]->m_Alpha = 0.5f;
-		//	}
-		//}
 		if(this->zButtonPressed == 0) //Main menu
 		{
-			ADVERT_MANAGER->Show();
-
-			this->zGameMode = GAME_MODE_SINGLE;
-
 			MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
 			SCENE_MANAGER->SwitchTo(menu);
 
 			this->zButtonPressed = -1;
 		}
-		else if(this->zButtonPressed == 1) // Close Window
+		else if(this->zButtonPressed == 1) // New Game
 		{
+			this->New_Game();
+
 			this->zButtonPressed = -1;
 		}
 	}
@@ -612,11 +634,6 @@ void Game::Render()
 			}
 		}
 	}
-}
-
-void Game::SwitchToScene( const char* pScene_Name )
-{
-
 }
 
 Iw2DSceneGraph::CColor Game::GetRandomColor()
@@ -716,6 +733,18 @@ void Game::CalculateCorrectMarbles()
 		{
 			Score* score = new Score(this->zCurrentGametimeSec, this->zCurrentRound + 1, MAX_ROUNDS);
 			this->zHighscore->AddScore(score);
+
+			char text[32];
+
+			sprintf(text, "%d - %d", this->zCurrentRound + 1, (int)this->zCurrentGametimeSec);
+
+			if(s3eFlurryAvailable())
+				s3eFlurryLogEventParams("Victory event", text);
+		}
+		else
+		{
+			if(s3eFlurryAvailable())
+				s3eFlurryLogEvent("Victory event");
 		}
 
 		int minute, hour, second;
@@ -728,8 +757,9 @@ void Game::CalculateCorrectMarbles()
 			s3eDialogAlertInfo info;
 			info.m_Message = text.c_str();
 			info.m_Title = "Victory";
-			info.m_Button[0] = "Main menu";
-			info.m_Button[1] = "Close";
+			info.m_Button[0] = "Main Menu";
+			info.m_Button[1] = "New Game";
+			info.m_Button[2] = "Close";
 			s3eDialogAlertBox(&info);
 		}
 	}
@@ -779,35 +809,53 @@ int Game::GetImageColorValue( const Image* pImage )
 void Game::CreateTimeText(const int& hour, const int& minute, const int& seconds, std::string& text, bool typeEnabled)
 {
 	std::stringstream ss;
+
 	if(hour > 0)
 	{
-		ss << "0";
-
 		if(hour < 10 && !typeEnabled)
 			ss << "0";
 
 		ss << hour;
-
 		if(typeEnabled)
 			ss << "h ";
 		else
 			ss << ":";
+
+		if(minute > 0)
+		{
+			if(minute < 10 && !typeEnabled)
+				ss << "0";
+
+			ss << minute;
+
+			if(typeEnabled)
+				ss << "m ";
+			else
+				ss << ":";
+		}
+		else
+		{
+			ss << "00:";
+		}
 	}
-	if(minute > 0)
+	else if(minute > 0)
 	{
 		if(minute < 10 && !typeEnabled)
 			ss << "0";
 
 		ss << minute;
+
 		if(typeEnabled)
 			ss << "m ";
 		else
 			ss << ":";
 	}
+
 	if(seconds < 10 && !typeEnabled)
 		ss << "0";
 
 	ss << seconds;
+
 	if(typeEnabled)
 		ss << "s ";
 
@@ -831,33 +879,17 @@ void Game::SetupGame()
 void Game::SetGameMode( GAME_MODE pMode )
 {
 	this->zGameMode = pMode;
-
-	switch (this->zGameMode)
-	{
-	case GAME_MODE_SINGLE:
-		this->zGameState = GAME_STATE_PLAYING;
-		break;
-	case GAME_MODE_MULTI:
-		this->zGameState = GAME_STATE_PICKING_ANSWERS;
-		break;
-	default:
-		break;
-	}
 }
 
 void Game::OnBackKeyPress()
 {
 	if(this->zGameState == GAME_STATE_PLAYING || this->zGameState == GAME_STATE_PICKING_ANSWERS)
 	{
-		ADVERT_MANAGER->Show();
-
 		PauseMenu* menu = (PauseMenu*)SCENE_MANAGER->Find("pausemenu");
 		SCENE_MANAGER->SwitchTo(menu);
 	}
 	else if(this->zGameState == GAME_STATE_VICTORY || this->zGameState == GAME_STATE_GAMEOVER)
 	{
-		ADVERT_MANAGER->Show();
-
 		MainMenu* menu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
 		SCENE_MANAGER->SwitchTo(menu);
 	}
@@ -880,4 +912,9 @@ int32 Game::DialogCallback( s3eDialogCallbackData* data, void* userData )
 	game->SetButtonPress(data->m_ButtonPressed);
 
 	return 0;
+}
+
+void Game::OnSwap()
+{
+	ADVERT_MANAGER->Hide();
 }

@@ -9,7 +9,7 @@ private:
 	Iw2DSceneGraph::CSprite* zNewGameButton;
 	Iw2DSceneGraph::CSprite* zResumeGameButton;
 	Iw2DSceneGraph::CSprite* zExitGameButton;
-	Iw2DSceneGraph::CSprite* zHighscoreButton;
+	Iw2DSceneGraph::CSprite* zMainMenuButton;
 public:
 	PauseMenu();
 	~PauseMenu();
@@ -28,5 +28,8 @@ public:
 	virtual void OnPause();
 
 	virtual void OnResume();
+
+	virtual void OnSwap();
+
 
 };

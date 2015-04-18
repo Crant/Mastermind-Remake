@@ -1,11 +1,13 @@
 #include "Mastermind.h"
 #include "Resource.h"
+#include "SceneHelp.h"
 #include "SceneGame.h"
 #include "SceneMainMenu.h"
 #include "ScenePauseMenu.h"
 #include "SceneHighscoreScreen.h"
 #include "Input.h"
 #include "Ads.h"
+#include "s3eFlurry.h"
 
 Mastermind::Mastermind()
 {
@@ -14,6 +16,9 @@ Mastermind::Mastermind()
 
 Mastermind::~Mastermind()
 {
+	if(s3eFlurryAvailable())
+		s3eFlurryEndSession();
+
 	INPUT_MANAGER->Release();
 	Input::Destroy();
 
@@ -47,13 +52,18 @@ void Mastermind::Init()
 	Ads::Create();
 	ADVERT_MANAGER->Init();
 	
+	if (s3eDeviceGetInt(S3E_DEVICE_OS) == S3E_OS_ID_ANDROID)
+	{
+		if(s3eFlurryAvailable())
+			s3eFlurryStartSession("B2M7Y8NKB67QDCKBRDG5");
+	}
+
 	this->zGlobalTweener = new CTweenManager();
 
 	Game* game = new Game();
 	game->SetName("game");
 	game->Init();
 	game->SetGlobalTween(this->zGlobalTweener);
-	game->New_Game();
 	SCENE_MANAGER->Add(game);
 
 	MainMenu* mainmenu = new MainMenu();
@@ -74,7 +84,11 @@ void Mastermind::Init()
 	highscoreScreen->SetGlobalTween(this->zGlobalTweener);
 	SCENE_MANAGER->Add(highscoreScreen);
 
-	ADVERT_MANAGER->Show();
+	HelpScreen* helpScreen = new HelpScreen();
+	helpScreen->SetName("help");
+	helpScreen->Init();
+	helpScreen->SetGlobalTween(this->zGlobalTweener);
+	SCENE_MANAGER->Add(helpScreen);
 
 	SCENE_MANAGER->SwitchTo(mainmenu);
 

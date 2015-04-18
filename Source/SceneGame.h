@@ -41,17 +41,16 @@ private:
 	Image* zSelectedMarble;
 	Image* zSelectedRect;
 
-	//Image** zAnswers;
-	//Image** zColorChoices;
 	Image* zAnswers[COLS];
 	Image* zColorChoices[COLORS];
-	//Image*** zGrid;
-	//Image*** zPins;
+
 	Image* zGrid[COLS][MAX_ROUNDS];
 	Image* zPins[COLS][MAX_ROUNDS];
 
 	Image* zArrow;
 	Image* zCheckButton;
+	Image* zHelpButton;
+
 	Iw2DSceneGraph::CLabel* zGametimeLabel;
 	Iw2DSceneGraph::CSprite* zBackground;
 	//int zMaxRounds;
@@ -103,8 +102,6 @@ public:
 	//Render the game
 	void Render();
 
-	void SwitchToScene(const char* pScene_Name);
-	
 	float GetGraphicsScaleY() {return this->zGraphics_ScaleY;}
 	float GetGraphicsScaleX() {return this->zGraphics_ScaleX;}
 	float GetFontScale() {return this->zFont_Scale;}
@@ -125,4 +122,7 @@ public:
 	virtual void OnPause();
 
 	virtual void OnResume();
+
+	virtual void OnSwap();
+
 };

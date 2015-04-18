@@ -2,6 +2,9 @@
 
 #include "ClassUtil.h"
 #include <fstream>
+#include "s3eFlurry.h"
+#include <sstream>
+#include "s3eDialog.h"
 
 #define FILENAME "highscore.mmh"
 
@@ -22,13 +25,14 @@ void Highscore::Sort()
 {
 	for (int i = 1; i < (int)this->zHighscoreList.size(); i++)
 	{
-		int j = i;
-		while (j > 0 && (*this->zHighscoreList[j-1]) > (*this->zHighscoreList[j]) )
+		Score* score = this->zHighscoreList[i];
+		int j = i - 1;
+		while(j >= 0 && (*this->zHighscoreList[j]) > (*score))
 		{
-			Score* temp = this->zHighscoreList[j - 1];
-			this->zHighscoreList[j - 1] = this->zHighscoreList[j];
-			this->zHighscoreList[j] = temp;
+			this->zHighscoreList[j + 1] = this->zHighscoreList[j];
+			j = j - 1;
 		}
+		this->zHighscoreList[j + 1] = score;
 	}
 }
 
@@ -54,8 +58,8 @@ bool Highscore::SaveHighscore()
 
 		int round = this->zHighscoreList[i]->GetRound();
 		out.write(reinterpret_cast<const char*>(&round), sizeof(int));
+	}	
 
-	}
 	out.close();
 	return true;
 }

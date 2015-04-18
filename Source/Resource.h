@@ -29,12 +29,16 @@ private:
 	CIw2DImage* zGameBG;
 	CIw2DImage* zHighscoreBG;
 	CIw2DImage* zBG;
+	CIw2DImage* zHelpBG;
 	CIw2DImage* zBlankButton;
 	CIw2DImage* zCheckButton;
 	CIw2DImage* zButtonSmall;
-	//CIw2DImage* zButtonSmallAnim;
+	CIw2DImage* zHelpButton;
+	CIw2DImage* zBackButton;
 	CIw2DImage* zArrow;
 	CIw2DImage* zPinBG;
+
+
 	CIw2DFont*	zFontNormal;
 	CIw2DFont*  zFontBold;
 	CIw2DFont*  zFontLarge;
@@ -43,15 +47,18 @@ public:
 	void Init();
 	void Release();
 
-	//Iw2DSceneGraph::CAtlas* GetButtonSmallAtlas()			{return this->zButtonSmallAtlas;}
+	//Iw2DSceneGraph::CAtlas* GetButtonSmallAtlas()		{return this->zButtonSmallAtlas;}
 	//Iw2DSceneGraph::CAtlas* GetMarbleSelectedAtlas()	{return this->zMarble_SelectedAtlas;}
 	CIw2DImage*				GetMarbleSelected()			{return this->zMarble_Selected;}
 	CIw2DImage*				GetMarble()					{return this->zMarble;}
 	CIw2DImage*				GetBG()						{return this->zBG;}
 	CIw2DImage*				GetMarbleBG()				{return this->zMarbleBG;}
 	CIw2DImage*				GetGameBG()					{return this->zGameBG;}
+	CIw2DImage*				GetHelpBG()					{return this->zHelpBG;}
 	CIw2DImage*				GetHighscoreBG()			{return this->zHighscoreBG;}
 	CIw2DImage*				GetCheckButton()			{return this->zCheckButton;}
+	CIw2DImage*				GetBackButton()				{return this->zBackButton;}
+	CIw2DImage*				GetHelpButton()				{return this->zHelpButton;}
 	CIw2DImage*				GetButton()					{return this->zBlankButton;}
 	CIw2DImage*				GetArrow()					{return this->zArrow;}
 	CIw2DImage*				GetPin()					{return this->zPin;}

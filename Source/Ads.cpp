@@ -26,7 +26,7 @@ void Ads::Init()
 		BannerAdLoad();
 		
 		//Timer to load the next one.
-		s3eTimerSetTimer(5000, _ad, NULL);
+		s3eTimerSetTimer(3000, _ad, NULL);
 	}
 }
 

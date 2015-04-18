@@ -13,6 +13,7 @@ using namespace Iw2DSceneGraph;
 PauseMenu::PauseMenu()
 {
 	this->zNewGameButton = 0;
+	this->zMainMenuButton = 0;
 	this->zExitGameButton = 0;
 	this->zResumeGameButton = 0;
 }
@@ -45,10 +46,10 @@ void PauseMenu::Init()
 
 	this->zNewGameButton = new CSprite();
 	this->zNewGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zNewGameButton->m_Y = (IwGxGetScreenHeight() / 2) - RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 2.0f;
+	this->zNewGameButton->m_Y = 300.0f * game->GetGraphicsScaleY();
 	this->zNewGameButton->SetImage(RESOURCE_MANAGER->GetButton());
 	this->zNewGameButton->m_AnchorX = 0.5f;
-	this->zNewGameButton->m_AnchorY = 0.5f;
+	this->zNewGameButton->m_AnchorY = 0.0f;
 	this->zNewGameButton->m_ScaleX = game->GetGraphicsScaleX();
 	this->zNewGameButton->m_ScaleY = game->GetGraphicsScaleY();
 
@@ -72,10 +73,10 @@ void PauseMenu::Init()
 
 	this->zResumeGameButton = new CSprite();
 	this->zResumeGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zResumeGameButton->m_Y = (IwGxGetScreenHeight() / 2) - RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 0.5f;
+	this->zResumeGameButton->m_Y = 300.0f * game->GetGraphicsScaleY() + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 1.5f;
 	this->zResumeGameButton->SetImage(RESOURCE_MANAGER->GetButton());
 	this->zResumeGameButton->m_AnchorX = 0.5f;
-	this->zResumeGameButton->m_AnchorY = 0.5f;
+	this->zResumeGameButton->m_AnchorY = 0.0f;
 	this->zResumeGameButton->m_ScaleX = game->GetGraphicsScaleX();
 	this->zResumeGameButton->m_ScaleY = game->GetGraphicsScaleY();
 
@@ -97,12 +98,39 @@ void PauseMenu::Init()
 
 	this->zResumeGameButton->AddChild(resumeGameLabel);
 
+	this->zMainMenuButton = new CSprite();
+	this->zMainMenuButton->m_X = (IwGxGetScreenWidth() / 2.0f);
+	this->zMainMenuButton->m_Y = 300.0f * game->GetGraphicsScaleY() + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 3.0f;
+	this->zMainMenuButton->SetImage(RESOURCE_MANAGER->GetButton());
+	this->zMainMenuButton->m_AnchorX = 0.5f;
+	this->zMainMenuButton->m_AnchorY = 0.0f;
+	this->zMainMenuButton->m_ScaleX = game->GetGraphicsScaleX();
+	this->zMainMenuButton->m_ScaleY = game->GetGraphicsScaleY();
+
+	AddChild(this->zMainMenuButton);
+
+	CLabel* mainmenuLabel = new CLabel();
+	mainmenuLabel->m_X = this->zMainMenuButton->m_W / 2;
+	mainmenuLabel->m_Y = this->zMainMenuButton->m_H / 2;
+	mainmenuLabel->m_W = this->zMainMenuButton->m_W;
+	mainmenuLabel->m_H = this->zMainMenuButton->m_H;
+	mainmenuLabel->m_AnchorX = 0.5f;
+	mainmenuLabel->m_AnchorY = 0.5f;
+	mainmenuLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
+	mainmenuLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
+	mainmenuLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
+	mainmenuLabel->m_ScaleY = game->GetFontScale() / game->GetGraphicsScaleY();
+	mainmenuLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
+	mainmenuLabel->m_Text = "Main Menu";
+
+	this->zMainMenuButton->AddChild(mainmenuLabel);
+
 	this->zExitGameButton = new CSprite();
 	this->zExitGameButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zExitGameButton->m_Y = (IwGxGetScreenHeight() / 2) + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 2.5f;
+	this->zExitGameButton->m_Y = 300.0f * game->GetGraphicsScaleY() + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 4.5f;
 	this->zExitGameButton->SetImage(RESOURCE_MANAGER->GetButton());
 	this->zExitGameButton->m_AnchorX = 0.5f;
-	this->zExitGameButton->m_AnchorY = 0.5f;
+	this->zExitGameButton->m_AnchorY = 0.0f;
 	this->zExitGameButton->m_ScaleX = game->GetGraphicsScaleX();
 	this->zExitGameButton->m_ScaleY = game->GetGraphicsScaleY();
 
@@ -123,33 +151,6 @@ void PauseMenu::Init()
 	exitGameLabel->m_Text = "Exit Game";
 
 	this->zExitGameButton->AddChild(exitGameLabel);
-
-	this->zHighscoreButton = new CSprite();
-	this->zHighscoreButton->m_X = (IwGxGetScreenWidth() / 2.0f);
-	this->zHighscoreButton->m_Y = (IwGxGetScreenHeight() / 2) + RESOURCE_MANAGER->GetButton()->GetHeight() * game->GetGraphicsScaleY() * 1.0f;
-	this->zHighscoreButton->SetImage(RESOURCE_MANAGER->GetButton());
-	this->zHighscoreButton->m_AnchorX = 0.5f;
-	this->zHighscoreButton->m_AnchorY = 0.5f;
-	this->zHighscoreButton->m_ScaleX = game->GetGraphicsScaleX();
-	this->zHighscoreButton->m_ScaleY = game->GetGraphicsScaleY();
-
-	AddChild(this->zHighscoreButton);
-
-	CLabel* highscoreLabel = new CLabel();
-	highscoreLabel->m_X = this->zHighscoreButton->m_W / 2;
-	highscoreLabel->m_Y = this->zHighscoreButton->m_H / 2;
-	highscoreLabel->m_W = this->zHighscoreButton->m_W;
-	highscoreLabel->m_H = this->zHighscoreButton->m_H;
-	highscoreLabel->m_AnchorX = 0.5f;
-	highscoreLabel->m_AnchorY = 0.5f;
-	highscoreLabel->m_AlignHor = IW_2D_FONT_ALIGN_CENTRE;
-	highscoreLabel->m_AlignVer = IW_2D_FONT_ALIGN_CENTRE;
-	highscoreLabel->m_ScaleX = game->GetFontScale() / game->GetGraphicsScaleX();
-	highscoreLabel->m_ScaleY = game->GetFontScale() / game->GetGraphicsScaleY();
-	highscoreLabel->m_Font = RESOURCE_MANAGER->GetFontLarge();
-	highscoreLabel->m_Text = "Highscore";
-
-	this->zHighscoreButton->AddChild(highscoreLabel);
 }
 
 void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f */ )
@@ -168,36 +169,30 @@ void PauseMenu::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* = 1.0f
 			INPUT_MANAGER->Reset();
 			if(this->zNewGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Show();
+				//Switch to game Scene
+				Game* game = (Game*)SCENE_MANAGER->Find("game");
+				game->New_Game();
 
-				//Switch to main menu Scene
-				MainMenu* mainmenu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
-				SCENE_MANAGER->SwitchTo(mainmenu);
+				SCENE_MANAGER->SwitchTo(game);
 			}
 			else if(this->zResumeGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
-			{
-				ADVERT_MANAGER->Hide();
-				
+			{	
 				//Switch to game Scene
 				Game* game = (Game*)SCENE_MANAGER->Find("game");
 				SCENE_MANAGER->SwitchTo(game);
 			}
+			else if(this->zMainMenuButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
+			{
+				//Switch to main menu Scene
+				MainMenu* mainmenu = (MainMenu*)SCENE_MANAGER->Find("mainmenu");
+				SCENE_MANAGER->SwitchTo(mainmenu);
+			}
 			else if(this->zExitGameButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Hide();
-
 				Game* game = (Game*)SCENE_MANAGER->Find("game");
 				game->SaveHighscore();
 
 				SCENE_MANAGER->QuitGame();
-			}
-			else if(this->zHighscoreButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
-			{
-				ADVERT_MANAGER->Hide();
-
-				HighscoreScreen* highscore = (HighscoreScreen*)SCENE_MANAGER->Find("highscore");
-
-				SCENE_MANAGER->SwitchTo(highscore);
 			}
 		}
 	}
@@ -213,6 +208,8 @@ void PauseMenu::Render()
 
 void PauseMenu::OnBackKeyPress()
 {
+	ADVERT_MANAGER->Hide();
+
 	Game* game = (Game*)SCENE_MANAGER->Find("game");
 	game->SaveHighscore();
 
@@ -227,4 +224,9 @@ void PauseMenu::OnPause()
 void PauseMenu::OnResume()
 {
 	this->zIsActive = true;
+}
+
+void PauseMenu::OnSwap()
+{
+	ADVERT_MANAGER->Show();
 }

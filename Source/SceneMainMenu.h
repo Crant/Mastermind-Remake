@@ -35,4 +35,7 @@ public:
 
 	virtual void OnResume();
 
+	virtual void OnSwap();
+
+
 };

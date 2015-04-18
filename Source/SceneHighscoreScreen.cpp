@@ -174,7 +174,6 @@ void HighscoreScreen::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* 
 		this->zTimeLabel[i]->SetText("");
 	}
 
-
 	for (int i = 0; i < (int)scorelist.size(); i++)
 	{
 		char str[32];
@@ -206,8 +205,6 @@ void HighscoreScreen::Update( float pDeltaTime /* = 0.0f */, float pAlphaMul /* 
 			INPUT_MANAGER->Reset();
 			if(this->zBackButton->HitTest(INPUT_MANAGER->GetX_Position(), INPUT_MANAGER->GetY_Position()))
 			{
-				ADVERT_MANAGER->Show();
-
 				Scene* prevScene = SCENE_MANAGER->GetPreviousScene();
 
 				SCENE_MANAGER->SwitchTo(prevScene);
@@ -234,34 +231,51 @@ void HighscoreScreen::Render()
 void HighscoreScreen::CreateTimeText(const int& hour, const int& minute, const int& seconds, std::string& text)
 {
 	std::stringstream ss;
+
 	if(hour > 0)
 	{
-		ss << "0";
-
 		if(hour < 10)
 			ss << "0";
 
 		ss << hour << ":";
+
+		if(minute > 0)
+		{
+			if(minute < 10)
+				ss << "0";
+
+			ss << minute;
+
+			ss << ":";
+		}
+		else
+		{
+			ss << "00:";
+		}
 	}
-	if(minute > 0)
+	else if(minute > 0)
 	{
 		if(minute < 10)
 			ss << "0";
 
-		ss << minute << ":";
+		ss << minute;
+
+		ss << ":";
+	}
+	else if(minute == 0)
+	{
+		ss << "00:";
 	}
 	if(seconds < 10)
 		ss << "0";
 
 	ss << seconds;
 
-	text = ss.str();
+	text += ss.str();
 }
 
 void HighscoreScreen::OnBackKeyPress()
 {
-	ADVERT_MANAGER->Show();
-
 	Scene* prevScene = SCENE_MANAGER->GetPreviousScene();
 
 	SCENE_MANAGER->SwitchTo(prevScene);
@@ -275,4 +289,9 @@ void HighscoreScreen::OnPause()
 void HighscoreScreen::OnResume()
 {
 	this->zIsActive = true;
+}
+
+void HighscoreScreen::OnSwap()
+{
+	ADVERT_MANAGER->Hide();
 }

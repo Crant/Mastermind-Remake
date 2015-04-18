@@ -15,6 +15,15 @@ ResGroupResources:
 		"bkg2" (0x7c94a14b)
 		Size: 2617380
 	CIwTexture (0x3521f539)
+		"bkg3" (0x7c94a14c)
+		Size: 1145802
+	CIwTexture (0x3521f539)
+		"HelpButton" (0x1572262a)
+		Size: 28936
+	CIwTexture (0x3521f539)
+		"BackButton" (0x5c0d4fb2)
+		Size: 28936
+	CIwTexture (0x3521f539)
 		"button" (0xf4ff5d81)
 		Size: 130016
 	CIwTexture (0x3521f539)
@@ -35,7 +44,7 @@ ResGroupResources:
 	CIwTexture (0x3521f539)
 		"pin_bg" (0x14cacaf4)
 		Size: 3172
-	ResList 'CIwTexture' pos:40 size:9931918
+	ResList 'CIwTexture' pos:40 size:11135592
 
 	CIwGxFont (0xa68776be)
 		"arial10" (0x401fc9cf)
@@ -46,7 +55,7 @@ ResGroupResources:
 	CIwGxFont (0xa68776be)
 		"arial14" (0x401fc9d3)
 		Size: 132745
-	ResList 'CIwGxFont' pos:9931958 size:267101
+	ResList 'CIwGxFont' pos:11135632 size:267101
 
-ResGroupResources: Wrote 10199023 bytes to CIwResGroup "Resources"
+ResGroupResources: Wrote 11402697 bytes to CIwResGroup "Resources"
 

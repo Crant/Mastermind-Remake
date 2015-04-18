@@ -25,9 +25,12 @@ MemSize=25000000
 MemSizeDebugDevice=2000000
 MemSizeDebug=300000000	# Memory used for resource building and other debug features
 SysGlesVersion=2
-DispFixRot=Portrait
+DispFixRot=FixedPortrait
 
-SplashScreenAutoMinTime=1500
-
+SplashScreenScale=zoomEven
+SplashScreenAutoMinTime=2000
+SplashScreenBkR=0 
+SplashScreenBkG=0 
+SplashScreenBkB=0
 [GX]
 DataCacheSize=161072

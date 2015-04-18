@@ -36,4 +36,7 @@ public:
 	virtual void OnPause();
 
 	virtual void OnResume();
+
+	virtual void OnSwap();
+
 };

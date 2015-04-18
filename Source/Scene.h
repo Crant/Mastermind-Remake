@@ -38,6 +38,7 @@ public:
 	virtual void OnBackKeyPress() = 0;
 	virtual void OnPause() = 0;
 	virtual void OnResume() = 0;
+	virtual void OnSwap() = 0;
 public:
 	/**
      * @fn    virtual void Scene::Init();
